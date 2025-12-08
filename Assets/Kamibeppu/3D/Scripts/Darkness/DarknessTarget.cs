@@ -50,23 +50,23 @@ public class DarknessTarget : MonoBehaviour
 
     private void Update()
     {
-        bool isInDarkness = false;
+        //bool isInDarkness = false;
 
-        // センサーに自分自身を渡して暗闇にいるか取得する
-        if (darknessSensor != null)
-        {
-            isInDarkness = darknessSensor.GetSelfIsDarkness(this);
-        }
+        //// センサーに自分自身を渡して暗闇にいるか取得する
+        //if (darknessSensor != null)
+        //{
+        //    isInDarkness = darknessSensor.GetSelfIsDarkness(this);
+        //}
 
-        // 暗闇にいたら処理をする
-        if (isInDarkness == true)
-        {
-            DarknessAction();
-        }
-        else
-        {
-            ResetDarknessAnimation();
-        }
+        //// 暗闇にいたら処理をする
+        //if (isInDarkness == true)
+        //{
+        //    DarknessAction();
+        //}
+        //else
+        //{
+        //    ResetDarknessAnimation();
+        //}
     }
 
     // 暗闇に入ったときの演出

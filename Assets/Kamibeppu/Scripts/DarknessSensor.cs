@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 /*
  * このスクリプトは
@@ -27,14 +26,10 @@ public class DarknessSensor : MonoBehaviour
     private DarknessEntityTracker entityTracker;
     // ライトトラッカーのシングルトン
     private ActiveLightTracker lightTracker;
-    private IReadOnlyList<DarknessTarget> targetEntities;   // 判定対象エンティティのリスト
-    private IReadOnlyList<Light> targetLights;            // 判定に使用するライトのリスト
-    private List<DarknessTarget> entitiesInDarkness;        // 暗闇にいるエンティティのリスト
 
-    // 子どもの暗闇フラグ
-    private bool isDarknessChild = false;
-    // 子どものオブジェクト
-    private GameObject child = null;
+    private IReadOnlyList<DarknessTarget> targetEntities;   // 判定対象エンティティのリスト
+    private IReadOnlyList<Light> targetLights;              // 判定に使用するライトのリスト
+    private List<DarknessTarget> entitiesInDarkness;        // 暗闇にいるエンティティのリスト
 
     private void Awake()
     {
@@ -74,79 +69,51 @@ public class DarknessSensor : MonoBehaviour
         return false;
     }
 
-    /// <summary>
-    /// 渡されたエンティティをリストから削除する
-    /// </summary>
-    /// <param name="self"></param>
-    public void RemoveSelfInDarkness(DarknessTarget self)
-    {
-        if (self != null && entitiesInDarkness.Contains(self))
-            entitiesInDarkness.Remove(self);
-    }
-
-    // 暗闇にいるエンティティのリストを初期化する
-    private void ClearEntitiesInDarkness()
-    {
-        bool preIsDarknessChild = isDarknessChild;
-
-        // 子どもが暗闇にいるか取得する
-        isDarknessChild = IsInChildEntity();
-
-        // 変更が確認されたら、処理を分岐する
-        if (preIsDarknessChild != isDarknessChild && child != null)
-        {
-            // 子どもの暗闇処理関数を呼び出す
-
-        }
-
-        entitiesInDarkness.Clear();
-    }
-
-    // 暗闇にいるエンティティの中から子どもを探す
-    private bool IsInChildEntity()
-    {
-        foreach (DarknessTarget entity in entitiesInDarkness)
-        {
-            // エンティティのタグが子どもなら、 true を返す
-            if (entity.CompareTag("Child"))
-            {
-                // 初めて子どもが暗闇に入ったらゲームオブジェクトを取得
-                if (child == null)
-                {
-                    child = entity.gameObject;
-                }
-                return true;
-            }
-        }
-        return false;
-    }
-
     // 暗闇にいるエンティティを調べる
     private void CheckDarknessEntities()
     {
-        ClearEntitiesInDarkness();
+        entitiesInDarkness.Clear();
 
         // すべてのエンティティに対して暗闇判定を行う
-        //foreach (DarknessTarget entity in targetEntities)
-        //{
-        //    bool isDarkness = true;
-        //    foreach (Light light2D in targetLights)
-        //    {
-        //        if (IsWithinLightArea(entity, light2D) == true && IsLightPathBlocked(entity, light2D) == false)
-        //        {
-        //            isDarkness = false;
-        //        }
-        //    }
+        foreach (DarknessTarget entity in targetEntities)
+        {
+            bool isDarkness = true;
+            foreach (Light light in targetLights)
+            {
+                if (IsWithinSpotLightArea(entity, light) == true)
+                {
+                    
+                }
+            }
 
-        //    // 暗闇フラグが true のままだったらリストに加える
-        //    if (isDarkness == true)
-        //    {
-        //        entitiesInDarkness.Add(entity);
-        //        Debug.Log($"{entity.name}を暗闇リストに加えます");
-        //        Debug.Log($"暗闇にいるエンティティの数：{entitiesInDarkness.Count}");
-        //    }
-        //}
+            // 暗闇フラグが true のままだったらリストに加える
+            if (isDarkness == true)
+            {
+                entitiesInDarkness.Add(entity);
+                Debug.Log($"{entity.name}を暗闇リストに加えます");
+                Debug.Log($"暗闇にいるエンティティの数：{entitiesInDarkness.Count}");
+            }
+        }
 
+    }
+
+    // エンティティがスポットライトの照射範囲内にいるか調べる
+    private bool IsWithinSpotLightArea(DarknessTarget entity, Light light)
+    {
+        // 半径で簡易チェック
+        Vector3 lightPos = light.gameObject.transform.position;
+        Vector3 entityPos = entity.gameObject.transform.position;
+        float distance = Vector3.Distance( entityPos, lightPos );
+        float range = light.range;
+
+        // 半径よりも距離が大きい場合は暗いため false を返す
+        if (distance > range)
+        {
+            return false;
+        }
+
+
+        return true;
     }
 
     // エンティティがライトの照射範囲内にいるか調べる
