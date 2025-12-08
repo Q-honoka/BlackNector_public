@@ -1,8 +1,9 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
-
-public class GimmickThread : GimmickBase
+namespace Maruyama
+{
+    public class GimmickThread : GimmickBase
 {
 
     bool connectMarionntte = true;
@@ -48,3 +49,4 @@ public class GimmickThread : GimmickBase
 }
 
 
+}

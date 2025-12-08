@@ -1,8 +1,9 @@
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
-public class PlayerController : MonoBehaviour, ICharcters
+namespace Maruyama
+{
+    public class PlayerController : MonoBehaviour, ICharcters
 {
     //キャラクターのすべての状態
     public enum CharctersState
@@ -282,4 +283,5 @@ public class PlayerController : MonoBehaviour, ICharcters
     {
         //onGround = true;
     }
+}
 }

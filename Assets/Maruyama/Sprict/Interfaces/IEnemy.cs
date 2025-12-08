@@ -1,6 +1,7 @@
 using UnityEngine;
-
-public interface IEnemy
+namespace Maruyama
+{
+    public interface IEnemy
 {
     void FoundPlayer();
     void CatchByNector();
@@ -44,3 +45,4 @@ public interface IEnemy
 //
 //  }
 //}
+}

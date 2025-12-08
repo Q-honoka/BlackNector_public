@@ -1,7 +1,8 @@
 using System;
 using UnityEngine;
-
-public class GimmickCollision : MonoBehaviour
+namespace Maruyama
+{
+    public class GimmickCollision : MonoBehaviour
 {
     GameObject player;
 
@@ -34,4 +35,5 @@ public class GimmickCollision : MonoBehaviour
             player = null;
         }
     }
+}
 }

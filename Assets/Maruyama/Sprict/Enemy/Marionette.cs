@@ -1,6 +1,7 @@
 using UnityEngine;
-
-public class Marionette : MonoBehaviour, ICharcters, IEnemy
+namespace Maruyama
+{
+    public class Marionette : MonoBehaviour, ICharcters, IEnemy
 {
     /// <summary>
     /// èÛë‘
@@ -142,4 +143,5 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
         if (collision.gameObject.tag != "Ground") { return; }
         marionette.myData.charctersInterface.SetMyState((int)State.BROKEN);
     }
+}
 }

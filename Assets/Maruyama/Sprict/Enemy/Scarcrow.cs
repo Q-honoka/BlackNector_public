@@ -1,6 +1,7 @@
 using UnityEngine;
-
-public class Scarcrow : MonoBehaviour, IEnemy, ICharcters
+namespace Maruyama
+{
+    public class Scarcrow : MonoBehaviour, IEnemy, ICharcters
 {
     enum State
     {
@@ -61,4 +62,5 @@ public class Scarcrow : MonoBehaviour, IEnemy, ICharcters
     {
         state = (State)newState;
     }
+}
 }

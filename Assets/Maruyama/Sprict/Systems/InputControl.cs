@@ -1,8 +1,9 @@
 using System;
 using System.Diagnostics;
 using UnityEngine;
-
-public class InputControl : MonoBehaviour
+namespace Maruyama
+{
+    public class InputControl : MonoBehaviour
 {
     public static InputControl Instance;
 
@@ -50,3 +51,4 @@ public class InputControl : MonoBehaviour
     }
 }
 
+}

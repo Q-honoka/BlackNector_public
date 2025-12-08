@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 //using static UnityEngine.RuleTile.TilingRuleOutput;
-
-public class ChildController : MonoBehaviour, ICharcters
+namespace Maruyama
+{
+    public class ChildController : MonoBehaviour, ICharcters
 {
 
     public enum CharctersState
@@ -174,4 +175,4 @@ public class ChildController : MonoBehaviour, ICharcters
         transform.position = child.myData.pos;
         rigid.linearVelocityX = 0;
     }
-}
+}}

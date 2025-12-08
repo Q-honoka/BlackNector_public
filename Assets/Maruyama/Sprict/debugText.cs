@@ -1,7 +1,8 @@
 using TMPro;
 using UnityEngine;
-
-public class debugText : MonoBehaviour
+namespace Maruyama
+{
+    public class debugText : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI DebugText;
     [SerializeField] ChildController child;
@@ -16,4 +17,5 @@ public class debugText : MonoBehaviour
     {
         //DebugText.text = child.player.ToString();
     }
+}
 }

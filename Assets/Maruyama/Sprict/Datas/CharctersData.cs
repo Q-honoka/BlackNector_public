@@ -1,6 +1,7 @@
 using UnityEngine;
-
-[System.Serializable]
+namespace Maruyama
+{
+    [System.Serializable]
 public class CharctersData
 {
     public Vector2 pos;        //キャラクターの初期位置
@@ -9,3 +10,4 @@ public class CharctersData
     public GameObject obje;    //キャラクターのオブジェクト
 }
 
+}

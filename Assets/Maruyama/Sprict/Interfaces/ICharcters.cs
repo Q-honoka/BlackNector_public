@@ -1,7 +1,8 @@
 using UnityEngine;
 
-
-public interface ICharcters
+namespace Maruyama
+{
+    public interface ICharcters
 {
     void State();           //ó‘ÔŠÇ—‘Š‡ 
     void Idle();            //‘Ò‹@ó‘Ô
@@ -12,3 +13,4 @@ public interface ICharcters
 
 
 
+}
