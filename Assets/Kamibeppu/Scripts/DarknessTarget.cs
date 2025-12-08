@@ -18,6 +18,8 @@ public class DarknessTarget : MonoBehaviour
     [SerializeField] private int spawnedNestorCount = 10;  // ネスターの生成個数
 
     private DarknessSensor darknessSensor;
+    private DarknessEntityTracker tracker;
+    private DarknessTarget target;
     private List<GameObject> nestors = new List<GameObject>();  // 生成されたネスターのリスト
     private List<float> angles = new List<float>();             // 各ネスターの生成角度
     private float angleStep;                // 生成する角度の間隔
@@ -35,6 +37,9 @@ public class DarknessTarget : MonoBehaviour
         {
             Debug.Log("センサースクリプトのインスタンス化に失敗");
         }
+
+        tracker = DarknessEntityTracker.Instance;
+        target = this.GetComponent<DarknessTarget>();
 
         radius = initializeRadius;
         angleStep = 360f / spawnedNestorCount;      // 生成する角度の間隔
@@ -146,7 +151,7 @@ public class DarknessTarget : MonoBehaviour
             }
         }
     }
-    
+
     // アニメーションのリセット
     private void ResetDarknessAnimation()
     {
@@ -162,10 +167,28 @@ public class DarknessTarget : MonoBehaviour
     // 自身を消去したらセンサーのリストからも削除する
     private void OnDestroy()
     {
-        if (darknessSensor != null)
-        {
-            darknessSensor.RemoveSelfInDarkness(this);
+        NotifyLightStateChanged();
+    }
 
+    // エンティティの状態が変化したことを通知する
+    private void NotifyLightStateChanged()
+    {
+        if (tracker != null)
+        {
+            tracker?.UpdateActiveEntities(target);
         }
     }
+
+    // エンティティが無効になったときにトラッカーに通知
+    private void OnDisable()
+    {
+        NotifyLightStateChanged();
+    }
+
+    // エンティティが有効になったときにトラッカーに通知
+    private void OnEnable()
+    {
+        NotifyLightStateChanged();
+    }
+
 }

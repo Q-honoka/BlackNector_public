@@ -18,13 +18,11 @@ using UnityEngine;
 public class LightNotifier : MonoBehaviour
 {
     private Light light3D;
-    private bool isEnable;          // Light2Dがついているオブジェクトの状態
     private static ActiveLightTracker tracker;  // ライトのトラッカースクリプト
 
     private void Start()
     {
         light3D = GetComponent<Light>();
-        isEnable = light3D.gameObject.activeSelf;
 
         // トラッカーを取得
         if (tracker == null)
