@@ -123,32 +123,7 @@ public class DarknessSensor : MonoBehaviour
             return false;
         }
 
-        return true;
+        // レイをとばして間に遮蔽物があれば false なければ true を返す
+        return !Physics.Raycast(lightPos, toEntity, range);
     }
-
-    //// ライトとエンティティの間で光が遮られているか調べる
-    //private bool IsLightPathBlocked(DarknessTarget entity, Light2D light2D)
-    //{
-    //    Vector2 start = light2D.transform.position;
-    //    Vector2 end = entity.transform.position;
-
-    //    RaycastHit2D[] hit = Physics2D.LinecastAll(start, end);
-
-    //    // 衝突したオブジェクトすべてと 光が遮られているか 調べる
-    //    foreach (RaycastHit2D ray in hit)
-    //    {
-    //        Collider2D collider = ray.collider;
-    //        if (collider == null)
-    //            continue;
-
-    //        // エンティティでなく かつ 光を遮っているなら true を返す
-    //        if (collider.gameObject.GetComponent<DarknessTarget>() == null &&
-    //            collider.gameObject.GetComponent<ShadowCaster2D>() != null)
-    //        {
-    //            return true;
-    //        }
-    //    }
-
-    //    return false;
-    //}
 }
