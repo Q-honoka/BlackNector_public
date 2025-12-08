@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 /*
  * このスクリプトは
@@ -16,17 +15,16 @@ using UnityEngine.Rendering.Universal;
  */
 
 [DefaultExecutionOrder(-10)]
-[RequireComponent(typeof(Light2D))]
 public class LightNotifier : MonoBehaviour
 {
-    private Light2D light2D;
+    private Light light3D;
     private bool isEnable;          // Light2Dがついているオブジェクトの状態
     private static ActiveLightTracker tracker;  // ライトのトラッカースクリプト
 
     private void Start()
     {
-        light2D = GetComponent<Light2D>();
-        isEnable = light2D.gameObject.activeSelf;
+        light3D = GetComponent<Light>();
+        isEnable = light3D.gameObject.activeSelf;
 
         // トラッカーを取得
         if (tracker == null)
@@ -37,7 +35,7 @@ public class LightNotifier : MonoBehaviour
         // 現在のライトの状態を通知する
         if (tracker != null)
         {
-            tracker?.UpdateActiveLights(light2D);
+            tracker?.UpdateActiveLights(light3D);
         }
     }
 
@@ -46,7 +44,7 @@ public class LightNotifier : MonoBehaviour
     {
         if (tracker != null)
         {
-            tracker?.UpdateActiveLights(light2D);
+            tracker?.UpdateActiveLights(light3D);
         }
     }
 

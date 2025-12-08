@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 /*
  * このスクリプトは
@@ -23,7 +22,7 @@ public class ActiveLightTracker : MonoBehaviour
     public static ActiveLightTracker Instance { get; private set; }
 
     // アクティブなライトのリスト
-    private List<Light2D> activeLights = new();
+    private List<Light> activeLights = new();
 
     private void Awake()
     {
@@ -41,15 +40,15 @@ public class ActiveLightTracker : MonoBehaviour
     /// ライトが有効なら追加、無効なら削除します。
     /// </summary>
     /// <param name="light"></param>
-    public void UpdateActiveLights(Light2D light)
+    public void UpdateActiveLights(Light light3D)
     {
-        if (light.gameObject.activeSelf)
+        if (light3D.gameObject.activeSelf)
         {
-            AddActiveLight(light);
+            AddActiveLight(light3D);
         }
         else
         {
-            RemoveActiveLight(light);
+            RemoveActiveLight(light3D);
         }
     }
 
@@ -58,28 +57,28 @@ public class ActiveLightTracker : MonoBehaviour
     /// (読み取り専用)
     /// </summary>
     /// <returns></returns>
-    public IReadOnlyList<Light2D> GetActiveLights()
+    public IReadOnlyList<Light> GetActiveLights()
     {
         return activeLights.AsReadOnly();
     }
 
     // アクティブなライトをリストに追加する関数
-    private void AddActiveLight(Light2D light2D)
+    private void AddActiveLight(Light light3D)
     {
         // リストにそのライトがない かつ ライトオブジェクトが有効の場合は追加する
-        if (!activeLights.Contains(light2D) && light2D.gameObject.activeSelf)
+        if (!activeLights.Contains(light3D) && light3D.gameObject.activeSelf)
         {
-            activeLights.Add(light2D);
+            activeLights.Add(light3D);
         }
     }
 
     // 非アクティブなライトをリストから削除する関数
-    private void RemoveActiveLight(Light2D light2D)
+    private void RemoveActiveLight(Light light3D)
     {
         // リストにそのライトがある かつ ライトオブジェクトが無効の場合は削除する
-        if (activeLights.Contains(light2D) && !light2D.gameObject.activeSelf)
+        if (activeLights.Contains(light3D) && !light3D.gameObject.activeSelf)
         {
-            activeLights.Remove(light2D);
+            activeLights.Remove(light3D);
         }
     }
 }
