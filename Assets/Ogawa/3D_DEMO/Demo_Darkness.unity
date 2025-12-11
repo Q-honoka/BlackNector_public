@@ -1437,9 +1437,17 @@ PrefabInstance:
       propertyPath: scacrow
       value: 
       objectReference: {fileID: 11400000, guid: 1c0b433f1303a4f4ba6a47bac4210f72, type: 2}
+    - target: {fileID: 4328281049460724548, guid: 64176f05c99e48f4cb5773c2ad04d71e, type: 3}
+      propertyPath: m_Radius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8394684719277781421, guid: 64176f05c99e48f4cb5773c2ad04d71e, type: 3}
       propertyPath: m_Name
       value: Scarecrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 8646947373035259099, guid: 64176f05c99e48f4cb5773c2ad04d71e, type: 3}
+      propertyPath: viewRadius
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9060676101501348261, guid: 64176f05c99e48f4cb5773c2ad04d71e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1541,6 +1549,10 @@ PrefabInstance:
     - target: {fileID: 4537963177039515598, guid: 46855b9301a656d4c9729ee32d4a9a1d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717440513318450888, guid: 46855b9301a656d4c9729ee32d4a9a1d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
