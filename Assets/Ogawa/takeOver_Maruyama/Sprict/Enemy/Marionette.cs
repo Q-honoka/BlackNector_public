@@ -39,7 +39,7 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
         //
         marionette.myData.charctersInterface = this;
         marionette.enemyInterface = this;
-        thread = gameObject.transform.parent.GetComponent<GimmickThread>();
+        thread = gameObject.transform.GetComponent<GimmickThread>();
     }
 
     void Update()
