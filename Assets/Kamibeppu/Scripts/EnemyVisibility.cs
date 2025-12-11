@@ -28,7 +28,7 @@ public class EnemyVisibility : MonoBehaviour
 
     // 視界の中に子どもがいるか調べる
     public bool IsWithinChildInVisibility()
-    {
+    {/*
         if(child == null)
             return false;
 
@@ -60,5 +60,7 @@ public class EnemyVisibility : MonoBehaviour
         // ループを抜けた = 範囲内に子どもがいるため true を返す
         Debug.Log("子どもがいる！");
         return true;
+        */
+        return false;   // 小川デバッグ用
     }
 }
