@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 10fc4df2da32a41aaa32d77bc913491c
+guid: 409d6bb1397c95440bde40b7cec12f4f
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 0
+  mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
@@ -10,6 +10,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 288108
   packageName: Vintage Retro Room URP
-  packageVersion: 
-  assetPath: Assets/Settings/SampleSceneProfile.asset
-  uploadId: 0
+  packageVersion: 1.0
+  assetPath: Assets/Stylized Retro Room/Materials/Props3 Blue.mat
+  uploadId: 676855
