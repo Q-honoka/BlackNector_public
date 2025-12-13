@@ -86,7 +86,7 @@ public class ChildController : MonoBehaviour, ICharcters
     {
 
         Collider col = GetComponent<Collider>();
-       // Debug.Log(rigid.linearVelocityX);
+        // Debug.Log(rigid.linearVelocityX);
         //インスタンスがからの場合return
         if (player == null) { return; }
 
