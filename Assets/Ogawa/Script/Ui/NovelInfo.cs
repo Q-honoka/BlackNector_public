@@ -3,7 +3,7 @@ using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 
-public enum NOVEL_CHAR
+public enum NOVEL_CHAR  // ノベルに登場するキャラクター
 {
     MainCharacter,
     Bird,

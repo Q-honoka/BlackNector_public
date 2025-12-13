@@ -79,7 +79,6 @@ public class DarknessEntityTracker : MonoBehaviour
         if (!darknessEntities.Contains(entity) && entity.gameObject.activeSelf)
         {
             darknessEntities.Add(entity);
-            Debug.Log("’Ç‰Á");
         }
     }
 
@@ -90,7 +89,6 @@ public class DarknessEntityTracker : MonoBehaviour
         if (darknessEntities.Contains(entity) && !entity.gameObject.activeSelf)
         {
             darknessEntities.Remove(entity);
-            Debug.Log("íœ");
         }
     }
 
