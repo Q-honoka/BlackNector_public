@@ -5,8 +5,9 @@ using static UnityEngine.InputManagerEntry;
 
 public enum NOVEL_KIND  // ノベルパートの種類
 {
+    Debug_1_1,
+    Debug_1_2,
     Tutorial_1_1,
-    Tutorial_1_2,
     MAX
 }
 
