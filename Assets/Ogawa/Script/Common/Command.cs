@@ -1,7 +1,15 @@
+using RaruLib;
 using UnityEngine;
 
 public class Command : MonoBehaviour
 {
+    private void Start()
+    {
+        if(Sound.instance!=null)
+        {
+            Sound.instance.Play("BGM", "BGM1");
+        }
+    }
     public void LogOutForGame()
     {
 #if UNITY_EDITOR
