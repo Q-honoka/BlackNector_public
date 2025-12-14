@@ -1,2 +1,0 @@
-# RaruLib
-kiralumi Library

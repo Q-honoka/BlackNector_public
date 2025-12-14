@@ -3585,7 +3585,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "e9bfa130f44447fa98ae304e0bf908e0",
     "m_Id": 0,
-    "m_DisplayName": "SceneFilter",
+    "m_DisplayName": "SceneFilterColor",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -3612,10 +3612,10 @@
     "m_Guid": {
         "m_GuidSerialized": "02703ac8-5089-4f5d-b5f0-d2152bb35482"
     },
-    "m_Name": "SceneFilter",
+    "m_Name": "SceneFilterColor",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "SceneFilter",
-    "m_DefaultReferenceName": "_SceneFilter",
+    "m_RefNameGeneratedByDisplayName": "SceneFilterColor",
+    "m_DefaultReferenceName": "_SceneFilterColor",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,

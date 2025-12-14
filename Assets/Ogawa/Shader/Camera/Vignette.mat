@@ -38,17 +38,18 @@ Material:
     m_Ints: []
     m_Floats:
     - _Amount: 0.164
-    - _Edge1: 0.9
-    - _Edge2: 0.77
+    - _Edge1: 0.93
+    - _Edge2: 0.8
     - _FIlterFactor: 0.304
-    - _FogAmount: 0.558
-    - _FogFactor: 0.268
+    - _FogAmount: 0.42
+    - _FogFactor: 0.5
     - _FogSpeedFactorX: 0.2
     - _FogSpeedFactorY: 0.1
     - _SceneFilterAmount: 1
     m_Colors:
     - _FilterColor: {r: 0.18639469, g: 0.18142578, b: 0.254717, a: 1}
-    - _FogColor: {r: 0.3462798, g: 0.3863209, b: 0.5169811, a: 1}
+    - _FogColor: {r: 0.3201495, g: 0.3486027, b: 0.4339623, a: 1}
     - _SceneFilter: {r: 0.26269135, g: 0.34681424, b: 0.5924529, a: 0}
+    - _SceneFilterColor: {r: 0.6228764, g: 0.62301075, b: 0.90943396, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
