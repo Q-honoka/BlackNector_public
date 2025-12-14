@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour, ICharcters
     ChildController child;
 
 
-    bool onGround = true;                      //接地フラグ
+    bool onGround = false;                      //接地フラグ
     bool beginGround = false;                  //地面が存在しているか
     bool jumpFlag = false;                     //ジャンプしているか
     float groundToPlayerDistance = 0;          //地面とplayerとの距離
