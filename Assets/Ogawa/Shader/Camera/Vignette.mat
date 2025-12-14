@@ -37,6 +37,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Amount: 0.6
     - _Edge1: 0.86
     - _Edge2: 0.71
     - _FogSpeedFactorX: 0.2
