@@ -130,9 +130,10 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     /// </summary>
     void Broken() 
     {
-        rigid.isKinematic = false;
+        rigid.isKinematic = true;
         collider.isTrigger = true;
-        transform.position = new Vector3(transform.position.x, transform.position.y, 100);
+        transform.position = new Vector3(transform.position.x, transform.position.y, 1);
+        transform.rotation = Quaternion.identity;
        
         gameObject.layer = 5;
     }
