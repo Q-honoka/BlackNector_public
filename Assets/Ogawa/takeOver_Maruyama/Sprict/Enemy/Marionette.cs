@@ -39,7 +39,7 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
         //
         marionette.myData.charctersInterface = this;
         marionette.enemyInterface = this;
-        thread = gameObject.GetComponentInChildren<GimmickThread>();
+        thread = gameObject.GetComponentInChildren<GimmickThread>();    // 子オブジェクトのコライダーを使用する
     }
 
     void Update()
@@ -122,6 +122,7 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     void Fall() 
     {
         rigid.isKinematic = false;
+        rigid.constraints = RigidbodyConstraints.FreezePositionX;       // 真下に落ちるようにする
         rigid.useGravity = true;
     }
     /// <summary>
