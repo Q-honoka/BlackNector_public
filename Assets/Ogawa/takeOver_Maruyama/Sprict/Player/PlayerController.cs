@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour, ICharcters
             //Œ»İ‚©‚©‚Á‚Ä‚¢‚é—Í‚ğ0‚É‚·‚é
             rigid.linearVelocity = new Vector3(rigid.linearVelocity.x, 0, rigid.linearVelocity.z);
             //Ä“xã•ûŒü‚É—Í‚ğ‰Á‚¦‚é
-            rigid.AddForce(transform.up * STAY_FORCE);
+            //rigid.AddForce(transform.up * STAY_FORCE);
         }
     }
 
