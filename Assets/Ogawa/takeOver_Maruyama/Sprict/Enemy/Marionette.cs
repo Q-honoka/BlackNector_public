@@ -39,7 +39,7 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
         //
         marionette.myData.charctersInterface = this;
         marionette.enemyInterface = this;
-        thread = gameObject.transform.GetComponent<GimmickThread>();
+        thread = gameObject.GetComponentInChildren<GimmickThread>();    // 子オブジェクトのコライダーを使用する
     }
 
     void Update()
@@ -122,6 +122,7 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     void Fall() 
     {
         rigid.isKinematic = false;
+        rigid.constraints = RigidbodyConstraints.FreezePositionX;       // 真下に落ちるようにする
         rigid.useGravity = true;
     }
     /// <summary>
@@ -129,9 +130,10 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     /// </summary>
     void Broken() 
     {
-        rigid.isKinematic = false;
+        rigid.isKinematic = true;
         collider.isTrigger = true;
-        transform.position = new Vector3(transform.position.x, transform.position.y, 100);
+        transform.position = new Vector3(transform.position.x, transform.position.y, 1);
+        transform.rotation = Quaternion.identity;
        
         gameObject.layer = 5;
     }

@@ -2304,12 +2304,20 @@ PrefabInstance:
       value: marionette
       objectReference: {fileID: 0}
     - target: {fileID: 3896285273978520349, guid: 46855b9301a656d4c9729ee32d4a9a1d, type: 3}
+      propertyPath: m_Mass
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896285273978520349, guid: 46855b9301a656d4c9729ee32d4a9a1d, type: 3}
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3896285273978520349, guid: 46855b9301a656d4c9729ee32d4a9a1d, type: 3}
+      propertyPath: m_Constraints
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896285273978520349, guid: 46855b9301a656d4c9729ee32d4a9a1d, type: 3}
       propertyPath: m_IsKinematic
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4537963177039515598, guid: 46855b9301a656d4c9729ee32d4a9a1d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2321,7 +2329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4537963177039515598, guid: 46855b9301a656d4c9729ee32d4a9a1d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4537963177039515598, guid: 46855b9301a656d4c9729ee32d4a9a1d, type: 3}
       propertyPath: m_LocalRotation.w
