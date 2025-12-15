@@ -134,6 +134,7 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
         collider.isTrigger = true;
         transform.position = new Vector3(transform.position.x, transform.position.y, 1);
         transform.rotation = Quaternion.identity;
+        foundArea.gameObject.SetActive(false);
        
         gameObject.layer = 5;
     }

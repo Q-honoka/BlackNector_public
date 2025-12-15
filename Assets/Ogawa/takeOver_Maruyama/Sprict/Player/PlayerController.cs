@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour, ICharcters
     const float GRAVITY_SPEED_Y = -5;
     const float SATY_GRAVITY = 1;
     const bool  SATY_GRAVITY_BOOL = true;
-    const float STAY_FORCE = 7.5f;
+    const float STAY_FORCE = 10f;
     const float STAY_SPAN = 0.25f;
     [SerializeField] PlayersData player;                //playerの情報
     [SerializeField] Rigidbody rigid;                 //物理演算
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour, ICharcters
             if (jumpLimit <= 0) { rigid.useGravity = false; jumpFlag = false; }   
             else
             {
-                rigid.linearVelocity += new Vector3(0, (0 < rigid.linearVelocity.y) ? -Time.deltaTime : Time.deltaTime,0);
+                rigid.linearVelocity += new Vector3(0, (0 < rigid.linearVelocity.y) ? -Time.deltaTime : Time.deltaTime, 0);
                 jumpLimit -= rigid.linearVelocity.y;
             }
         }
@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour, ICharcters
 
         if (onGround || jumpFlag) { return; }
         //重力を止まっている間のみ適応
-        rigid.useGravity = SATY_GRAVITY_BOOL;
+        rigid.useGravity = false;
 
         //現在の位置が静止した場所よりも低い位置にあるなら
         if (transform.position.y < stayPosY)
@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour, ICharcters
 
         //空中にいる場合関数を発動させる
         if (!onGround) { beginGround = CheckBeingUnderGround(); }
-        if ((!onGround && !jumpFlag) && rigid.useGravity != false) { rigid.useGravity = true; }
+        if ((!onGround && !jumpFlag) && rigid.useGravity != false) { rigid.useGravity = false; }
 
         switch (InputControl.Instance.CheckPlayerMoveKey())
         {
@@ -173,6 +173,7 @@ public class PlayerController : MonoBehaviour, ICharcters
             case (int)InputControl.PlayerActions.MOVE_LEFT:
                 {
                     if (rigid.linearVelocity.x <= -MAX_SPEED_X) { rigid.linearVelocity = new Vector3(-MAX_SPEED_X, 0, 0); }
+
                     rigid.AddForce(transform.right * -player.myData.speed);
                     break;
                 }
@@ -189,7 +190,7 @@ public class PlayerController : MonoBehaviour, ICharcters
                     rigid.AddForce(transform.up * -player.myData.speed);
 
                     //自身の足元に地面がある場合、重力を戻す
-                    if (beginGround) { rigid.useGravity = true; }
+                    if (beginGround) { rigid.useGravity = false; }
                     break;
                 }
 
@@ -208,7 +209,7 @@ public class PlayerController : MonoBehaviour, ICharcters
             //つつく
             case (int)InputControl.PlayerActions.ACTION_PECK:
                 {
-                    if (0 < peckSpan) { return; }
+                    if (0 < peckSpan) { peckInput = false; return; }
                     peckSpan = KEY_INPUT_SPAN;
                     peckInput = true;
                     break;

@@ -2138,6 +2138,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 249613689938464457, guid: aba7c0f8951627046b8f2a68db6d2216, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 249613689938464457, guid: aba7c0f8951627046b8f2a68db6d2216, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249613689938464457, guid: aba7c0f8951627046b8f2a68db6d2216, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
