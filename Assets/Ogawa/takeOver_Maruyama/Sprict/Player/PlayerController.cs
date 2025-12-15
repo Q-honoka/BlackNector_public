@@ -208,7 +208,7 @@ public class PlayerController : MonoBehaviour, ICharcters
             //‚Â‚Â‚­
             case (int)InputControl.PlayerActions.ACTION_PECK:
                 {
-                    if (0 < peckSpan) { return; }
+                    if (0 < peckSpan) { peckInput = false; return; }
                     peckSpan = KEY_INPUT_SPAN;
                     peckInput = true;
                     break;
