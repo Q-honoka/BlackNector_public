@@ -10,10 +10,10 @@ using static UnityEngine.InputManagerEntry;
 public class NovelTextView : MonoBehaviour
 {
     private NovelSubject novelSubject;
-    private static float typeSpeed = 0.1f;  // タイピングスピード
-    private static float skipCoolTime = 0.5f;   // タイピングを開始してスキップ可能になるまでのクールタイム
-    private static string initText = "";    // 初期文字
-    private static int click = 0;   // デバッグ用(マウスボタン左)
+    private static readonly float typeSpeed = 0.1f;  // タイピングスピード
+    private static readonly float skipCoolTime = 0.5f;   // タイピングを開始してスキップ可能になるまでのクールタイム
+    private static readonly string initText = "";    // 初期文字
+    private static readonly int click = 0;   // デバッグ用(マウスボタン左)
 
     [SerializeField] NOVEL_CHAR present_character;  // このコンポーネントで表示するテキストに設定したキャラクター
     [SerializeField] NOVEL_KIND present_kind;   // このコンポーネントで表示するチュートリアルの種類
@@ -69,8 +69,9 @@ public class NovelTextView : MonoBehaviour
         {
             bool isClick = Input.GetMouseButtonDown(click);             //スキップクリックしたか
             bool isFinishedCT = Time.time - typeStart >= skipCoolTime;  // スキップできるまでのクールタイムが経過したか
+            bool isLockedAutoPlay = novelSubject.IsLockedAutoPlay;  // ロックするか
 
-            if (isClick && isFinishedCT)
+            if (isClick && isFinishedCT && !isLockedAutoPlay)
             {
                 CompleteText(asset);
                 break;
@@ -80,7 +81,7 @@ public class NovelTextView : MonoBehaviour
             ugui.text = text;
             await UniTask.WaitForSeconds(typeSpeed);
         }
-        Debug.Log($"小川：タイピングを終えた", gameObject);
+        Debug.Log($"小川：タイピングを終えた{asset.text}", gameObject);
     }
 
     // テキストを即座に適用させる

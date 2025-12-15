@@ -1110,6 +1110,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8f38ec76949099944a32251db52b3e1f, type: 2}
   - {fileID: 11400000, guid: 0acb06c5b73e45b468ca52c96a5c71be, type: 2}
   - {fileID: 11400000, guid: 05c368a2564765a429c919c3f4f65bc3, type: 2}
+  - {fileID: 11400000, guid: f775d1a6f2fa1214396cc8c6ea5040ae, type: 2}
+  - {fileID: 11400000, guid: a513ed01afa92414eb704652147c5f1d, type: 2}
+  - {fileID: 11400000, guid: cceab4c7e5252df4c8f7d36475be42f2, type: 2}
 --- !u!4 &756071722
 Transform:
   m_ObjectHideFlags: 0
@@ -2076,6 +2079,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6666196437704271867, guid: b003c4fdd441a604888ed38a9d02ed14, type: 3}
+      propertyPath: present_kind
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6870618158549891827, guid: b003c4fdd441a604888ed38a9d02ed14, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0.2
@@ -2204,6 +2211,10 @@ PrefabInstance:
     - target: {fileID: 5554423849377962435, guid: aba7c0f8951627046b8f2a68db6d2216, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080089762696504926, guid: aba7c0f8951627046b8f2a68db6d2216, type: 3}
+      propertyPath: present_kind
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6321724526516474488, guid: aba7c0f8951627046b8f2a68db6d2216, type: 3}
       propertyPath: m_Name
