@@ -66,5 +66,9 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(scenes[scene]);
     }
 
+    public void SceneReLoad()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
 }

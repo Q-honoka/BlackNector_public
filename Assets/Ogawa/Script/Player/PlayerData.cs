@@ -18,6 +18,8 @@ public class PlayerData : MonoBehaviour
             Debug.Log("小川：Retryが存在しません", gameObject);
         }
 
+        MoveResetSpot();    // セーブされている初期位置に移動
+
         retry.OnRetry
             .Subscribe(kind => {
                 MoveResetSpot();

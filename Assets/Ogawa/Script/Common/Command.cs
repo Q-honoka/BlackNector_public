@@ -1,5 +1,6 @@
 using RaruLib;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Command : MonoBehaviour
 {
@@ -26,5 +27,32 @@ public class Command : MonoBehaviour
             return;
         }
         Retry.instance.CallRetry();
+    }
+    public void CallSceneChange(int value)
+    {
+        if (SceneController.instance == null)
+        {
+            Debug.Log("ƒV[ƒ“‘JˆÚ¸”s", gameObject);
+            return;
+        }
+        SceneController.instance.SceneChange(value);
+    }
+    public void CallPanelChange_SendMain()
+    {
+        if (ScenePanel.instance == null)
+        {
+            Debug.Log("ƒpƒlƒ‹‘JˆÚ¸”s", gameObject);
+            return;
+        }
+        ScenePanel.instance.DataCallOpenPanel(PanelKind.Main);
+    }
+    public void CallPanelChange_SendMenu()
+    {
+        if (ScenePanel.instance == null)
+        {
+            Debug.Log("ƒpƒlƒ‹‘JˆÚ¸”s", gameObject);
+            return;
+        }
+        ScenePanel.instance.DataCallOpenPanel(PanelKind.Menu);
     }
 }

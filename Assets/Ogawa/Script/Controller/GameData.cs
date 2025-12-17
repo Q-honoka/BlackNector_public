@@ -30,7 +30,7 @@ public class GameData : MonoBehaviour
         }
     }
 
-    private SaveSpotKind _saveSpot;
+    private SaveSpotKind _saveSpot = SaveSpotKind.Stage1_1;
     public  SaveSpotKind saveSpot => _saveSpot;
 
     // 最終セーブ地点更新

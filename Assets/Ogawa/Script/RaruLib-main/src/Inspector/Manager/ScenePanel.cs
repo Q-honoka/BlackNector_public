@@ -17,6 +17,7 @@ namespace RaruLib
 {
     public enum PanelKind
     {
+        Main,
         Start,
         End,
         Config,
@@ -40,12 +41,12 @@ namespace RaruLib
             public void CallOpenPanel() { onOpenPanel?.Invoke(); }
             public void CallClosePanel() { onClosePanel?.Invoke(); }
 
-            public void OpenPanel() { panel.SetActive(true); }
-            public void ClosePanel() { panel.SetActive(false); }
+            public void OpenPanel() { if (panel == null) { return; } panel.SetActive(true); }
+            public void ClosePanel() { if (panel == null){ return; } panel.SetActive(false); }
         }
 
-        [SerializeField]
-        public PanelData[] panelDatas;  // イベント量に応じたイベント配列
+        [SerializeField,Header("内部enumの順に入れる")]
+        public PanelData[] panelDatas = new PanelData[(int)PanelKind.MAX];  // イベント量に応じたイベント配列
 
         /***************************************************************
          * 初期化

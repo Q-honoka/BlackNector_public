@@ -40,14 +40,7 @@ public class Retry : MonoBehaviour
             return;
         }
 
-        CalledRetry().Forget();
-
-    }
-
-    private async UniTaskVoid CalledRetry()
-    {
-        SceneController.instance.SceneChange((int)SCENE.GAME);
-        await UniTask.WaitForSeconds(1); ÇµÇÀÅ[Å[
+        SceneController.instance.SceneReLoad();
         retrySubject.OnNext(Unit.Default);
     }
 }
