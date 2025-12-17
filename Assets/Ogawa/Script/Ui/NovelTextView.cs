@@ -43,12 +43,12 @@ public class NovelTextView : MonoBehaviour
             .Where(asset => asset.charcter == present_character)
             .Subscribe(asset => { 
                 View(asset);
-                Debug.Log($"小川：テキストが進んだ", gameObject);
+                Debug.Log($"小川：テキストが進んだ：{asset.text}", gameObject);
             });
 
         novelSubject.OnFinishedNovel
-            .Subscribe(kind => { 
-                ugui.enabled = false;
+            .Subscribe(kind => {
+                Close().Forget();
                 Debug.Log($"小川：テキストが終わった", gameObject);
             });
     }
@@ -56,6 +56,15 @@ public class NovelTextView : MonoBehaviour
     private void View(NovelAsset asset)
     {
         TypeText(asset).Forget();
+    }
+
+    private async UniTaskVoid Close()
+    {
+        if(novelSubject.IsLockedAutoPlay)
+        {
+            await UniTask.WaitForSeconds(novelSubject.lockedAutoSpeed);
+        }
+        ugui.enabled = false;
     }
 
     // テキストをタイピングのように表示する

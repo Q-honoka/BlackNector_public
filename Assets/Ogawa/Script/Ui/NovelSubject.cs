@@ -56,7 +56,7 @@ public class NovelSubject : MonoBehaviour
         }
     }
     // 操作不可オート再生速度（少なすぎると正常に動作しない可能性）
-    private readonly float lockedAutoSpeed = 1.0f;
+    public readonly float lockedAutoSpeed = 1.0f;
 
     private void Awake()
     {
@@ -107,16 +107,16 @@ public class NovelSubject : MonoBehaviour
         playingNovel = playNovel;
         currentAssetsID = 0;
         novelKindSubject.OnNext(playingNovel);
-        IsLockedAutoPlay = novelData[(int)playingNovel];
-
+        IsLockedAutoPlay = novelData[(int)playingNovel].isLockedAutoPlay;
+        Debug.Log($"小川：{IsLockedAutoPlay}、{(int)playingNovel}");
 
         if (IsLockedAutoPlay)
         {
+            novelAssetsSubject.OnNext(novelData[(int)playingNovel].novel[currentAssetsID]);
             for(int i = 0; i < novelData[(int)playingNovel].novel.Length; i++)
             {
-                novelAssetsSubject.OnNext(novelData[(int)playingNovel].novel[currentAssetsID]);
-                Debug.Log($"小川：読んだ({novelData[(int)playingNovel].novel[currentAssetsID].text})");
-                await UniTask.WaitForSeconds(lockedAutoSpeed);  // ここ直す！！currentAssetsID++;されてない
+                await UniTask.WaitForSeconds(lockedAutoSpeed);
+                Next();
             }
         }
         else
