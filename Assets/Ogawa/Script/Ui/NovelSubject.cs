@@ -83,7 +83,7 @@ public class NovelSubject : MonoBehaviour
     public IObservable<NOVEL_KIND> OnPlayNovel
     {
         get {
-            Debug.Log($"小川：{novelKindSubject}だった", gameObject);
+            //Debug.Log($"小川：{novelKindSubject}だった", gameObject);
             return novelKindSubject; 
         }
     }
@@ -108,7 +108,7 @@ public class NovelSubject : MonoBehaviour
         currentAssetsID = 0;
         novelKindSubject.OnNext(playingNovel);
         IsLockedAutoPlay = novelData[(int)playingNovel].isLockedAutoPlay;
-        Debug.Log($"小川：{IsLockedAutoPlay}、{(int)playingNovel}");
+        //Debug.Log($"小川：{IsLockedAutoPlay}、{(int)playingNovel}");
 
         if (IsLockedAutoPlay)
         {
