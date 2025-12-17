@@ -1,3 +1,4 @@
+using UniRx.Triggers;
 using UnityEngine;
 
 public class TinDollController : MonoBehaviour, ICharcters, IEnemy
@@ -24,7 +25,7 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     // 現在の状態
     [SerializeField] State state = State.MOVE;
     // 巡回ポイント
-    [SerializeField, Header("巡回する座標")] Vector3[] patrolPos = new Vector3[2];
+    [SerializeField, Header("巡回する座標")] GameObject[] patrolPos = new GameObject[2];
     // Uターンする障害物のレイヤー
     [SerializeField] LayerMask obstacleLayer;
     // 前判定に使う視野の長さ
@@ -32,6 +33,7 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
 
     private bool foundChild = false;
     public int patrolPosIndex = 0;
+    private float threshold = 0.1f;
 
     private void Start()
     {
@@ -85,8 +87,8 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     {
         // 視界内に子どもがいたら FOUND 状態に遷移する
         if (foundArea.IsWithinChildInVisibility()) { tinDoll.myData.charctersInterface.SetMyState((int)State.FOUND); }
-        // 前方に壁があったらUターンする
-        if(CheckWallForward() == true) { Turn(); }
+        // 前方に壁がある もしくは 巡回地点に到達したら Uターンする
+        if(CheckWallForward() || CheckPatrolPos()) { Turn(); }
         // 前方に移動
         transform.Translate(transform.right * tinDoll.myData.speed * Time.deltaTime, Space.World);
     }
@@ -123,6 +125,18 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     void IEnemy.CatchByNector() { }
 
     /// <summary>
+    /// 巡回地点に到達したか調べる
+    /// </summary>
+    /// <returns></returns>
+    bool CheckPatrolPos()
+    {
+        // 巡回地点と自身の距離を求める
+        float distance = Mathf.Abs(patrolPos[patrolPosIndex].transform.position.x - this.transform.position.x);
+        // 距離がしきい値以下なら true を返す
+        return distance <= threshold;
+    }
+
+    /// <summary>
     /// 前に壁があるか調べる
     /// </summary>
     /// <returns></returns>
@@ -132,14 +146,10 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
         Vector3 direction = this.gameObject.transform.right;
         RaycastHit hit;
         
-        // 当たったオブジェクトが障害物なら進行方向を反転する
-        Debug.DrawLine(origin, origin + direction * viewLength);
-        if(Physics.Raycast(origin, direction, out hit, viewLength) == true)
+        // 当たったオブジェクトが障害物なら true を返す
+        if(Physics.Raycast(origin, direction, out hit, viewLength, obstacleLayer) == true)
         {
-            if(hit.collider != null && (1 << hit.collider.gameObject.layer) == obstacleLayer.value)
-            {
-                return true;
-            }
+            if(hit.collider != null) { return true; }
         }
 
         return false;
