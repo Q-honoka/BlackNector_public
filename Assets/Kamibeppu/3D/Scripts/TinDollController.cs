@@ -1,4 +1,3 @@
-using UniRx.Triggers;
 using UnityEngine;
 
 public class TinDollController : MonoBehaviour, ICharcters, IEnemy
@@ -31,9 +30,9 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     // 前判定に使う視野の長さ
     [SerializeField] float viewLength = 2f;
 
-    private bool foundChild = false;
-    public int patrolPosIndex = 0;
-    private float threshold = 0.1f;
+    private bool foundChild = false;    // 子どもを見つけたかどうか
+    private int patrolPosIndex = 0;     // 現在の巡回地点インデックス
+    private float threshold = 0.1f;     // 巡回地点に到達と判定するしきい値
 
     private void Start()
     {
