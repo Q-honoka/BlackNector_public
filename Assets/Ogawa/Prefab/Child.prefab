@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2221540928747293975}
   - component: {fileID: 7646114924289781281}
   - component: {fileID: 6666196437704271867}
+  - component: {fileID: 4474549605017580816}
   m_Layer: 0
   m_Name: Child
   m_TagString: Child
@@ -80,9 +81,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   present_character: 0
-  present_kind: 2
+  viewType: 2
   ugui: {fileID: 8391473230487837140}
+  typeSpeed: 0.1
   addAlpha: 0.05
+  charInterval: 0.001
+  fadeTime: 0.02
+--- !u!114 &4474549605017580816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447938188821214508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218148fa4cf14fc46a54b30cb4d79a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  retrySpot:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
 --- !u!1 &4869365982405007903
 GameObject:
   m_ObjectHideFlags: 0

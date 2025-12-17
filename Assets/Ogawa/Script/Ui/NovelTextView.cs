@@ -35,7 +35,6 @@ public class NovelTextView : MonoBehaviour
     [SerializeField, Range(0, 1), Tooltip("秒間透明度増加率")] float addAlpha = 0.05f;
     [Header("フェードイン＆タイピング")]
     [SerializeField, Header("文字の表示間隔")] float charInterval = 0.001f;
-    [SerializeField, Header("透明度が変化する時間")] float fadeTime = 0.02f;
 
 
     private void Start()

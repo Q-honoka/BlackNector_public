@@ -27,6 +27,8 @@ public class NovelSubject : MonoBehaviour
 {
     public static NovelSubject Instance;    // シングルトン
 
+    [SerializeField] private bool dontDestroy = false;
+
     [SerializeField] NovelInfo[] novelData = new NovelInfo[(int)NOVEL_KIND.MAX];    // ノベルデータ
 
     private NOVEL_KIND playingNovel; // 現在再生中のノベル
@@ -63,10 +65,14 @@ public class NovelSubject : MonoBehaviour
         if(Instance == null)
         {
             Instance = this;
+            if(dontDestroy)
+            {
+                DontDestroyOnLoad(this);
+            }
         }
         else
         {
-            Destroy(this.gameObject);
+            Destroy(this);
         }
     }
 
