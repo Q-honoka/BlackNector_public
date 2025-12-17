@@ -3,10 +3,10 @@ using UnityEngine;
 
 public interface ICharcters
 {
-    void State();           //ó‘ÔŠÇ—‘Š‡ 
-    void Idle();            //‘Ò‹@ó‘Ô
-    void Move();            //ˆÚ“®As“®ó‘Ô
-    void End();              //íœ@¨@ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç‚Ì’Ç‰Á‚ÌÛ‚Ég—p
+    void State();           //ï¿½ï¿½ÔŠÇ—ï¿½ï¿½ï¿½ï¿½ï¿½ 
+    void Idle();            //ï¿½Ò‹@ï¿½ï¿½ï¿½
+    void Move();            //ï¿½Ú“ï¿½ï¿½Aï¿½sï¿½ï¿½ï¿½ï¿½ï¿½
+    void End();              //ï¿½íœï¿½@ï¿½ï¿½ï¿½@ï¿½Aï¿½jï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½È‚Ç‚Ì’Ç‰ï¿½ï¿½ÌÛ‚Égï¿½p
     void SetMyState(int newState);
 }
 
