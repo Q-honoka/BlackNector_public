@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class TinDollController : MonoBehaviour, ICharcters
+public class TinDollController : MonoBehaviour, ICharcters, IEnemy
 {
 
     public enum TinDollState
     {
+
         MOVE,   // 移動
         TURN,   // Uターン
         END,    // 終了
@@ -14,6 +15,8 @@ public class TinDollController : MonoBehaviour, ICharcters
     [SerializeField] TinDollState state;
     [SerializeField] Vector3[] patrolPos = new Vector3[2];      // 巡回ポイント
     [SerializeField] int direction = 1;
+
+    private bool foundChild = false;
 
     private void Start()
     {
@@ -74,4 +77,23 @@ public class TinDollController : MonoBehaviour, ICharcters
 
         tinDoll.myData.charctersInterface.SetMyState((int)TinDollState.MOVE);
     }
+
+    /*  以下、IEnemy の実装です。敵の基本動作を実装しています。
+        FoundPlayer()       子どもを見つけたかどうかを true / false で設定する関数
+        GetFoundPlayer()    子どもを見つけたかどうかを true / false で返す関数
+        CatchByNector()     暗闇でネスターに見つかった時の処理をする関数（現状未定）
+     */
+    /// <summary>
+    /// Playerを見つけた
+    /// </summary>
+    void IEnemy.FoundPlayer() { foundChild = true; }
+    /// <summary>
+    /// playerの捜索状態を共有
+    /// </summary>
+    /// <returns></returns>
+    bool IEnemy.GetFoundPlayer() { return foundChild; }
+    /// <summary>
+    /// ネスターに捕まった
+    /// </summary>
+    void IEnemy.CatchByNector() { }
 }
