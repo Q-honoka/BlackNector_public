@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2275184238657761416}
+  - component: {fileID: 196061940422505428}
   - component: {fileID: 4233977869797964034}
   - component: {fileID: 2528800332389251418}
   - component: {fileID: 2736153690428214492}
@@ -38,6 +39,26 @@ Transform:
   - {fileID: 7333593007456120792}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &196061940422505428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6321724526516474488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218148fa4cf14fc46a54b30cb4d79a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  retrySpot:
+  - {x: -2.84, y: -2.39, z: 0}
+  - {x: 13.62, y: -2.39, z: 0}
+  - {x: 31.12, y: -2.39, z: 0}
+  - {x: 50.07, y: -2.39, z: 0}
+  - {x: 67.28, y: -2.39, z: 0}
+  - {x: 86.31, y: -2.39, z: 0}
+  - {x: 112.28, y: -2.39, z: 0}
 --- !u!33 &4233977869797964034
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -168,8 +189,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   present_character: 1
-  present_kind: 2
+  viewType: 2
   ugui: {fileID: 4041929950641528333}
+  typeSpeed: 0.1
+  addAlpha: 0.05
+  charInterval: 0.001
 --- !u!1001 &469329889020420448
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,13 +1,13 @@
 using UnityEngine;
 using UniRx;
 
-public class PlayerData : MonoBehaviour
+public class RetryEntity : MonoBehaviour
 {
-    private Retry retry;
+    protected Retry retry;
 
-    [SerializeField] Vector3[] retrySpot = new Vector3[(int)SaveSpotKind.MAX];
+    [SerializeField] protected Vector3[] retrySpot = new Vector3[(int)SaveSpotKind.MAX];
 
-    private void Start()
+    protected void Start()
     {
         if (Retry.instance != null)
         {
@@ -28,7 +28,7 @@ public class PlayerData : MonoBehaviour
     }
 
     // 位置をリセット
-    private void MoveResetSpot()
+    protected void MoveResetSpot()
     {
         if(GameData.instance == null)
         {
