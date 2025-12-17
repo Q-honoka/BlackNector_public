@@ -72,7 +72,7 @@ public class NovelSubject : MonoBehaviour
 
     public void OnStart()
     {
-        Play(NOVEL_KIND.Event_1_1).Forget();  // デバッグ用
+        Play(NOVEL_KIND.Tutorial_1_1).Forget();  // デバッグ用
     }
 
 
