@@ -38,7 +38,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Amount: 0.164
-    - _Edge1: 0.93
+    - _Edge1: 0.9
     - _Edge2: 0.8
     - _FIlterFactor: 0.304
     - _FogAmount: 0.42
