@@ -5,7 +5,7 @@ public class CanvasInit : MonoBehaviour
 {
     private Canvas _canvas;
 
-    [SerializeField] private bool renderIsWorldCamera; 
+    [SerializeField] private bool renderIsWorldCamera = true; 
 
     private void Start()
     {

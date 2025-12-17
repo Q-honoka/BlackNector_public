@@ -18,4 +18,13 @@ public class Command : MonoBehaviour
         Application.Quit();
 #endif
     }
+    public void CallRetry()
+    {
+        if(Retry.instance==null)
+        {
+            Debug.Log("ƒŠƒgƒ‰ƒCŽ¸”s", gameObject);
+            return;
+        }
+        Retry.instance.CallRetry();
+    }
 }

@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using UniRx;
 using UnityEngine;
@@ -39,7 +40,14 @@ public class Retry : MonoBehaviour
             return;
         }
 
+        CalledRetry().Forget();
+
+    }
+
+    private async UniTaskVoid CalledRetry()
+    {
         SceneController.instance.SceneChange((int)SCENE.GAME);
+        await UniTask.WaitForSeconds(1); ÇµÇÀÅ[Å[
         retrySubject.OnNext(Unit.Default);
     }
 }

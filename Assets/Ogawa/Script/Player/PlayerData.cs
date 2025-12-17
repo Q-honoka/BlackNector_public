@@ -5,7 +5,7 @@ public class PlayerData : MonoBehaviour
 {
     private Retry retry;
 
-    [SerializeField] Vector3[] retrySpot = new Vector3[(int)SaveSpot.MAX];
+    [SerializeField] Vector3[] retrySpot = new Vector3[(int)SaveSpotKind.MAX];
 
     private void Start()
     {
@@ -21,7 +21,8 @@ public class PlayerData : MonoBehaviour
         retry.OnRetry
             .Subscribe(kind => {
                 MoveResetSpot();
-            });
+            })
+            .AddTo(this); ;
     }
 
     // 位置をリセット

@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6223296176727084045}
+  - component: {fileID: 4474549605017580816}
   - component: {fileID: 2221540928747293975}
   - component: {fileID: 7646114924289781281}
   - component: {fileID: 6666196437704271867}
-  - component: {fileID: 4474549605017580816}
   m_Layer: 0
   m_Name: Child
   m_TagString: Child
@@ -36,6 +36,26 @@ Transform:
   - {fileID: 8921136284424102093}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4474549605017580816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447938188821214508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218148fa4cf14fc46a54b30cb4d79a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  retrySpot:
+  - {x: -6.699, y: -2.7, z: 0}
+  - {x: 11.17, y: -2.7, z: 0}
+  - {x: 29.26, y: -2.7, z: 0}
+  - {x: 47.25, y: -2.7, z: 0}
+  - {x: 65.71, y: -2.7, z: 0}
+  - {x: 83.37, y: -2.7, z: 0}
+  - {x: 110.65, y: -2.7, z: 0}
 --- !u!114 &2221540928747293975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,25 +106,6 @@ MonoBehaviour:
   typeSpeed: 0.1
   addAlpha: 0.05
   charInterval: 0.001
-  fadeTime: 0.02
---- !u!114 &4474549605017580816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2447938188821214508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 218148fa4cf14fc46a54b30cb4d79a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  retrySpot:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
 --- !u!1 &4869365982405007903
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +121,7 @@ GameObject:
   - component: {fileID: 4413778030728308796}
   m_Layer: 0
   m_Name: syuzinkou
-  m_TagString: Untagged
+  m_TagString: Child
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -258,7 +259,7 @@ GameObject:
   - component: {fileID: 2686323399533461699}
   m_Layer: 0
   m_Name: syuzinkou_1
-  m_TagString: Untagged
+  m_TagString: Child
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
