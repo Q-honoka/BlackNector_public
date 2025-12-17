@@ -11,12 +11,14 @@ public class SliderEvent : MonoBehaviour
     {
         SoundBGM,
         SoundSE,
+        Brightness,
         MAX
     }
 
     [SerializeField] SLIDER_KIND slider_kind = SLIDER_KIND.SoundBGM;
     
     private Sound _sound;
+    [SerializeField] Material _material_brightness;
 
     private Slider _slider;
 
@@ -59,5 +61,10 @@ public class SliderEvent : MonoBehaviour
     public void ChangeSEVol(float value)
     {
         _sound.ChangeVolume("SE", value);
+    }
+
+    public void ChangeBrightness(float value)
+    {
+        _material_brightness.SetFloat("_Brightness", value);
     }
 }
