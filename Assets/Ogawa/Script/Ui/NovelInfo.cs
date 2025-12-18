@@ -22,5 +22,6 @@ public struct NovelAsset
 [CreateAssetMenu(fileName = nameof(NovelInfo), menuName = nameof(ScriptableObject) + "/UI/" + nameof(NovelInfo))]
 public class NovelInfo : ScriptableObject
 {
+    public bool isLockedAutoPlay = false;
    public NovelAsset[] novel;
 }

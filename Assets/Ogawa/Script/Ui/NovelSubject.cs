@@ -2,12 +2,16 @@ using UnityEngine;
 using UniRx;
 using System;
 using static UnityEngine.InputManagerEntry;
+using Cysharp.Threading.Tasks;
 
 public enum NOVEL_KIND  // ノベルパートの種類
 {
     Debug_1_1,
     Debug_1_2,
     Tutorial_1_1,
+    Tutorial_2_1,
+    Event_1_1,
+    Event_1_2,
     MAX
 }
 
@@ -23,41 +27,69 @@ public class NovelSubject : MonoBehaviour
 {
     public static NovelSubject Instance;    // シングルトン
 
+    [SerializeField] private bool dontDestroy = false;
+
     [SerializeField] NovelInfo[] novelData = new NovelInfo[(int)NOVEL_KIND.MAX];    // ノベルデータ
 
     private NOVEL_KIND playingNovel; // 現在再生中のノベル
     private int currentAssetsID;     // 次に再生するノベルアセットID
+
+    /*ノベル再生発火用*/
+    private Subject<NOVEL_KIND> novelKindSubject = new Subject<NOVEL_KIND>();
+    private Subject<NovelAsset> novelAssetsSubject = new Subject<NovelAsset>();
+    private Subject<Unit> novelFinishedSubject = new Subject<Unit>();
+    private Subject<bool> autoChangeSubject = new Subject<bool>();
+
+    // 操作不可オート再生するか
+    private bool _IsLockedAutoPlay = false;
+    public bool IsLockedAutoPlay 
+    {
+        get
+        {
+            return _IsLockedAutoPlay;
+        }
+        set // 状態切り替え時のみイベント発火
+        {
+            if(value!=_IsLockedAutoPlay)
+            {
+                autoChangeSubject.OnCompleted();
+                _IsLockedAutoPlay = value;
+            }
+        }
+    }
+    // 操作不可オート再生速度（少なすぎると正常に動作しない可能性）
+    public readonly float lockedAutoSpeed = 1.0f;
 
     private void Awake()
     {
         if(Instance == null)
         {
             Instance = this;
+            if(dontDestroy)
+            {
+                DontDestroyOnLoad(this);
+            }
         }
         else
         {
-            Destroy(this.gameObject);
+            Destroy(this);
         }
     }
 
     public void OnStart()
     {
-        Play(NOVEL_KIND.Tutorial_1_1);  // デバッグ用
+        Play(NOVEL_KIND.Tutorial_1_1).Forget();  // デバッグ用
     }
 
-    /*ノベル再生発火用*/
-    /***************************/
-    private Subject<NOVEL_KIND> novelKindSubject = new Subject<NOVEL_KIND>();
-    private Subject<NovelAsset> novelAssetsSubject = new Subject<NovelAsset>();
-    private Subject<Unit> novelFinishedSubject = new Subject<Unit>();
 
+    /***************************/
     // イベントの購読側だけを公開
 
     // 再生するノベルのデータ
     public IObservable<NOVEL_KIND> OnPlayNovel
     {
         get {
-            Debug.Log($"小川：{novelKindSubject}だった", gameObject);
+            //Debug.Log($"小川：{novelKindSubject}だった", gameObject);
             return novelKindSubject; 
         }
     }
@@ -76,12 +108,27 @@ public class NovelSubject : MonoBehaviour
     /**************************/
     
     // ノベルの再生を開始する
-    public void Play(NOVEL_KIND playNovel)
+    public async UniTask Play(NOVEL_KIND playNovel)
     {
         playingNovel = playNovel;
         currentAssetsID = 0;
         novelKindSubject.OnNext(playingNovel);
-        novelAssetsSubject.OnNext(novelData[(int)playingNovel].novel[currentAssetsID]);
+        IsLockedAutoPlay = novelData[(int)playingNovel].isLockedAutoPlay;
+        //Debug.Log($"小川：{IsLockedAutoPlay}、{(int)playingNovel}");
+
+        if (IsLockedAutoPlay)
+        {
+            novelAssetsSubject.OnNext(novelData[(int)playingNovel].novel[currentAssetsID]);
+            for(int i = 0; i < novelData[(int)playingNovel].novel.Length; i++)
+            {
+                await UniTask.WaitForSeconds(lockedAutoSpeed);
+                Next();
+            }
+        }
+        else
+        {
+            novelAssetsSubject.OnNext(novelData[(int)playingNovel].novel[currentAssetsID]);
+        }
     }
 
     // ノベルを進める
