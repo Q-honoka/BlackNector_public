@@ -11,12 +11,12 @@ public class RetryCamera : RetryEntity
         base.Start();
 
         _camera = GetComponent<Camera>();
+
+        this.MoveResetSpot();
     }
 
     private void MoveResetSpot()
     {
-        base.MoveResetSpot();
-
         _camera.orthographicSize = retryCameraSize[(int)GameData.instance.saveSpot];
     }
 }

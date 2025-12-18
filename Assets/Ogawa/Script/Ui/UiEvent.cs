@@ -4,11 +4,11 @@ using UnityEngine.EventSystems;
 
 public class UiEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
-    private Sound _sound;
+    private Sound _sound => Sound.instance;
 
     private void Start()
     {
-        _sound = (Sound.instance != null) ? Sound.instance : gameObject.AddComponent<Sound>();
+        //_sound = (Sound.instance != null) ? Sound.instance : gameObject.AddComponent<Sound>();
     }
 
     public void OnPointerEnter(PointerEventData eventData)

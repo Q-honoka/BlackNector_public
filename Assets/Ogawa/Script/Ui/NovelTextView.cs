@@ -4,6 +4,7 @@ using UnityEngine;
 using UniRx;
 using static UnityEngine.InputManagerEntry;
 using System;
+using System.Threading;
 
 public enum ViewType
 {
@@ -24,6 +25,8 @@ public class NovelTextView : MonoBehaviour
     private static readonly string initText = "";    // 初期文字
     private static readonly int click = 0;   // デバッグ用(マウスボタン左)
 
+    private CancellationToken token;
+
     [SerializeField] NOVEL_CHAR present_character;  // このコンポーネントで表示するテキストに設定したキャラクター
     //[SerializeField] NOVEL_KIND present_kind = NOVEL_KIND.MAX;   // このコンポーネントで表示するチュートリアルの種類(使用やめた)
     [SerializeField] ViewType viewType = ViewType.Fadein;
@@ -39,36 +42,42 @@ public class NovelTextView : MonoBehaviour
 
     private void Start()
     {
-        if(NovelSubject.Instance != null)
+        if(NovelSubject.instance != null)
         {
-            novelSubject = NovelSubject.Instance;
+            novelSubject = NovelSubject.instance;
         }
         else
         {
             Debug.Log("小川：NovelSubjectが存在しません", gameObject);
         }
 
+        token = this.GetCancellationTokenOnDestroy();
+
         ugui.enabled = false;
 
         novelSubject.OnPlayNovel
-            .Subscribe(kind => { 
+            .Subscribe(kind =>
+            {
                 ugui.text = initText;
                 ugui.enabled = true;//(kind == present_kind)
                 //Debug.Log($"小川：{kind == present_kind}に変えた", gameObject);
-            });
+            })
+            .AddTo(this);
 
         novelSubject.OnNextNovel
             .Where(asset => asset.charcter == present_character)
             .Subscribe(asset => { 
                 View(asset);
                 //Debug.Log($"小川：テキストが進んだ：{asset.text}", gameObject);
-            });
+            })
+            .AddTo(this);
 
         novelSubject.OnFinishedNovel
             .Subscribe(kind => {
                 Close().Forget();
                 //Debug.Log($"小川：テキストが終わった", gameObject);
-            });
+            })
+            .AddTo(this);
     }
 
     private void View(NovelAsset asset)
@@ -91,7 +100,7 @@ public class NovelTextView : MonoBehaviour
     {
         if(novelSubject.IsLockedAutoPlay)
         {
-            await UniTask.WaitForSeconds(novelSubject.lockedAutoSpeed);
+            await UniTask.WaitForSeconds(novelSubject.lockedAutoSpeed, cancellationToken: token);
         }
         ugui.enabled = false;
     }
@@ -117,7 +126,7 @@ public class NovelTextView : MonoBehaviour
 
             text += asset.text[t];
             ugui.text = text;
-            await UniTask.WaitForSeconds(typeSpeed);
+            await UniTask.WaitForSeconds(typeSpeed, cancellationToken: token);
         }
     }
 
@@ -131,7 +140,7 @@ public class NovelTextView : MonoBehaviour
         while(ugui.color.a < 1)
         {
             ugui.color = new Color(ugui.color.r, ugui.color.g, ugui.color.b, ugui.color.a + addAlpha); // 透明度加算
-            await UniTask.WaitForFixedUpdate();
+            await UniTask.WaitForFixedUpdate(cancellationToken: token);
         }
 
         ugui.color = new Color(ugui.color.r, ugui.color.g, ugui.color.b, 1);    // 透明度調整
@@ -158,7 +167,7 @@ public class NovelTextView : MonoBehaviour
         for (int i = 0; i < textCount; i++)
         {
             FadeChar(textInfo, i).Forget();
-            await UniTask.WaitForSeconds(charInterval);
+            await UniTask.WaitForSeconds(charInterval, cancellationToken: token);
         }
     }
 
@@ -184,7 +193,7 @@ public class NovelTextView : MonoBehaviour
             }
 
             ugui.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
-            await UniTask.WaitForFixedUpdate();
+            await UniTask.WaitForFixedUpdate(cancellationToken: token);
         }
     }
 

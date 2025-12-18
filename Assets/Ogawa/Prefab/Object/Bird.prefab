@@ -53,12 +53,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   retrySpot:
   - {x: -2.84, y: -2.39, z: 0}
-  - {x: 13.62, y: -2.39, z: 0}
-  - {x: 31.12, y: -2.39, z: 0}
-  - {x: 50.07, y: -2.39, z: 0}
-  - {x: 67.28, y: -2.39, z: 0}
-  - {x: 86.31, y: -2.39, z: 0}
-  - {x: 112.28, y: -2.39, z: 0}
+  - {x: 14.17, y: -2.39, z: 0}
+  - {x: 34.09, y: -2.39, z: 0}
+  - {x: 54.4, y: -2.39, z: 0}
+  - {x: 74.48, y: -2.39, z: 0}
+  - {x: 94.28, y: -2.39, z: 0}
+  - {x: 123.74, y: -2.39, z: 0}
 --- !u!33 &4233977869797964034
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -141,8 +141,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6321724526516474488}
   serializedVersion: 4
-  m_Mass: 5
-  m_Drag: 0
+  m_Mass: 1
+  m_Drag: 5
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}

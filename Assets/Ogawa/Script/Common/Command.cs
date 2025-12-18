@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using RaruLib;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
@@ -54,5 +55,23 @@ public class Command : MonoBehaviour
             return;
         }
         ScenePanel.instance.DataCallOpenPanel(PanelKind.Menu);
+    }
+    public void CallNovelMessagePlay()
+    {
+        if (NovelSubject.instance == null)
+        {
+            Debug.Log("ÉmÉxÉãçƒê∂é∏îs", gameObject);
+            return;
+        }
+        NovelSubject.instance.Play(NOVEL_KIND.Event_1_1).Forget();
+    }
+    public void CallNovelMessageNext()
+    {
+        if (NovelSubject.instance == null)
+        {
+            Debug.Log("ÉmÉxÉãêiçsé∏îs", gameObject);
+            return;
+        }
+        NovelSubject.instance.Next();
     }
 }
