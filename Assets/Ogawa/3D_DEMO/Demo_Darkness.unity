@@ -388,7 +388,7 @@ Transform:
   m_GameObject: {fileID: 49064134}
   serializedVersion: 2
   m_LocalRotation: {x: 0.026176924, y: 0, z: 0, w: 0.99965733}
-  m_LocalPosition: {x: 18, y: 1.2, z: -10.1}
+  m_LocalPosition: {x: 0, y: 1.2, z: -10.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -452,11 +452,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   retrySpot:
-  - {x: 0, y: 0, z: -10.1}
-  - {x: 18, y: 0, z: -10.1}
-  - {x: 36, y: 0, z: -10.1}
-  - {x: 54, y: 0, z: -10.1}
-  - {x: 72, y: 0, z: -10.1}
+  - {x: 0, y: 1.2, z: -10.1}
+  - {x: 18, y: 1.2, z: -10.1}
+  - {x: 36, y: 1.2, z: -10.1}
+  - {x: 54, y: 1.2, z: -10.1}
+  - {x: 72, y: 1.2, z: -10.1}
   - {x: 94.5, y: 3.5, z: -10.1}
   - {x: 121.5, y: 3.5, z: -10.1}
   retryCameraSize:
@@ -478,6 +478,7 @@ GameObject:
   - component: {fileID: 55471304}
   - component: {fileID: 55471303}
   - component: {fileID: 55471302}
+  - component: {fileID: 55471305}
   m_Layer: 0
   m_Name: UI Camera
   m_TagString: Untagged
@@ -595,6 +596,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 3, y: 0, z: 0}
+--- !u!114 &55471305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55471301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 613055aa557bd454e943f8f51ae50c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  retrySpot:
+  - {x: 0, y: 1, z: -10}
+  - {x: 18, y: 1, z: -10}
+  - {x: 36, y: 1, z: -10}
+  - {x: 54, y: 1, z: -10}
+  - {x: 72, y: 1, z: -10}
+  - {x: 94.5, y: 1, z: -10}
+  - {x: 121.5, y: 1, z: -10}
+  retryCameraSize:
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 7.5
+  - 7.5
 --- !u!1 &61957122
 GameObject:
   m_ObjectHideFlags: 0
