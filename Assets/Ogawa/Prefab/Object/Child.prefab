@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2221540928747293975}
   - component: {fileID: 7646114924289781281}
   - component: {fileID: 6666196437704271867}
+  - component: {fileID: 7000310909640180750}
+  - component: {fileID: 1293441293391977971}
   m_Layer: 0
   m_Name: Child
   m_TagString: Child
@@ -106,6 +108,31 @@ MonoBehaviour:
   typeSpeed: 0.1
   addAlpha: 0.05
   charInterval: 0.001
+--- !u!114 &7000310909640180750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447938188821214508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54fa117c400be1c489656a9f116f4d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1293441293391977971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447938188821214508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6bfd3bfaafb7fe42bbfaa80b87d8a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickTrigger: 1
 --- !u!1 &4869365982405007903
 GameObject:
   m_ObjectHideFlags: 0

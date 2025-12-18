@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6080089762696504926}
   m_Layer: 0
   m_Name: Bird
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -394,6 +394,10 @@ PrefabInstance:
     - target: {fileID: 6104837168747920985, guid: 51226fe3e950b3f49816f98e963f5fa2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747852634067954672, guid: 51226fe3e950b3f49816f98e963f5fa2, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9106233322706270467, guid: 51226fe3e950b3f49816f98e963f5fa2, type: 3}
       propertyPath: m_Name
