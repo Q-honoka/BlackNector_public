@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour, ICharcters
     void Start()
     {
         player.myData.charctersInterface = this;
-        child = GameObject.FindWithTag("Child").GetComponent<ChildController>();
+        child = GameObject.FindAnyObjectByType<ChildController>();
         transform.position = player.myData.pos;
         jumpLimit = transform.localScale.y;
     }

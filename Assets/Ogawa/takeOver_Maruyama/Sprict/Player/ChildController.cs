@@ -166,7 +166,7 @@ public class ChildController : MonoBehaviour, ICharcters
 
     public void SetCanMove() 
     {
-        Debug.Log(state);
+        Debug.Log($"あああ：{state}");
         if (state == CharctersState.MOVE) { child.myData.charctersInterface.SetMyState((int)CharctersState.IDLE); return; }
         else if (state == CharctersState.IDLE) { child.myData.charctersInterface.SetMyState((int)CharctersState.MOVE); return; }
             

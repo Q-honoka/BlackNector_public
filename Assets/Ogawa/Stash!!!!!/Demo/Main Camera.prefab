@@ -70,7 +70,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -152,18 +152,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   retrySpot:
-  - {x: 0, y: 1.2, z: -10.1}
-  - {x: 18, y: 1.2, z: -10.1}
-  - {x: 36, y: 1.2, z: -10.1}
-  - {x: 54, y: 1.2, z: -10.1}
-  - {x: 72, y: 1.2, z: -10.1}
-  - {x: 94.5, y: 3.5, z: -10.1}
-  - {x: 121.5, y: 3.5, z: -10.1}
+  - {x: 0, y: 0.6, z: -10.1}
+  - {x: 20, y: 1.2, z: -10.1}
+  - {x: 40, y: 1.2, z: -10.1}
+  - {x: 60, y: 1.2, z: -10.1}
+  - {x: 80, y: 1.2, z: -10.1}
+  - {x: 104, y: 3, z: -10.1}
+  - {x: 132, y: 3, z: -10.1}
   retryCameraSize:
-  - 5
-  - 5
-  - 5
-  - 5
-  - 5
-  - 7.5
-  - 7.5
+  - 5.5
+  - 5.5
+  - 5.5
+  - 5.5
+  - 5.5
+  - 8
+  - 8

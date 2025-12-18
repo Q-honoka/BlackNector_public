@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 1602212848138493604}
   m_Layer: 0
   m_Name: syuzinkou
-  m_TagString: Child
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 3896440073268087256}
   m_Layer: 0
   m_Name: syuzinkou_1
-  m_TagString: Child
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

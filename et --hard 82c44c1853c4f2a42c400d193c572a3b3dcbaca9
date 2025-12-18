@@ -1,0 +1,507 @@
+[33mcommit a1f73d18313ac50011c92b0db56f4998432719ad[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: ae71d3a 6a944d6
+Author: Meikq <ncr2419sp0005@edu.nca.ac.jp>
+Date:   Thu Dec 18 14:17:30 2025 +0900
+
+    Merge pull request #16 from Q-honoka/Kato
+    
+    ステージ組み立て修正
+
+[33mcommit 6a944d60455f5df25aa911608296282b7efde8fd[m[33m ([m[1;31morigin/Kato[m[33m)[m
+Merge: 8a84fd0 ae71d3a
+Author: Meikq <ncr2419sp0005@edu.nca.ac.jp>
+Date:   Thu Dec 18 14:17:22 2025 +0900
+
+    Merge branch 'main' into Kato
+
+[33mcommit ae71d3a4dc85a06848d33d4dc747c65157531ab5[m
+Author: 501-09\cre <a>
+Date:   Thu Dec 18 14:12:12 2025 +0900
+
+    会費
+
+[33mcommit 8a84fd024945d687277d6b939bec4ba04545f46f[m
+Author: ncr2419sp0005 <ncr2419sp0005@edu.nca.ac.jp>
+Date:   Thu Dec 18 13:56:48 2025 +0900
+
+    ステージ組み立て修正
+    床と感圧版に角度を付けました。
+
+[33mcommit 82c44c1853c4f2a42c400d193c572a3b3dcbaca9[m
+Author: 501-09\cre <a>
+Date:   Thu Dec 18 13:30:44 2025 +0900
+
+    UIカメラも移動するように変更
+
+[33mcommit 521feef8d49f838c5443acd7b4e0427fb70f52e5[m
+Author: MAINMAPC\02rak <0>
+Date:   Thu Dec 18 02:01:27 2025 +0900
+
+    明るさ調整実装
+
+[33mcommit aa62f443a5f8a0185f6ef0ee85cbc34bfc50cc72[m
+Author: MAINMAPC\02rak <0>
+Date:   Thu Dec 18 01:47:20 2025 +0900
+
+    鳥のリスポーン位置指定、カメラのリスポーン位置とサイズ指定
+
+[33mcommit 214350d84fb879a43df8ddaa931fe2b0ae5e0239[m
+Author: MAINMAPC\02rak <0>
+Date:   Wed Dec 17 23:24:26 2025 +0900
+
+    メニュー画面実装（明るさ調整はまだ）、リトライ機能の実装（ステージ１のデモ円錐毎にトリガーついてる）
+
+[33mcommit 3a9b071870b3acb11a2d891732a84523b5d4abe1[m
+Author: 602-11\cre <z>
+Date:   Wed Dec 17 19:52:15 2025 +0900
+
+    プレイヤーセーブポイント途中
+
+[33mcommit c209797fc44303359a38398b3cb2cd3ef3fbf51f[m
+Author: 602-11\cre <z>
+Date:   Wed Dec 17 18:52:06 2025 +0900
+
+    リトライ用のスクリプト作成。ゲームデータとプレイヤーデータ作成
+
+[33mcommit 4fcbe1b618d2578b02b06d03f5a485da859b442c[m
+Author: 602-11\cre <z>
+Date:   Wed Dec 17 17:33:01 2025 +0900
+
+    テキストの表示方法”タイピング”、”フェードイン”、”タイピング＆フェードイン”の実装
+
+[33mcommit b316188e68cf7da54daf17a4e68e879f311e14e5[m
+Merge: a8b3683 9390e9a
+Author: 504-19\cre <d>
+Date:   Wed Dec 17 16:12:44 2025 +0900
+
+    Merge branch 'main' of https://github.com/Q-honoka/3D-BlackNector
+    
+    # Conflicts:
+    #       Assets/Ogawa/3D_DEMO/Demo_Darkness.unity
+
+[33mcommit a8b3683c6856012a790bc93e92329269734cde6e[m[33m ([m[1;31morigin/Ogawa2[m[33m)[m
+Author: 504-19\cre <d>
+Date:   Wed Dec 17 16:08:39 2025 +0900
+
+    ノベルテキストの描画改善
+
+[33mcommit 9390e9a9e27d82809ea7e8ee80e75c96ce3cede0[m
+Merge: fdac65c af3ef4f
+Author: Meikq <ncr2419sp0005@edu.nca.ac.jp>
+Date:   Wed Dec 17 16:03:05 2025 +0900
+
+    Merge pull request #14 from Q-honoka/Kato
+    
+    ステージの組み立てをしました。(完成)
+
+[33mcommit af3ef4f98164d525c6177d135093839eae06cdda[m
+Author: ncr2419sp0005 <ncr2419sp0005@edu.nca.ac.jp>
+Date:   Wed Dec 17 15:57:07 2025 +0900
+
+    ステージの組み立てをしました。(完成)
+
+[33mcommit fdac65c19164b766bf06f24752be7cb9c03bb2de[m
+Merge: 4628ac1 f21ac4e
+Author: Q-honoka <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Wed Dec 17 15:19:32 2025 +0900
+
+    Merge pull request #13 from Q-honoka/Kamibeppu
+    
+    ブリキの人形の修正
+
+[33mcommit f21ac4e6ea5b22d85f87a852e24d8488e5ae55d2[m[33m ([m[1;31morigin/Kamibeppu[m[33m)[m
+Author: Honoka <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Wed Dec 17 15:18:55 2025 +0900
+
+    ブリキの人形の修正
+
+[33mcommit 4628ac158adae6c7991b21c008dce392f0de4927[m
+Merge: f21aaad 98d5fd9
+Author: Q-honoka <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Wed Dec 17 15:09:30 2025 +0900
+
+    Merge pull request #12 from Q-honoka/Kamibeppu
+    
+    ブリキの人形を実装。PrefabファイルのTindollが巡回地点を設定すればそのまま使えます。
+
+[33mcommit 98d5fd983e1e3c2084c1491b72bac803664d2cfd[m
+Author: Honoka <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Wed Dec 17 15:04:06 2025 +0900
+
+    ブリキが巡回地点に到達したらUターンする処理を実装しました。
+
+[33mcommit 1d97dfb8b1fce1c4dfba2935be82c1c30a1309fa[m
+Author: Honoka <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Wed Dec 17 14:38:28 2025 +0900
+
+    ブリキが壁に当たったらUターンする処理を実装しました。
+
+[33mcommit f21aaaded0f65a2a8c6c5608bc4a9c3133b6e4d9[m
+Merge: 15f4cc8 0eb69b6
+Author: Meikq <ncr2419sp0005@edu.nca.ac.jp>
+Date:   Wed Dec 17 14:05:23 2025 +0900
+
+    Merge pull request #11 from Q-honoka/Kato
+    
+    ステージの形だけ作ってます(未完)
+
+[33mcommit 0eb69b61229295ffdb3721606aa07931e583f3f9[m
+Author: ncr2419sp0005 <ncr2419sp0005@edu.nca.ac.jp>
+Date:   Wed Dec 17 13:57:24 2025 +0900
+
+    ステージの形だけ作ってます(未完)
+
+[33mcommit 15f4cc8ebaf515e34c0b70b20a9b5a613825a161[m
+Author: 504-19\cre <d>
+Date:   Wed Dec 17 13:52:42 2025 +0900
+
+    タイトルの変更
+
+[33mcommit e1bf2b4b22254838a9853e9fc39440bcf607dcc6[m
+Author: 504-19\cre <d>
+Date:   Wed Dec 17 13:51:51 2025 +0900
+
+    テキストノベルの自動再生、手動再生実装。NovelInfoのスクリタブルの変数で切り替え可能。
+
+[33mcommit 984b5bb8be22620eadcf5f2b1786f2eedeb01d75[m
+Author: Honoka <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Wed Dec 17 10:33:11 2025 +0900
+
+    ブリキの人形にエネミーインターフェースを実装しました
+
+[33mcommit d80903d6666813c79cfddf86905778fc114aa2d1[m
+Author: Honoka <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Wed Dec 17 10:29:53 2025 +0900
+
+    Revert "ブリキの人形にエネミーインターフェースを実装しました"
+    
+    This reverts commit 89164820f0aa080a77e2cbf0cd5eb7506651f5a8.
+
+[33mcommit 89164820f0aa080a77e2cbf0cd5eb7506651f5a8[m
+Author: Honoka <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Wed Dec 17 10:29:34 2025 +0900
+
+    ブリキの人形にエネミーインターフェースを実装しました
+
+[33mcommit 810da472bd82d886c526e6a950d4b535f5a3dc87[m
+Merge: f505fd7 27d68a0
+Author: 504-10\cre <qa>
+Date:   Mon Dec 15 18:33:49 2025 +0900
+
+    Merge branch 'main' of https://github.com/Q-honoka/3D-BlackNector
+
+[33mcommit f505fd76f6ed992dc1423fbc985edc6ef7c1e806[m
+Author: 504-10\cre <qa>
+Date:   Mon Dec 15 18:33:43 2025 +0900
+
+    テキストの自動描画
+
+[33mcommit 27d68a097831132d1aa335175fc0d5c4f7742622[m
+Merge: 5bcaf38 db594ee
+Author: Q-honoka <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Mon Dec 15 18:00:12 2025 +0900
+
+    Merge pull request #10 from Q-honoka/Kamibeppu
+    
+    移動キーを離したときに鳥が上に上がらないようにしました。
+
+[33mcommit db594ee66c13a1b9d968e433207410ce2bb248eb[m
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Mon Dec 15 18:00:22 2025 +0900
+
+    移動キーを離したときに鳥が上に上がらないようにしました。
+
+[33mcommit fe6ac3cfa2d00909609f0b82822e6c82f7af9a96[m
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Mon Dec 15 17:55:59 2025 +0900
+
+    鳥の移動を修正しました
+
+[33mcommit 5bcaf38e5da9a18a43393fcedd209665a582855c[m
+Merge: f97a8ae fe6ac3c
+Author: Q-honoka <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Mon Dec 15 17:55:54 2025 +0900
+
+    Merge pull request #9 from Q-honoka/Kamibeppu
+    
+    鳥の動き修正
+
+[33mcommit 22ff89d55bbc9a7a811cfc1a61e1228d096ed157[m
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Mon Dec 15 17:09:56 2025 +0900
+
+    一度つつくキーを押すとつつくフラグが常にtrueになる問題を修正しました。
+
+[33mcommit f4f36bebbe196c309f6f0818f167bdf7c8539fe6[m
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Mon Dec 15 17:06:42 2025 +0900
+
+    マリオネットが落下後、視界を切るように変更しました
+
+[33mcommit f97a8ae643fc9a4e7ceb222a169b6f4374518f6d[m
+Merge: a97cd64 1431ca4
+Author: Q-honoka <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Mon Dec 15 16:57:56 2025 +0900
+
+    Merge pull request #8 from Q-honoka/Kamibeppu
+    
+    マリオネットの修正
+
+[33mcommit 1431ca49f0b13cf2cbef264d179f2632c343b964[m
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Mon Dec 15 16:57:16 2025 +0900
+
+    落下中のマリオネットが回転するのを修正
+
+[33mcommit f14b331f6bdad50c03d58840e4f9151cd7709976[m
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Mon Dec 15 16:42:38 2025 +0900
+
+    糸を切ったあとにマリオネットが真下に落ちるようにしました。
+
+[33mcommit f4ecb5257665b6ecab023614f87a63fc11c7315a[m
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Mon Dec 15 16:34:59 2025 +0900
+
+    下から糸が切れる問題を解決しました。
+
+[33mcommit a97cd6440846edc299a77ed39953b2f3654dcedd[m
+Author: Meikq <ncr2419sp0005@edu.nca.ac.jp>
+Date:   Mon Dec 15 16:30:07 2025 +0900
+
+    Create README.md
+
+[33mcommit 84e19f8780aef9b5745ee80ac1d278deca03b259[m
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Mon Dec 15 16:27:02 2025 +0900
+
+    マリオネットが吹き飛ばないようにしました。
+
+[33mcommit 303128b32831e950db4a186ae0a6b71589a3745e[m
+Author: MAINMAPC\02rak <0>
+Date:   Sun Dec 14 23:44:45 2025 +0900
+
+    音周りの基板実装/カメラにフィルターを正式実装/UI用カメラの追加(フィルターかける上で分ける必要あり)
+
+[33mcommit 76070b6784d5d7784657f653f96ade98a8834f22[m
+Author: 605-02\cre <justin@shinfamily.com.au>
+Date:   Sun Dec 14 17:22:56 2025 +0900
+
+    カメラをUI]とUi以外で分けていた（途中）
+
+[33mcommit 5e906e5c6f14fe7f64f3110e0a70953aac555d35[m
+Merge: b05ca4d e950cee
+Author: Q-honoka <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Sun Dec 14 14:16:18 2025 +0900
+
+    Merge pull request #7 from Q-honoka/Kamibeppu
+    
+    鳥の移動修正。鳥の上昇ができることを確認しました
+
+[33mcommit e950cee6fe25494e54afc4e0bb04f97eb019dd0e[m
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Sun Dec 14 14:11:55 2025 +0900
+
+    鳥の移動修正。鳥の上昇ができることを確認しました
+
+[33mcommit b05ca4dd7bee965ac3c1fd3f35378f6f6c76386a[m
+Author: 605-02\cre <justin@shinfamily.com.au>
+Date:   Sun Dec 14 13:18:42 2025 +0900
+
+    タイトルシーンUI設置中（UIがなぜかワールド座標基準になる？）/自作ライブラリ導入（UI周りに使用予定）
+
+[33mcommit 5a9f0618f3d3d3646e068b6eabccfa8d406f115c[m
+Author: 605-02\cre <justin@shinfamily.com.au>
+Date:   Sun Dec 14 13:02:14 2025 +0900
+
+    シーンカメラフィルターの調整
+
+[33mcommit 749c8917b3458a382397a72899990decf60de1bb[m
+Author: 605-02\cre <justin@shinfamily.com.au>
+Date:   Sun Dec 14 12:48:20 2025 +0900
+
+    カメラあシェーダーの調整
+
+[33mcommit af1cbf3460dec3362c2e1782b1a64b8c581b8ab8[m
+Author: 504-10\cre <w>
+Date:   Sat Dec 13 19:40:32 2025 +0900
+
+    タイトルシーンの追加/カメラシェーダーの追加（途中）
+
+[33mcommit b4ee08ebeb03bd21f25f77e3b4d0aaa942b756c3[m
+Author: 504-10\cre <w>
+Date:   Sat Dec 13 17:32:40 2025 +0900
+
+    ノベル回り調整
+
+[33mcommit 80ca9494a1e85ac948ab39589d4766efebfec58d[m
+Author: 504-10\cre <w>
+Date:   Sat Dec 13 16:40:02 2025 +0900
+
+    フォントデータの削減
+
+[33mcommit 06408953b09a0175d7274ef1dd1c82ea46d0442a[m
+Merge: cb47e76 3f4c19e
+Author: Q-honoka <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Sat Dec 13 13:29:43 2025 +0900
+
+    デバッグ用フォント追加（KleeOne）/テキスト表示スクリプト追加/UniTask追加
+
+[33mcommit 3f4c19eaa614441a90522149a9a4cda3b6de2be3[m
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Sat Dec 13 13:28:02 2025 +0900
+
+    鳥の動きの修正が終わりました。移動、飛ぶ、つつく、子ども呼ぶ、どれもできます
+
+[33mcommit cb47e76ca51dbfa5c4894f28c85df6d854a4b0d1[m
+Author: 503-12\cre <sa>
+Date:   Fri Dec 12 16:16:49 2025 +0900
+
+    UniRxの導入(アドベンチャーシーンの処理で使います)/アドベンチャーノベル要処理の途中
+
+[33mcommit 7630555abc351f47762c72141fc6d1237bfd0234[m
+Merge: b4c4ffd 6b7cf52
+Author: Q-honoka <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Thu Dec 11 14:29:10 2025 +0900
+
+    Merge pull request #5 from Q-honoka/Kamibeppu
+    
+    かかしとマリオネットのPrefabの構造を変更。視界の動作確認済み。
+
+[33mcommit 6b7cf526b80e07963384f07bb6b96a8d2e39a80f[m
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Thu Dec 11 14:28:29 2025 +0900
+
+    かかしとマリオネットのPrefabの構造を変更。視界の動作確認済み。
+
+[33mcommit b4c4ffd58979bde1259c27b0ad99de3d0c33a580[m
+Merge: b08b11d 604e4cf
+Author: rumi_ne <113249739+rainrumi@users.noreply.github.com>
+Date:   Thu Dec 11 14:15:05 2025 +0900
+
+    Merge pull request #4 from Q-honoka/ogawa
+    
+    Ogawa>3D_DEMO内シーンの更新/登場予定キャラクターのPrefab作成
+
+[33mcommit 604e4cf87821c238a9a9e394ca83c7a0402a9601[m
+Author: 501-17\cre <tky1091@icloud.com>
+Date:   Thu Dec 11 14:14:54 2025 +0900
+
+    Ogawa>3D_DEMO内シーンの更新/登場予定キャラクターのPrefab作成
+
+[33mcommit b08b11d60a82178dd5c5eb1b80938ed0b29ef9f2[m
+Merge: 4f03596 9822d77
+Author: Q-honoka <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Thu Dec 11 14:13:02 2025 +0900
+
+    Merge pull request #3 from Q-honoka/Kamibeppu
+    
+    敵の視界の修正完了。
+    Kamibeppu -> 3D -> Prefab に Visibility という名前でPrefab化しています。
+    視界を作りたいオブジェクトの子にして使ってください。
+    IsWithinChildInVisibility()で子どもの有無を true/false で受け取ることができます。
+
+[33mcommit 9822d77a160f1d4563cdc62207519147796bf0bc[m
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Thu Dec 11 14:06:32 2025 +0900
+
+    敵の視界の描画が完成。敵の視界をPrefab化
+
+[33mcommit 47df98ebc26a8be78bb5a273ecd05032de78ef0c[m
+Merge: 4f03596 a0ff7d2
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Thu Dec 11 12:58:39 2025 +0900
+
+    Merge branch 'Kamibeppu' of https://github.com/Q-honoka/3D-BlackNector into Kamibeppu
+
+[33mcommit 4f03596dc418894d5d975905e0048582aa0cd55d[m
+Merge: 1357416 7b3dea0
+Author: rumi_ne <113249739+rainrumi@users.noreply.github.com>
+Date:   Thu Dec 11 00:16:10 2025 +0900
+
+    Merge pull request #2 from Q-honoka/ogawa
+    
+    一部ファイルの階層変更/３Dシーン試作シーン作成/シェーダーとキャラの影シェーダーの作成
+
+[33mcommit 7b3dea07ffc36e52a939fbb138ddbdcbcbf63a7b[m
+Author: MAINMAPC\02rak <0>
+Date:   Thu Dec 11 00:15:07 2025 +0900
+
+    一部ファイルの階層変更/Dシーン試作シーン作成/シェーダーとキャラの影シェーダーの作成
+
+[33mcommit a0ff7d20a316ffeae1f5e558e965d2191927e3fb[m
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Wed Dec 10 11:32:50 2025 +0900
+
+    敵の視界判定作成。描画はまだです。
+
+[33mcommit 1357416091567f2b6f683aeb90614f4c800ea5dd[m
+Author: 504-10\cre <a>
+Date:   Mon Dec 8 19:26:07 2025 +0900
+
+    丸山さん->小川への複製＆改変データの追加/
+    2Dベースの処理から3Dベースの処理への変更/
+    丸山さんのすべてのスクリプトにnamespace Maruyama の追加（私が複製したコードが衝突してしまうため追加）
+
+[33mcommit 03aaa75bae8d8662af09fcc272f9d88483d38865[m
+Merge: 36228b7 f6366ed
+Author: Q-honoka <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Mon Dec 8 18:08:46 2025 +0900
+
+    Merge pull request #1 from Q-honoka/Kamibeppu
+    
+    暗闇判定の修正完了
+
+[33mcommit f6366ed4ac671a9d157c154e3a987845d3621efa[m
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Mon Dec 8 18:08:55 2025 +0900
+
+    暗闇判定修正完了。動作確認済み
+
+[33mcommit b31e972767d4d1b5533a4ebc4444396a46429f1f[m
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Mon Dec 8 18:00:38 2025 +0900
+
+    暗闇判定の角度チェック修正。動作確認済み。
+
+[33mcommit edb16c2da5ea92acfba2f51ca6afd77302b27671[m
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Mon Dec 8 17:22:39 2025 +0900
+
+    暗闇判定の簡易チェック修正。確認済み
+
+[33mcommit 490d2209642e0b901bbe5479c223fbf88131f6c2[m
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Mon Dec 8 17:07:47 2025 +0900
+
+    ライトトラッカー動作確認済み。エンティティトラッカー修正確認済み。
+
+[33mcommit b76777916446809180443316a3e415a540295d9a[m
+Author: ncr2419gp0006 <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Mon Dec 8 16:45:46 2025 +0900
+
+    暗闇判定。ライトトラッカーの修正
+
+[33mcommit 36228b785875beeef776124115cca45624d4ebbe[m
+Author: cre <cre@501-28>
+Date:   Thu Dec 4 16:47:03 2025 +0900
+
+    モデルやテクスチャをインポートしました。
+
+[33mcommit c8b0bca8a2d8d332908d9637263f0c90786e8b28[m
+Author: cre <cre@501-28>
+Date:   Thu Dec 4 16:38:56 2025 +0900
+
+    各メンバーのフォルダをインポートしました。
+
+[33mcommit f5030d9f572d0f8f80deeaae401271b9c106b56c[m
+Author: cre <cre@501-28>
+Date:   Thu Dec 4 16:34:16 2025 +0900
+
+    init commit
+
+[33mcommit e4cbc01edbc28bac9629c4fe3e557d0f6c838878[m
+Author: Q-honoka <ncr2419gp0006@edu.nca.ac.jp>
+Date:   Thu Dec 4 16:29:18 2025 +0900
+
+    Initial commit
