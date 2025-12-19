@@ -47,6 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateTrueObj: []
   stateFalseObj: []
+  isOpen: 0
+  door: {fileID: 6158586746663901707}
 --- !u!1 &6158586746663901707
 GameObject:
   m_ObjectHideFlags: 0

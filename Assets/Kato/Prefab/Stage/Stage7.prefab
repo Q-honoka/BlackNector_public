@@ -247,6 +247,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6536332876992877479}
     m_Modifications:
+    - target: {fileID: 5076810175465101883, guid: 5f6d67f88515e414aa1891216e8383c0, type: 3}
+      propertyPath: stateTrueObj.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076810175465101883, guid: 5f6d67f88515e414aa1891216e8383c0, type: 3}
+      propertyPath: 'stateTrueObj.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7761519366499136894}
+    - target: {fileID: 5076810175465101883, guid: 5f6d67f88515e414aa1891216e8383c0, type: 3}
+      propertyPath: 'stateTrueObj.Array.data[1]'
+      value: 
+      objectReference: {fileID: 7400244425664520344}
     - target: {fileID: 5813157666628521737, guid: 5f6d67f88515e414aa1891216e8383c0, type: 3}
       propertyPath: m_Name
       value: Switch (2)
@@ -385,6 +397,11 @@ PrefabInstance:
 --- !u!4 &2173330053602947019 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4130658343153737208, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
+  m_PrefabInstance: {fileID: 2844643063765250611}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2338316474135968872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 507057079724330587, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
   m_PrefabInstance: {fileID: 2844643063765250611}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3077989942825419772
@@ -1376,6 +1393,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1858449502444788854, guid: e51225a0238427c4fb99b2d698a859eb, type: 3}
+      propertyPath: stateTrueObj.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858449502444788854, guid: e51225a0238427c4fb99b2d698a859eb, type: 3}
+      propertyPath: 'stateTrueObj.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1990749107421985538}
+    - target: {fileID: 1858449502444788854, guid: e51225a0238427c4fb99b2d698a859eb, type: 3}
+      propertyPath: 'stateTrueObj.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2338316474135968872}
     - target: {fileID: 2080461186788124739, guid: e51225a0238427c4fb99b2d698a859eb, type: 3}
       propertyPath: m_Name
       value: Plate
@@ -1450,6 +1479,11 @@ PrefabInstance:
 --- !u!4 &4352082482910043612 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7708324999963054908, guid: 0c5987d71b0e3ce4a834db376a7c5c2e, type: 3}
+  m_PrefabInstance: {fileID: 6241086704581742304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5306913529168892775 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249894318306336135, guid: 0c5987d71b0e3ce4a834db376a7c5c2e, type: 3}
   m_PrefabInstance: {fileID: 6241086704581742304}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6426620792646078414
@@ -1951,6 +1985,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4130658343153737208, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
   m_PrefabInstance: {fileID: 7042396864957427395}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7400244425664520344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 507057079724330587, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
+  m_PrefabInstance: {fileID: 7042396864957427395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7042807615348743635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2335,6 +2374,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4130658343153737208, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
   m_PrefabInstance: {fileID: 7836009398407150373}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7761519366499136894 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 507057079724330587, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
+  m_PrefabInstance: {fileID: 7836009398407150373}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7914929242638480966
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2519,6 +2563,11 @@ PrefabInstance:
 --- !u!4 &182268560898783012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7811836998249366117, guid: f7522d861668d504cbca872109f588a6, type: 3}
+  m_PrefabInstance: {fileID: 7993524396050330945}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1990749107421985538 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8452759324709588547, guid: f7522d861668d504cbca872109f588a6, type: 3}
   m_PrefabInstance: {fileID: 7993524396050330945}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8242357836077357161
@@ -2725,6 +2774,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1858449502444788854, guid: e51225a0238427c4fb99b2d698a859eb, type: 3}
+      propertyPath: stateTrueObj.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858449502444788854, guid: e51225a0238427c4fb99b2d698a859eb, type: 3}
+      propertyPath: 'stateTrueObj.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5306913529168892775}
     - target: {fileID: 2080461186788124739, guid: e51225a0238427c4fb99b2d698a859eb, type: 3}
       propertyPath: m_Name
       value: Plate (1)
