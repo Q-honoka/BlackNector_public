@@ -96,7 +96,6 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     /// </summary>
     void ICharcters.Idle()
     {
-        //Debug.Log(thread.GetConnctMarionnet());
         if (foundArea.IsWithinChildInVisibility()) { marionette.myData.charctersInterface.SetMyState((int)State.FOUND); }
         if (!thread.GetConnctMarionnet()) { marionette.myData.charctersInterface.SetMyState((int)State.FALL); }
     }

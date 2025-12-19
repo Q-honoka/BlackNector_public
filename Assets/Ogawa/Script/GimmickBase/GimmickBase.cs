@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GimmickBase : MonoBehaviour
 {
-    private bool _isState;
+    private bool _isState = false;
     [SerializeField, Tooltip("無くてもよい")] protected GameObject[] stateTrueObj;
     [SerializeField, Tooltip("無くてもよい")] protected GameObject[] stateFalseObj;
 
