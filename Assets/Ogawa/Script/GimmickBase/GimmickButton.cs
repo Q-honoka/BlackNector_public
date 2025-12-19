@@ -31,7 +31,11 @@ public class GimmickButton : GimmickBase
     protected override void OnStateTrue()
     {
         isState = true;
-        stateTrueObj.SetActive(true);
+        foreach (GameObject obj in stateTrueObj)
+        {
+            if (obj != null)
+                obj.SetActive(!obj.activeSelf);
+        }
     }
 
     /// <summary>
@@ -39,7 +43,12 @@ public class GimmickButton : GimmickBase
     /// </summary>
     protected override void OnStateFalse()
     {
-        stateTrueObj.SetActive(false);
+        isState = false;
+        foreach (GameObject obj in stateTrueObj)
+        {
+            if (obj != null)
+                obj.SetActive(!obj.activeSelf);
+        }
     }
 
 }
