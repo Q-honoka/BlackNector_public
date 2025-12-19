@@ -124,17 +124,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2850b0c74d87e45fd8d3d674e60e3325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tinDoll: {fileID: 0}
-  foundArea: {fileID: 0}
+  tinDoll: {fileID: 11400000, guid: c43604ce1f571487cb48bc67f8bd9345, type: 2}
+  foundArea: {fileID: 6515255229066071825}
   state: 2
   patrolPos:
   - {fileID: 0}
   - {fileID: 0}
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   viewLength: 2
-  patrolPosIndex: 0
 --- !u!1001 &8441479046847026325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -197,3 +196,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5136558080522898411, guid: c1299693944817648be2f5a3b00d8df4, type: 3}
   m_PrefabInstance: {fileID: 8441479046847026325}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6515255229066071825 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3408378754924616580, guid: c1299693944817648be2f5a3b00d8df4, type: 3}
+  m_PrefabInstance: {fileID: 8441479046847026325}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f31bb9cf5f672a4c9865a363af2d02f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
