@@ -43,6 +43,14 @@ public class SceneController : MonoBehaviour
             Debug.Log("小川：GameDataが存在しません", gameObject);
         }
 
+        // セーブ時のシーンロード
+        gameData.OnSaveSpotUpdate
+            .Subscribe(kind =>
+            {
+                SceneReLoad();
+            })
+            .AddTo(this);
+
         /*
         retry.OnRetry
             .Subscribe(kind => {

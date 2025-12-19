@@ -20,7 +20,6 @@ public class SaveSpot : MonoBehaviour
             return;
         }
 
-        Debug.Log("小川：セーブするね", gameObject);
         GameData.instance.SaveFromSaveSpot(saveSpotKind);
     }
 }

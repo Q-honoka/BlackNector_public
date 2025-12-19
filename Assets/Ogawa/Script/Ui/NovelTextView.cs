@@ -53,6 +53,7 @@ public class NovelTextView : MonoBehaviour
 
         token = this.GetCancellationTokenOnDestroy();
 
+        ugui.text = initText;
         ugui.enabled = false;
 
         novelSubject.OnPlayNovel

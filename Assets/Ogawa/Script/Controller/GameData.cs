@@ -1,3 +1,4 @@
+using System;
 using UniRx;
 using UnityEngine;
 
@@ -16,6 +17,16 @@ public enum SaveSpotKind
 public class GameData : MonoBehaviour
 {
     public static GameData instance;
+
+    private Subject<SaveSpotKind> SaveSpotUpdateSubject = new Subject<SaveSpotKind>();    // セーブスポットが変更された時のイベント
+
+    public IObservable<SaveSpotKind> OnSaveSpotUpdate
+    {
+        get
+        {
+            return SaveSpotUpdateSubject;
+        }
+    }
 
     private void Awake()
     {
@@ -42,6 +53,9 @@ public class GameData : MonoBehaviour
             return;
         }
 
+
         _saveSpot = spot;
+        SaveSpotUpdateSubject.OnNext(_saveSpot);  
+        Debug.Log("セーブ成功",gameObject);
     }
 }
