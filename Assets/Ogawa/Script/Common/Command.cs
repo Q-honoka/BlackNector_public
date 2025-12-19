@@ -2,7 +2,6 @@ using Cysharp.Threading.Tasks;
 using RaruLib;
 using System;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 public class Command : MonoBehaviour
 {
