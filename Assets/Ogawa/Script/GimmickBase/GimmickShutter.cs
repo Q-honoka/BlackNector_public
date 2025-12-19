@@ -9,14 +9,12 @@ public class GimmickShutter : GimmickBase
     {
         if(isOpen)
         {
-            // 開くアニメーション
-            Debug.Log($"{name}: 開く");
+            // 開くアニメーション(未実装)
             door.SetActive(false);
         }
         else
         {
-            // 閉まるアニメーション
-            Debug.Log($"{name}: 閉まる");
+            // 閉まるアニメーション(未実装)
             door.SetActive(true);
         }
     }

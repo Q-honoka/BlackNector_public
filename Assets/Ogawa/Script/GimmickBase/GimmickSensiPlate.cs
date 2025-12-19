@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GimmickSensiPlate : GimmickBase
@@ -10,7 +9,7 @@ public class GimmickSensiPlate : GimmickBase
 
     private void Start()
     {
-        initPos = transform.position;
+        initPos = button.transform.localPosition;
     }
 
     /// <summary>
@@ -38,7 +37,7 @@ public class GimmickSensiPlate : GimmickBase
     /// </summary>
     protected override void OnStateFalse()
     {
-        if (button != null) { button.transform.position = initPos; }
+        if (button != null) { button.transform.localPosition = initPos; }
         // false ‚É‚µ‚½‚Æ‚«‚É’âŽ~‚µ‚½‚¢ƒMƒ~ƒbƒN‚Ì State ‚ð false ‚É‚·‚é
         foreach (GameObject obj in stateFalseObj)
         {
