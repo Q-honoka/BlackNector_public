@@ -734,6 +734,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2569178067166911623, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+      propertyPath: 'stateFalseObj.Array.data[0]'
+      value: 
+      objectReference: {fileID: 877465536}
+    - target: {fileID: 5018341034422707977, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5075300132425191636, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20
@@ -774,6 +782,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6132943495769059368, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132943495769059368, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+      propertyPath: m_Intensity
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6946759099118103619, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
       propertyPath: m_Name
       value: Stage2
@@ -783,6 +799,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+--- !u!1 &877465536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 848931959653055766, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+  m_PrefabInstance: {fileID: 877465534}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1106882958
 PrefabInstance:
   m_ObjectHideFlags: 0

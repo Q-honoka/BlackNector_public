@@ -6,7 +6,7 @@ public class GimmickBase : MonoBehaviour
     [SerializeField, Tooltip("無くてもよい")] protected GameObject[] stateTrueObj;
     [SerializeField, Tooltip("無くてもよい")] protected GameObject[] stateFalseObj;
 
-    protected bool isState
+    public bool isState
     {
         set
         {
