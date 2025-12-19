@@ -1,3 +1,5 @@
+using System;
+using UniRx;
 using UnityEngine;
 
 public class Marionette : MonoBehaviour, ICharcters, IEnemy
@@ -29,6 +31,16 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     [SerializeField] EnemyVisibility foundArea;
     //Œ»İ‚Ìó‘Ô
     [SerializeField] State state;
+
+    // —‰º‚·‚éƒCƒxƒ“ƒg
+    private Subject<Unit> fallSubject = new Subject<Unit>();
+    public IObservable<Unit> OnFallSubject
+    {
+        get
+        {
+            return fallSubject;
+        }
+    }
 
     //player‚ğŒ©‚Â‚¯‚½‚©”Û‚©
     bool foundChild = false;
@@ -84,7 +96,7 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     /// </summary>
     void ICharcters.Idle()
     {
-        Debug.Log(thread.GetConnctMarionnet());
+        //Debug.Log(thread.GetConnctMarionnet());
         if (foundArea.IsWithinChildInVisibility()) { marionette.myData.charctersInterface.SetMyState((int)State.FOUND); }
         if (!thread.GetConnctMarionnet()) { marionette.myData.charctersInterface.SetMyState((int)State.FALL); }
     }
