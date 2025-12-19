@@ -24,7 +24,8 @@ public class ChildController : MonoBehaviour, ICharcters
     [SerializeField] PlayersData child;
     [SerializeField] Rigidbody rigid;
     [SerializeField] CharctersState state;
-    [SerializeField]
+    [SerializeField] LayerMask Obstacle;        // 障害物のレイヤー
+    [SerializeField] 
     EnemyData[] enemies;
      GameObject player;
 
@@ -121,17 +122,18 @@ public class ChildController : MonoBehaviour, ICharcters
         //変数がvector2で宣言しているのは坂があった時に対応可能にするため...っ！( > · <⸝⸝ᐢ
 
         //右を確認
-        Vector3 rayOrigin = new Vector3((transform.position.x + transform.localScale.x / 2) + 0.02f, transform.position.y, transform.position.z);
+        Vector3 childPos = transform.GetChild(0).gameObject.transform.position;    // キャラモデルの位置を取得
+        Vector3 rayOrigin = new Vector3((childPos.x/* + transform.localScale.x / 2*/) + 0.02f, childPos.y, childPos.z);
         RaycastHit hit;
         float maxDistance = 1.5f;
 
-        bool isHit = Physics.Raycast(rayOrigin, transform.right, out hit, maxDistance);
+        bool isHit = Physics.Raycast(rayOrigin, transform.right, out hit, maxDistance, Obstacle);
 
         Debug.DrawRay(rayOrigin, transform.right * maxDistance, Color.red);
 
 
         //障害物に当たったかを確認
-        if (!isHit || hit.collider.gameObject.layer != 3) { Debug.Log("当たらなかった"); return false; }
+        if (!isHit/* || hit.collider.gameObject.layer != 3*/) { Debug.Log("当たらなかった"); return false; }
 
         Debug.Log("当たった");
 

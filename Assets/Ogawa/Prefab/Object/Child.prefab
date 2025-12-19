@@ -89,6 +89,9 @@ MonoBehaviour:
   child: {fileID: 11400000, guid: 8340a6d0dae8dd54aa42c888764671bb, type: 2}
   rigid: {fileID: 4413778030728308796}
   state: 0
+  Obstacle:
+    serializedVersion: 2
+    m_Bits: 0
   enemies: []
 --- !u!114 &6666196437704271867
 MonoBehaviour:
@@ -255,7 +258,7 @@ Rigidbody:
   m_GameObject: {fileID: 4869365982405007903}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -271,7 +274,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 124
   m_CollisionDetection: 0
 --- !u!1 &7816796539258653863
 GameObject:
