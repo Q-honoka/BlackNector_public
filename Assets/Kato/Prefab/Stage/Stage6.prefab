@@ -648,6 +648,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
+--- !u!1 &1331439108394759376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 507057079724330587, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
+  m_PrefabInstance: {fileID: 1545673013729327755}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3179645285501560691 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4130658343153737208, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
@@ -1426,6 +1431,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5459096877733763467}
     m_Modifications:
+    - target: {fileID: 5076810175465101883, guid: 5f6d67f88515e414aa1891216e8383c0, type: 3}
+      propertyPath: stateTrueObj.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076810175465101883, guid: 5f6d67f88515e414aa1891216e8383c0, type: 3}
+      propertyPath: 'stateTrueObj.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1331439108394759376}
+    - target: {fileID: 5076810175465101883, guid: 5f6d67f88515e414aa1891216e8383c0, type: 3}
+      propertyPath: 'stateTrueObj.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3260262174742275522}
     - target: {fileID: 5813157666628521737, guid: 5f6d67f88515e414aa1891216e8383c0, type: 3}
       propertyPath: m_Name
       value: Switch (4)
@@ -1562,6 +1579,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4130658343153737208, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
   m_PrefabInstance: {fileID: 3042087637184097177}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3260262174742275522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 507057079724330587, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
+  m_PrefabInstance: {fileID: 3042087637184097177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3677922014307951546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1626,6 +1648,11 @@ PrefabInstance:
 --- !u!4 &745787145645768258 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4130658343153737208, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
+  m_PrefabInstance: {fileID: 3677922014307951546}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3748111099824369121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 507057079724330587, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
   m_PrefabInstance: {fileID: 3677922014307951546}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3965271559385083177
@@ -1764,6 +1791,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5459096877733763467}
     m_Modifications:
+    - target: {fileID: 5076810175465101883, guid: 5f6d67f88515e414aa1891216e8383c0, type: 3}
+      propertyPath: stateTrueObj.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076810175465101883, guid: 5f6d67f88515e414aa1891216e8383c0, type: 3}
+      propertyPath: 'stateTrueObj.Array.data[0]'
+      value: 
+      objectReference: {fileID: 3748111099824369121}
+    - target: {fileID: 5076810175465101883, guid: 5f6d67f88515e414aa1891216e8383c0, type: 3}
+      propertyPath: 'stateTrueObj.Array.data[1]'
+      value: 
+      objectReference: {fileID: 6528560254862648011}
     - target: {fileID: 5813157666628521737, guid: 5f6d67f88515e414aa1891216e8383c0, type: 3}
       propertyPath: m_Name
       value: Switch (3)
@@ -1957,6 +1996,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
+--- !u!1 &5064496744380451631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 507057079724330587, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
+  m_PrefabInstance: {fileID: 4702278419197166964}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8652209479889524876 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4130658343153737208, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
@@ -2741,6 +2785,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
+--- !u!1 &6528560254862648011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 507057079724330587, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
+  m_PrefabInstance: {fileID: 6742864237418425488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7259939680587362664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4130658343153737208, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
@@ -2754,6 +2803,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5459096877733763467}
     m_Modifications:
+    - target: {fileID: 5076810175465101883, guid: 5f6d67f88515e414aa1891216e8383c0, type: 3}
+      propertyPath: stateTrueObj.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076810175465101883, guid: 5f6d67f88515e414aa1891216e8383c0, type: 3}
+      propertyPath: 'stateTrueObj.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8324270708892953281}
+    - target: {fileID: 5076810175465101883, guid: 5f6d67f88515e414aa1891216e8383c0, type: 3}
+      propertyPath: 'stateTrueObj.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5064496744380451631}
     - target: {fileID: 5813157666628521737, guid: 5f6d67f88515e414aa1891216e8383c0, type: 3}
       propertyPath: m_Name
       value: Switch (2)
@@ -3276,6 +3337,11 @@ PrefabInstance:
 --- !u!4 &5611386462659328354 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4130658343153737208, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
+  m_PrefabInstance: {fileID: 8398278312745510042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8324270708892953281 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 507057079724330587, guid: 0d3ebc99a1972e14cac72a2a1086d272, type: 3}
   m_PrefabInstance: {fileID: 8398278312745510042}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8420431935062999234
