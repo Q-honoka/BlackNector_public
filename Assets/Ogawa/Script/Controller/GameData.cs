@@ -39,6 +39,9 @@ public class GameData : MonoBehaviour
         {
             Destroy(this);
         }
+
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
     }
 
     private SaveSpotKind _saveSpot = SaveSpotKind.Stage1_1;
@@ -50,6 +53,11 @@ public class GameData : MonoBehaviour
         if (spot == SaveSpotKind.MAX)
         {
             Debug.Log("セーブ失敗", gameObject);
+            return;
+        }
+        if (spot == _saveSpot)
+        {
+            Debug.Log("セーブ地点が同じ。更新しない", gameObject);
             return;
         }
 
