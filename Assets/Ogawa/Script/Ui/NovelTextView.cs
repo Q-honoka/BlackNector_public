@@ -149,6 +149,8 @@ public class NovelTextView : MonoBehaviour
     // タイピング＆フェードイン
     private async UniTaskVoid FadeinTypingText(NovelAsset asset)
     {
+        float uguiAlpha = ugui.color.a;
+        ugui.color = new Color(ugui.color.r, ugui.color.g, ugui.color.b, 0);
         ugui.text = asset.text;
         ugui.ForceMeshUpdate();
 
@@ -160,6 +162,7 @@ public class NovelTextView : MonoBehaviour
         {
             await ChangeCharacterAlpha(textInfo, i, 0);
         }
+
         ugui.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
 
         // テキストのメッシュアルファを一文字ずつフェードインする
