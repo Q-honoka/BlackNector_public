@@ -21,7 +21,7 @@ public class GimmickCollision : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
-        Debug.Log(collision.name);
+        //Debug.Log(collision.name);
         if (collision.gameObject.tag != "Player") { return; }
         player = collision.gameObject;
 
