@@ -1274,6 +1274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DontDestroyController
       objectReference: {fileID: 0}
+    - target: {fileID: 4391170707625620718, guid: c55a70dd51dedce4084a7ecc026afe38, type: 3}
+      propertyPath: 'novelData.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: f775d1a6f2fa1214396cc8c6ea5040ae, type: 2}
     - target: {fileID: 5103173059836584990, guid: c55a70dd51dedce4084a7ecc026afe38, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
