@@ -303,7 +303,11 @@ GameObject:
   - component: {fileID: 9105373994203670286}
   - component: {fileID: 3244141445981939340}
   - component: {fileID: 3943150239172694797}
+<<<<<<< HEAD
   - component: {fileID: 7531094810927549793}
+=======
+  - component: {fileID: 3586873491629163778}
+>>>>>>> 1b83253fb411ce320dd71fecc2c0a01b001089e8
   m_Layer: 0
   m_Name: GimmickThread
   m_TagString: Untagged
@@ -363,7 +367,11 @@ MonoBehaviour:
   - {fileID: 0}
   stateFalseObj:
   - {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &7531094810927549793
+=======
+--- !u!114 &3586873491629163778
+>>>>>>> 1b83253fb411ce320dd71fecc2c0a01b001089e8
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

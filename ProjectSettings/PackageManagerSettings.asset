@@ -30,6 +30,7 @@ MonoBehaviour:
     m_Compliance:
       m_Status: 0
       m_Violations: []
+<<<<<<< HEAD
   - m_Id: scoped:project:VContainer
     m_Name: VContainer
     m_Url: https://package.openupm.com
@@ -42,6 +43,9 @@ MonoBehaviour:
       m_Status: 0
       m_Violations: []
   m_UserSelectedRegistryName: VContainer
+=======
+  m_UserSelectedRegistryName: 
+>>>>>>> df67b821b9c0ac8ff7fbbaa0780a7032742a9110
   m_UserAddingNewScopedRegistry: 0
   m_RegistryInfoDraft:
     m_Modified: 0
