@@ -623,6 +623,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1858449502444788854, guid: e51225a0238427c4fb99b2d698a859eb, type: 3}
+      propertyPath: stateTrueObj.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858449502444788854, guid: e51225a0238427c4fb99b2d698a859eb, type: 3}
+      propertyPath: 'stateTrueObj.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6937689628219365760}
     - target: {fileID: 2080461186788124739, guid: e51225a0238427c4fb99b2d698a859eb, type: 3}
       propertyPath: m_Name
       value: Plate
@@ -825,5 +833,10 @@ PrefabInstance:
 --- !u!4 &1551452400189134651 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7708324999963054908, guid: 0c5987d71b0e3ce4a834db376a7c5c2e, type: 3}
+  m_PrefabInstance: {fileID: 9186961725729850375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6937689628219365760 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249894318306336135, guid: 0c5987d71b0e3ce4a834db376a7c5c2e, type: 3}
   m_PrefabInstance: {fileID: 9186961725729850375}
   m_PrefabAsset: {fileID: 0}
