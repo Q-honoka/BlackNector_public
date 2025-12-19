@@ -106,11 +106,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   present_character: 0
-  viewType: 2
+  viewType: 3
   ugui: {fileID: 8391473230487837140}
   typeSpeed: 0.1
-  addAlpha: 0.05
-  charInterval: 0.001
+  addAlpha_Fadein_Sec: 0.05
+  charInterval: 0.05
+  addAlpha_FadeinType_Sec: 255
 --- !u!114 &7000310909640180750
 MonoBehaviour:
   m_ObjectHideFlags: 0

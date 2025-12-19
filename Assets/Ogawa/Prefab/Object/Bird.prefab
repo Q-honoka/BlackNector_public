@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 249613689938464457}
   - component: {fileID: 8424576838679746130}
   - component: {fileID: 6080089762696504926}
+  - component: {fileID: 3606636459588836103}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Player
@@ -189,11 +190,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   present_character: 1
-  viewType: 2
+  viewType: 3
   ugui: {fileID: 4041929950641528333}
   typeSpeed: 0.1
-  addAlpha: 0.05
-  charInterval: 0.001
+  addAlpha_Fadein_Sec: 0.05
+  charInterval: 0.05
+  addAlpha_FadeinType_Sec: 255
+--- !u!114 &3606636459588836103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6321724526516474488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54fa117c400be1c489656a9f116f4d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &469329889020420448
 PrefabInstance:
   m_ObjectHideFlags: 0
