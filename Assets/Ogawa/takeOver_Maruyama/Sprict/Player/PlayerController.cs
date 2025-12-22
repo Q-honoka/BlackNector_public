@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(Command))]
 public class PlayerController : MonoBehaviour, ICharcters
 {
     //キャラクターのすべての状態
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour, ICharcters
     [SerializeField] PlayersData player;                //playerの情報
     [SerializeField] Rigidbody rigid;                 //物理演算
     [SerializeField] CharctersState state;              //キャラクタの状態
+    private Command m_command;              // コマンドスクリプト
 
     public bool peckInput = false;          //つつくをしているかどうか
     //インスタンス
@@ -44,6 +46,8 @@ public class PlayerController : MonoBehaviour, ICharcters
         child = GameObject.FindAnyObjectByType<ChildController>();
         transform.position = player.myData.pos;
         jumpLimit = transform.localScale.y;
+
+        m_command = transform.GetComponent<Command>();
     }
     void Update()
     {
@@ -222,7 +226,17 @@ public class PlayerController : MonoBehaviour, ICharcters
                     if (0 < callChildSpan) { return; }
                     callChildSpan = KEY_INPUT_SPAN;
                     //子供を呼ぶ
-                    child.SetCanMove();
+                    ChildController.CharctersState c_state = child.SetCanMoveAndStateReturn();
+
+                    // 戻り値で呼ぶテキストを変更
+                    if(c_state == ChildController.CharctersState.MOVE)
+                    {
+                        m_command.CallNovelMessagePlay(NOVEL_KIND.Event_1_1);
+                    }
+                    else if(c_state == ChildController.CharctersState.IDLE)
+                    {
+                        m_command.CallNovelMessagePlay(NOVEL_KIND.Event_1_2);
+                    }
                     break;
                 }
 

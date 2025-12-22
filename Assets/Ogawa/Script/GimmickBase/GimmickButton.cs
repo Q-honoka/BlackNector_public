@@ -8,8 +8,7 @@ public class GimmickButton : GimmickBase
 
     private void Start()
     {
-        isState = false;
-        isState = true;
+        
     }
 
     private void Update()
@@ -30,8 +29,18 @@ public class GimmickButton : GimmickBase
     /// </summary>
     protected override void OnStateTrue()
     {
-        isState = true;
-        stateTrueObj.SetActive(true);
+        // true にしたときに起動したいギミックの State を true にする
+        foreach (GameObject obj in stateTrueObj)
+        {
+            if (obj != null)
+            {
+                GimmickBase gimmick = obj.GetComponent<GimmickBase>();
+                if(gimmick != null)
+                {
+                    gimmick.isState = true;
+                }
+            }
+        }
     }
 
     /// <summary>
@@ -39,7 +48,18 @@ public class GimmickButton : GimmickBase
     /// </summary>
     protected override void OnStateFalse()
     {
-        stateTrueObj.SetActive(false);
+        // false にしたときに停止したいギミックの State を false にする
+        foreach (GameObject obj in stateFalseObj)
+        {
+            if (obj != null)
+            {
+                GimmickBase gimmick = obj.GetComponent<GimmickBase>();
+                if (gimmick != null)
+                {
+                    gimmick.isState = false;
+                }
+            }
+        }
     }
 
 }

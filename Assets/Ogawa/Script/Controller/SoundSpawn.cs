@@ -5,7 +5,7 @@ public class SoundSpawn : MonoBehaviour
 {
     [SerializeField,Header("サウンドコントローラー")] GameObject gameobj;
 
-    private void Start()
+    private void Awake()
     {
         if(Sound.instance == null)
         {

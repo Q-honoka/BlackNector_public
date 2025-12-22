@@ -25,7 +25,7 @@ public enum NOVEL_KIND  // ノベルパートの種類
 
 public class NovelSubject : MonoBehaviour
 {
-    public static NovelSubject Instance;    // シングルトン
+    public static NovelSubject instance;    // シングルトン
 
     [SerializeField] private bool dontDestroy = false;
 
@@ -62,9 +62,9 @@ public class NovelSubject : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if(instance == null)
         {
-            Instance = this;
+            instance = this;
             if(dontDestroy)
             {
                 DontDestroyOnLoad(this);
@@ -75,12 +75,6 @@ public class NovelSubject : MonoBehaviour
             Destroy(this);
         }
     }
-
-    public void OnStart()
-    {
-        Play(NOVEL_KIND.Tutorial_1_1).Forget();  // デバッグ用
-    }
-
 
     /***************************/
     // イベントの購読側だけを公開
