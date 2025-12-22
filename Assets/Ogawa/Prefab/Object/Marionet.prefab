@@ -50,8 +50,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9abbbc9ea6284944ac72c8e49259f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  canvas: {fileID: 0}
   destroyTime: 3
-  nestorPrefab: {fileID: 0}
+  nestorPrefab: {fileID: 6556216763162163791, guid: f62867bbbe3ec5146ac727410858712f, type: 3}
   initializeRadius: 3
   spawnedNestorCount: 10
 --- !u!65 &4100863065861937623

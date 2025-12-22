@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5817193698328635516}
   - component: {fileID: 7676987920691613569}
   - component: {fileID: 7197849499124446963}
+  - component: {fileID: 8233969077218629455}
   m_Layer: 0
   m_Name: Tindoll
   m_TagString: Untagged
@@ -124,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2850b0c74d87e45fd8d3d674e60e3325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tinDoll: {fileID: 0}
+  tinDoll: {fileID: 11400000, guid: c43604ce1f571487cb48bc67f8bd9345, type: 2}
   foundArea: {fileID: 0}
   state: 2
   patrolPos:
@@ -132,9 +133,26 @@ MonoBehaviour:
   - {fileID: 0}
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   viewLength: 2
-  patrolPosIndex: 0
+--- !u!114 &8233969077218629455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2155909705354919554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9abbbc9ea6284944ac72c8e49259f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  canvas: {fileID: 0}
+  destroyTime: 3
+  nestorPrefab: {fileID: 6556216763162163791, guid: f62867bbbe3ec5146ac727410858712f, type: 3}
+  initializeRadius: 100
+  spawnedNestorCount: 10
 --- !u!1001 &8441479046847026325
 PrefabInstance:
   m_ObjectHideFlags: 0

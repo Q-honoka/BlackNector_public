@@ -41,21 +41,11 @@ MonoBehaviour:
     m_Compliance:
       m_Status: 0
       m_Violations: []
-<<<<<<< HEAD
   m_UserSelectedRegistryName: 
-=======
-  m_UserSelectedRegistryName: VContainer
-<<<<<<< HEAD
-=======
-  m_UserSelectedRegistryName: 
->>>>>>> df67b821b9c0ac8ff7fbbaa0780a7032742a9110
->>>>>>> 4cb58ff30d10df53ff7cb3c7ae4355c501f33d4f
-=======
->>>>>>> parent of fd4cede (ｘｘ)
   m_UserAddingNewScopedRegistry: 0
   m_RegistryInfoDraft:
     m_Modified: 0
     m_ErrorMessage: 
-    m_UserModificationsInstanceId: -864
-    m_OriginalInstanceId: -866
+    m_UserModificationsInstanceId: -884
+    m_OriginalInstanceId: -886
   m_LoadAssets: 0
