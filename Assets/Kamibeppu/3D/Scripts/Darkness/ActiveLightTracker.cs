@@ -68,6 +68,7 @@ public class ActiveLightTracker : MonoBehaviour
         // リストにそのライトがない かつ ライトオブジェクトが有効の場合は追加する
         if (!activeLights.Contains(light3D) && light3D.gameObject.activeSelf)
         {
+            Debug.Log($"{light3D.name}追加");
             activeLights.Add(light3D);
         }
     }

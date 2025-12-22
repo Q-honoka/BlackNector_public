@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class TinDollController : MonoBehaviour, ICharcters, IEnemy
@@ -51,6 +52,8 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     /// </summary>
     void ICharcters.State()
     {
+        if (patrolPos[0] == null) return;
+
         switch(state)
         {
             case State.IDLE:
