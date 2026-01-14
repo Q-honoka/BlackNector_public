@@ -1,3 +1,4 @@
+using System;
 using UniRx;
 using UnityEngine;
 
@@ -17,6 +18,16 @@ public class GameData : MonoBehaviour
 {
     public static GameData instance;
 
+    private Subject<SaveSpotKind> SaveSpotUpdateSubject = new Subject<SaveSpotKind>();    // セーブスポットが変更された時のイベント
+
+    public IObservable<SaveSpotKind> OnSaveSpotUpdate
+    {
+        get
+        {
+            return SaveSpotUpdateSubject;
+        }
+    }
+
     private void Awake()
     {
         if (instance == null)
@@ -28,6 +39,9 @@ public class GameData : MonoBehaviour
         {
             Destroy(this);
         }
+
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
     }
 
     private SaveSpotKind _saveSpot = SaveSpotKind.Stage1_1;
@@ -41,7 +55,15 @@ public class GameData : MonoBehaviour
             Debug.Log("セーブ失敗", gameObject);
             return;
         }
+        if (spot == _saveSpot)
+        {
+            Debug.Log("セーブ地点が同じ。更新しない", gameObject);
+            return;
+        }
+
 
         _saveSpot = spot;
+        SaveSpotUpdateSubject.OnNext(_saveSpot);  
+        Debug.Log("セーブ成功",gameObject);
     }
 }

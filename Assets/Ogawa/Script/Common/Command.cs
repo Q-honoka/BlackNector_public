@@ -1,17 +1,18 @@
+using Cysharp.Threading.Tasks;
 using RaruLib;
+using System;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 public class Command : MonoBehaviour
 {
-    private void Start()
+    protected void Start()
     {
         if(Sound.instance!=null)
         {
             Sound.instance.Play("BGM", "BGM1");
         }
     }
-    public void LogOutForGame()
+    public virtual void LogOutForGame()
     {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
@@ -19,7 +20,7 @@ public class Command : MonoBehaviour
         Application.Quit();
 #endif
     }
-    public void CallRetry()
+    public virtual void CallRetry()
     {
         if(Retry.instance==null)
         {
@@ -28,7 +29,7 @@ public class Command : MonoBehaviour
         }
         Retry.instance.CallRetry();
     }
-    public void CallSceneChange(int value)
+    public virtual void CallSceneChange(int value)
     {
         if (SceneController.instance == null)
         {
@@ -37,7 +38,7 @@ public class Command : MonoBehaviour
         }
         SceneController.instance.SceneChange(value);
     }
-    public void CallPanelChange_SendMain()
+    public virtual void CallPanelChange_SendMain()
     {
         if (ScenePanel.instance == null)
         {
@@ -46,7 +47,7 @@ public class Command : MonoBehaviour
         }
         ScenePanel.instance.DataCallOpenPanel(PanelKind.Main);
     }
-    public void CallPanelChange_SendMenu()
+    public virtual void CallPanelChange_SendMenu()
     {
         if (ScenePanel.instance == null)
         {
@@ -54,5 +55,38 @@ public class Command : MonoBehaviour
             return;
         }
         ScenePanel.instance.DataCallOpenPanel(PanelKind.Menu);
+    }
+    public virtual void CallNovelMessagePlay(NOVEL_KIND novelKind)
+    {
+        if (NovelSubject.instance == null)
+        {
+            Debug.Log("ÉmÉxÉãçƒê∂é∏îs", gameObject);
+            return;
+        }
+        NovelSubject.instance.Play(novelKind).Forget();
+    }
+    public virtual void CallNovelMessagePlay(int novelKind)
+    {
+        if (NovelSubject.instance == null)
+        {
+            Debug.Log("ÉmÉxÉãçƒê∂é∏îs", gameObject);
+            return;
+        }
+        if (!Enum.IsDefined(typeof(NOVEL_KIND), novelKind))
+        {
+            Debug.Log("ïsê≥Ç»enumÇ≈é∏îs", gameObject);
+            return;
+        }
+        NOVEL_KIND kind = (NOVEL_KIND)novelKind;
+        NovelSubject.instance.Play(kind).Forget();
+    }
+    public virtual void CallNovelMessageNext()
+    {
+        if (NovelSubject.instance == null)
+        {
+            Debug.Log("ÉmÉxÉãêiçsé∏îs", gameObject);
+            return;
+        }
+        NovelSubject.instance.Next();
     }
 }

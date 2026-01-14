@@ -22,7 +22,6 @@ namespace Maruyama
             transform.AddComponent<GimmickCollision>();
             collision = transform.GetComponent<GimmickCollision>();
         }
-
     }
 
     private void Update()

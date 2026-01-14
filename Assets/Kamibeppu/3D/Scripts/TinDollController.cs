@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class TinDollController : MonoBehaviour, ICharcters, IEnemy
@@ -51,6 +52,8 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     /// </summary>
     void ICharcters.State()
     {
+        if (patrolPos[0] == null) return;
+
         switch(state)
         {
             case State.IDLE:
@@ -69,9 +72,9 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     }
 
     /*  以下、ICharcters の実装です。キャラクターの基本動作を実装しています。
-        Idle()      停止状態の時の処理をする関数   （未実装）
-        Move()      決められたルートを巡回する関数  （未実装）
-        End()       終了処理をする関数            （未実装）
+        Idle()      停止状態の時の処理をする関数
+        Move()      決められたルートを巡回する関数
+        End()       終了処理をする関数
         SetMyState()    状態を変える関数
      */
 
@@ -107,7 +110,6 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     /*  以下、IEnemy の実装です。敵の基本動作を実装しています。
         FoundPlayer()       子どもを見つけたかどうかを true / false で設定する関数
         GetFoundPlayer()    子どもを見つけたかどうかを true / false で返す関数
-        CatchByNector()     暗闇でネスターに見つかった時の処理をする関数（未実装）
      */
     /// <summary>
     /// Playerを見つけた

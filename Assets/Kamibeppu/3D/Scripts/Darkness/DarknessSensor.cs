@@ -19,6 +19,7 @@ public class DarknessSensor : MonoBehaviour
     /// </summary>
     public static DarknessSensor Instance { get; private set; }
 
+    [SerializeField] LayerMask ObstacleLayer;
     [SerializeField]
     private float checkInterval = 1f;
 
@@ -124,6 +125,6 @@ public class DarknessSensor : MonoBehaviour
         }
 
         // ƒŒƒC‚ð‚Æ‚Î‚µ‚ÄŠÔ‚ÉŽÕ•Á•¨‚ª‚ ‚ê‚Î false ‚È‚¯‚ê‚Î true ‚ð•Ô‚·
-        return !Physics.Raycast(lightPos, toEntity, range);
+        return Physics.Raycast(lightPos, toEntity, range, ObstacleLayer);
     }
 }
