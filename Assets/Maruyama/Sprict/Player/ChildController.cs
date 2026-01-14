@@ -95,9 +95,10 @@ namespace Maruyama
         else if (CheckFront()) { child.myData.charctersInterface.SetMyState((int)CharctersState.IDLE); return; }
 
 
-        Debug.Log(rigid.linearVelocityX);
-        if (CharctersCommonDetas.MAX_SPEED <= rigid.linearVelocityX) { rigid.linearVelocityX = MAX_SPEED; }
-        rigid.AddForce(transform.right * child.myData.speed);
+        //Debug.Log(rigid.linearVelocityX);
+        //if (CharctersCommonDetas.MAX_SPEED <= rigid.linearVelocityX) { rigid.linearVelocityX = MAX_SPEED; }
+            //rigid.AddForce(transform.right * child.myData.speed);
+        this.transform.Translate(child.myData.speed, 0, 0);
     }
 
 

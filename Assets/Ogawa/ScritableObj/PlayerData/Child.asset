@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Child
   m_EditorClassIdentifier: 
   myData:
-    pos: {x: -6.699, y: -3.1, z: 0}
+    pos: {x: -7.26, y: -3.57, z: 0}
     speed: 10
     obje: {fileID: 0}

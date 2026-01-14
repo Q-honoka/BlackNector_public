@@ -89,14 +89,18 @@ public class ChildController : MonoBehaviour, ICharcters
 
     void ICharcters.Move()
     {
-
+        //Debug.Log("ChildMove()");
         Collider col = GetComponent<Collider>();
         // Debug.Log(rigid.linearVelocityX);
         //インスタンスがからの場合return
-        if (player == null) { return; }
-
+        if (player == null) {
+            Debug.Log("player= null");
+            return; 
+        }
+        
         //前方に壁が存在している場合
-        else if (CheckFront()) { child.myData.charctersInterface.SetMyState((int)CharctersState.IDLE); return; }
+        else if (CheckFront()) { child.myData.charctersInterface.SetMyState((int)CharctersState.IDLE);
+            return; }
 
 
         Debug.Log(rigid.linearVelocity);
