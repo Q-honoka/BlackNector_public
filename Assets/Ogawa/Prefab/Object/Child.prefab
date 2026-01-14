@@ -70,6 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9abbbc9ea6284944ac72c8e49259f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  canvas: {fileID: 0}
   destroyTime: 3
   nestorPrefab: {fileID: 0}
   initializeRadius: 3
@@ -150,6 +152,7 @@ GameObject:
   - component: {fileID: 5607436922458696532}
   - component: {fileID: 6440032996926063004}
   - component: {fileID: 4413778030728308796}
+  - component: {fileID: 5249400361030298028}
   m_Layer: 0
   m_Name: syuzinkou
   m_TagString: Child
@@ -277,6 +280,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 124
   m_CollisionDetection: 0
+--- !u!114 &5249400361030298028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4869365982405007903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6739eb2aea71649a3573430d683f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visible: 0
 --- !u!1 &7816796539258653863
 GameObject:
   m_ObjectHideFlags: 0

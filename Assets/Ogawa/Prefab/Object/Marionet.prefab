@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 5185393265803470971}
   - component: {fileID: 4359965753582571581}
   - component: {fileID: 4725862349725561469}
+  - component: {fileID: 6609486367189665260}
   m_Layer: 0
   m_Name: marionette
   m_TagString: Untagged
@@ -294,6 +295,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6609486367189665260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6226457746119043245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6739eb2aea71649a3573430d683f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visible: 0
 --- !u!1 &8229420207119653610
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +319,7 @@ GameObject:
   - component: {fileID: 9105373994203670286}
   - component: {fileID: 3244141445981939340}
   - component: {fileID: 3943150239172694797}
+  - component: {fileID: 8017820491174370843}
   m_Layer: 0
   m_Name: GimmickThread
   m_TagString: Untagged
@@ -364,6 +379,18 @@ MonoBehaviour:
   - {fileID: 0}
   stateFalseObj:
   - {fileID: 0}
+--- !u!114 &8017820491174370843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8229420207119653610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95decb6edd0e52439f6e0b4fb561622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1905476544748535075
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 
 public class TinDollController : MonoBehaviour, ICharcters, IEnemy
@@ -35,16 +34,19 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     private int patrolPosIndex = 0;     // 現在の巡回地点インデックス
     private float threshold = 0.1f;     // 巡回地点に到達と判定するしきい値
 
+    private ICharcters myCharacter;
+    private IEnemy myEnemy;
+
     private void Start()
     {
-        tinDoll.myData.charctersInterface = this;
-        tinDoll.enemyInterface = this;
+        myCharacter = this;
+        myEnemy = this;
     }
 
     void Update()
     {
         // キャラクターデータがあれば、状態ごとの処理をする
-        if (tinDoll != null) { tinDoll.myData.charctersInterface.State(); }
+        if (tinDoll != null) { myCharacter.State(); }
     }
 
     /// <summary>
@@ -57,16 +59,16 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
         switch(state)
         {
             case State.IDLE:
-                tinDoll.myData.charctersInterface.Idle();
+                myCharacter.Idle();
                 break;
             case State.FOUND:
-                tinDoll.enemyInterface.FoundPlayer();
+                myEnemy.FoundPlayer();
                 break;
             case State.MOVE:
-                tinDoll.myData.charctersInterface.Move();
+                myCharacter.Move();
                 break;
             case State.END:
-                tinDoll.myData.charctersInterface.End();
+                myCharacter.End();
                 break;
         }
     }
@@ -88,7 +90,7 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     void ICharcters.Move()
     {
         // 視界内に子どもがいたら FOUND 状態に遷移する
-        if (foundArea.IsWithinChildInVisibility()) { tinDoll.myData.charctersInterface.SetMyState((int)State.FOUND); }
+        if (foundArea.IsWithinChildInVisibility()) { myCharacter.SetMyState((int)State.FOUND); }
         // 前方に壁がある もしくは 巡回地点に到達したら Uターンする
         if(CheckWallForward() || CheckPatrolPos()) { Turn(); }
         // 前方に移動
@@ -114,7 +116,12 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     /// <summary>
     /// Playerを見つけた
     /// </summary>
-    void IEnemy.FoundPlayer() { foundChild = true; }
+    void IEnemy.FoundPlayer() 
+    { 
+        foundChild = true;
+        GameObject child = GameObject.FindGameObjectWithTag("Child");
+        if (child != null) child.GetComponentInParent<ChildController>().SetIsFound();
+    }
     /// <summary>
     /// playerの捜索状態を共有
     /// </summary>
