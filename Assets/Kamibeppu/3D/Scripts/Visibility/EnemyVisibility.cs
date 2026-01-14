@@ -45,7 +45,7 @@ public class EnemyVisibility : MonoBehaviour
             isWithinChild = IsWithinVisibility();
         }
 
-        //Debug.Log("‚±‚Ç‚à: " + (isWithinChild ? "‚¢‚é" : "‚¢‚È‚¢"));
+        //Debug.Log($"K:{gameObject.name}‚ÌID:{GetInstanceID()}‚Í‚±‚Ç‚à:{isWithinChild}");
     }
 
     // Ž‹ŠE‚Ì•`‰æ

@@ -94,7 +94,6 @@ MonoBehaviour:
   marionette: {fileID: 11400000, guid: 293ada977509a4f47a48fa00dba0ac95, type: 2}
   foundArea: {fileID: 3836331005150897831}
   state: 0
-  thread: {fileID: 0}
 --- !u!54 &3896285273978520349
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -219,6 +218,7 @@ GameObject:
   - component: {fileID: 5185393265803470971}
   - component: {fileID: 4359965753582571581}
   - component: {fileID: 4725862349725561469}
+  - component: {fileID: 6609486367189665260}
   m_Layer: 0
   m_Name: marionette
   m_TagString: Untagged
@@ -295,6 +295,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6609486367189665260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6226457746119043245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6739eb2aea71649a3573430d683f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visible: 0
 --- !u!1 &8229420207119653610
 GameObject:
   m_ObjectHideFlags: 0

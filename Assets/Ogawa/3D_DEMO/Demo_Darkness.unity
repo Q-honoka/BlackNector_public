@@ -401,6 +401,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326665694}
   m_CullTransparentMesh: 1
+--- !u!114 &365749047 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5547695108401690710, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
+  m_PrefabInstance: {fileID: 1226428016779481537}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f31bb9cf5f672a4c9865a363af2d02f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &366659538
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,6 +695,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2221540928747293975, guid: b003c4fdd441a604888ed38a9d02ed14, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1655683216471870431}
+    - target: {fileID: 2221540928747293975, guid: b003c4fdd441a604888ed38a9d02ed14, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 9121798762320603615}
+    - target: {fileID: 2221540928747293975, guid: b003c4fdd441a604888ed38a9d02ed14, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2221540928747293975, guid: b003c4fdd441a604888ed38a9d02ed14, type: 3}
+      propertyPath: nestorPrefab
+      value: 
+      objectReference: {fileID: 6556216763162163791, guid: f62867bbbe3ec5146ac727410858712f, type: 3}
+    - target: {fileID: 2221540928747293975, guid: b003c4fdd441a604888ed38a9d02ed14, type: 3}
+      propertyPath: initializeRadius
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2447938188821214508, guid: b003c4fdd441a604888ed38a9d02ed14, type: 3}
       propertyPath: m_Name
       value: Child
@@ -753,6 +784,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 9121798762320603615}
+    - target: {fileID: 2126630546170248976, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+      propertyPath: m_Name
+      value: Scarecrow 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2532800495434932059, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
       propertyPath: cam
       value: 
@@ -769,6 +804,10 @@ PrefabInstance:
       propertyPath: foundArea
       value: 
       objectReference: {fileID: 1092253276}
+    - target: {fileID: 4811885108061715690, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+      propertyPath: foundArea
+      value: 
+      objectReference: {fileID: 1805250112}
     - target: {fileID: 5018341034422707977, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -825,6 +864,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage2
       objectReference: {fileID: 0}
+    - target: {fileID: 6958043797676190823, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+      propertyPath: m_Name
+      value: Visibility 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8825648620332327172, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+      propertyPath: m_Name
+      value: Visibility 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -835,6 +882,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 848931959653055766, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
   m_PrefabInstance: {fileID: 877465534}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1073458557 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4820356402795390593, guid: eb0aa5229104a074d927b59a9e69db31, type: 3}
+  m_PrefabInstance: {fileID: 1106882958}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f31bb9cf5f672a4c9865a363af2d02f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1092253276 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 795001869696141061, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
@@ -854,6 +912,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1063017288230143512, guid: eb0aa5229104a074d927b59a9e69db31, type: 3}
+      propertyPath: m_Name
+      value: Visibility 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287640520070025229, guid: eb0aa5229104a074d927b59a9e69db31, type: 3}
+      propertyPath: foundArea
+      value: 
+      objectReference: {fileID: 1073458557}
+    - target: {fileID: 2982190618102320611, guid: eb0aa5229104a074d927b59a9e69db31, type: 3}
+      propertyPath: m_Name
+      value: Visibility 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4006362679753415910, guid: eb0aa5229104a074d927b59a9e69db31, type: 3}
       propertyPath: cam
       value: 
@@ -878,6 +948,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 9121798762320603615}
+    - target: {fileID: 5663998975315153911, guid: eb0aa5229104a074d927b59a9e69db31, type: 3}
+      propertyPath: m_Name
+      value: Scarecrow 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9192389048162409140, guid: eb0aa5229104a074d927b59a9e69db31, type: 3}
       propertyPath: m_LocalPosition.x
       value: 60
@@ -955,6 +1029,10 @@ PrefabInstance:
       propertyPath: initializeRadius
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 2547355314685400117, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
+      propertyPath: m_Name
+      value: Visibility 11
+      objectReference: {fileID: 0}
     - target: {fileID: 3716085924733132511, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
       propertyPath: cam
       value: 
@@ -963,6 +1041,18 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 9121798762320603615}
+    - target: {fileID: 4428180373107147790, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
+      propertyPath: m_Name
+      value: Scarecrow 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864365532627849225, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
+      propertyPath: m_Name
+      value: Visibility 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524661464710732314, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
+      propertyPath: m_Name
+      value: Visibility 12
+      objectReference: {fileID: 0}
     - target: {fileID: 6536332876992877479, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
       propertyPath: m_LocalPosition.x
       value: 125
@@ -1016,6 +1106,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
+--- !u!114 &1805250112 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1296058823458998886, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+  m_PrefabInstance: {fileID: 877465534}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f31bb9cf5f672a4c9865a363af2d02f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1851394904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1152,6 +1253,14 @@ PrefabInstance:
     - target: {fileID: 5459096877733763467, guid: 3638c9f4ab5e626449b017817d16dfbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5623391261752488043, guid: 3638c9f4ab5e626449b017817d16dfbd, type: 3}
+      propertyPath: m_Name
+      value: Visibility 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5673619597636308793, guid: 3638c9f4ab5e626449b017817d16dfbd, type: 3}
+      propertyPath: m_Name
+      value: Visibility 9
       objectReference: {fileID: 0}
     - target: {fileID: 5906142403533982074, guid: 3638c9f4ab5e626449b017817d16dfbd, type: 3}
       propertyPath: m_Layer
@@ -1315,6 +1424,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 231242934603257290, guid: 711c6e6e5253bbb4380dc8df09a4698a, type: 3}
+      propertyPath: m_Name
+      value: Visibility 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3787401424713467120, guid: 711c6e6e5253bbb4380dc8df09a4698a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 80
@@ -1367,6 +1480,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 9121798762320603615}
+    - target: {fileID: 5646036543298332720, guid: 711c6e6e5253bbb4380dc8df09a4698a, type: 3}
+      propertyPath: m_Name
+      value: Visibility 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5853342324586121034, guid: 711c6e6e5253bbb4380dc8df09a4698a, type: 3}
       propertyPath: foundArea
       value: 
@@ -1869,14 +1986,30 @@ PrefabInstance:
       propertyPath: m_TagString
       value: enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2289686708318244570, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
+      propertyPath: foundArea
+      value: 
+      objectReference: {fileID: 365749047}
     - target: {fileID: 2422790552642814687, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
       propertyPath: m_Name
       value: Stage1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844825001145635636, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
+      propertyPath: m_Name
+      value: Visibility 1
       objectReference: {fileID: 0}
     - target: {fileID: 2954883219894843400, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
       propertyPath: thread
       value: 
       objectReference: {fileID: 612707692}
+    - target: {fileID: 4199651039883598127, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
+      propertyPath: m_Name
+      value: Visibility 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648443628828773664, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
+      propertyPath: m_Name
+      value: Scarecrow 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5648824798887860209, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
       propertyPath: cam
       value: 
@@ -1885,6 +2018,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 9121798762320603615}
+    - target: {fileID: 5648824798887860209, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5648824798887860209, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
       propertyPath: initializeRadius
       value: 100

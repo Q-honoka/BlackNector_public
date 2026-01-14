@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,7 +29,13 @@ public class DarknessTarget : MonoBehaviour
     private float radius = 0f;
     private float decreaseRadius;           // 減らす半径
     private GameObject nestorContainer;     // ネスターUIを管理する親オブジェクト
-    private bool isInsideCamera;            // カメラ内にいるかどうか
+    private bool isEnd;           // アニメーションが終わったかどうか
+
+    // アニメーションが終わったかどうかを返す
+    public bool GetIsEnd()
+    {
+        return isEnd;
+    }
 
     private void Start()
     {
@@ -45,12 +50,14 @@ public class DarknessTarget : MonoBehaviour
         decreaseRadius = (initializeRadius - 20f) / destroyTime;
 
         if(cam == null) cam = Camera.main;
+        isEnd = false;
     }
 
     private void Update()
     {
         // カメラの範囲内 かつ 暗闇にいる場合はアニメーションをする
         bool isInDark = darknessSensor.GetSelfIsDarkness(this);
+        bool isInsideCamera = this.gameObject.transform.GetComponentInChildren<CameraVisible>().visible;
         if (isInsideCamera == true && isInDark == true)
         {
             DarknessAction();
@@ -59,10 +66,19 @@ public class DarknessTarget : MonoBehaviour
         {
             ResetDarknessAnimation();
         }
+
+        // アニメーションが終わったときに自身が子どもでないなら消去する
+        if (isEnd == true)
+        {
+            if(!this.gameObject.CompareTag("Child"))
+            {
+                Destroy(this.gameObject);
+            }
+        }
     }
 
     // 暗闇に入ったときの演出
-    public void DarknessAction()
+    private void DarknessAction()
     {
         elapsedTime += Time.deltaTime;
         
@@ -74,7 +90,7 @@ public class DarknessTarget : MonoBehaviour
         else
         {
             if(nestorContainer != null) Destroy(nestorContainer);
-            Destroy(this.gameObject);
+            isEnd = true;
         }
     }
 
@@ -178,11 +194,11 @@ public class DarknessTarget : MonoBehaviour
     private void OnDestroy()
     {
         if(nestorContainer != null) Destroy(nestorContainer);
-        NotifyLightStateChanged();
+        NotifyEntityStateChanged();
     }
 
     // エンティティの状態が変化したことを通知する
-    private void NotifyLightStateChanged()
+    private void NotifyEntityStateChanged()
     {
         if (tracker != null)
         {
@@ -193,24 +209,12 @@ public class DarknessTarget : MonoBehaviour
     // エンティティが無効になったときにトラッカーに通知
     private void OnDisable()
     {
-        NotifyLightStateChanged();
+        NotifyEntityStateChanged();
     }
 
     // エンティティが有効になったときにトラッカーに通知
     private void OnEnable()
     {
-        NotifyLightStateChanged();
-    }
-
-    // カメラから外れた瞬間にフラグを false にする
-    private void OnBecameInvisible()
-    {
-        isInsideCamera = false;
-    }
-
-    // カメラ内に入った瞬間にフラグを true にする
-    private void OnBecameVisible()
-    {
-        isInsideCamera = true;
+        NotifyEntityStateChanged();
     }
 }

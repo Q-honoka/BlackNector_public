@@ -50,6 +50,9 @@ public class ChildController : MonoBehaviour, ICharcters
         {
             if (enemy.enemyInterface.GetFoundPlayer()) { child.myData.charctersInterface.SetMyState((int)CharctersState.END); }
         }
+
+        // ネスターに襲われたらリトライ処理へ状態遷移する
+        if (this.gameObject.GetComponent<DarknessTarget>().GetIsEnd()) { child.myData.charctersInterface.SetMyState((int)CharctersState.END); }
     }
 
 
@@ -105,9 +108,10 @@ public class ChildController : MonoBehaviour, ICharcters
     void ICharcters.End()
     {
         //アニメーションなど
+        Retry.instance.CallRetry();
 
         //次のシーンへ移動
-        SceneManager.LoadScene("GameOver");
+        //SceneManager.LoadScene("GameOver");
     }
 
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6285703274344747088}
   - component: {fileID: 3115336946487521879}
   - component: {fileID: 8834329250738154364}
+  - component: {fileID: 2383674712265477858}
   m_Layer: 0
   m_Name: Scarecrow
   m_TagString: enemy
@@ -103,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   scacrow: {fileID: 11400000, guid: 1c0b433f1303a4f4ba6a47bac4210f72, type: 2}
-  foundArea: {fileID: 8646947373035259099}
+  foundArea: {fileID: 0}
 --- !u!114 &8834329250738154364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +123,19 @@ MonoBehaviour:
   nestorPrefab: {fileID: 6556216763162163791, guid: f62867bbbe3ec5146ac727410858712f, type: 3}
   initializeRadius: 100
   spawnedNestorCount: 10
+--- !u!114 &2383674712265477858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8394684719277781421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6739eb2aea71649a3573430d683f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visible: 0
 --- !u!1001 &6290647669203705695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -184,14 +198,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5136558080522898411, guid: c1299693944817648be2f5a3b00d8df4, type: 3}
   m_PrefabInstance: {fileID: 6290647669203705695}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8646947373035259099 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3408378754924616580, guid: c1299693944817648be2f5a3b00d8df4, type: 3}
-  m_PrefabInstance: {fileID: 6290647669203705695}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f31bb9cf5f672a4c9865a363af2d02f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

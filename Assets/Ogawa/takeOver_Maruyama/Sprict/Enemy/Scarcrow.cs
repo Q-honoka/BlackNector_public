@@ -23,6 +23,8 @@ public class Scarcrow : MonoBehaviour, IEnemy, ICharcters
     {
         scacrow.myData.charctersInterface = this;
         scacrow.enemyInterface = this;
+        foundArea = this.transform.GetComponentInChildren<EnemyVisibility>();
+        Debug.Log($"{gameObject.name}‚ÌŽ‹ŠE: {foundArea.name}");
     }
 
     void Update()  { scacrow.myData.charctersInterface.State(); }
