@@ -51,7 +51,7 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
         //
         marionette.myData.charctersInterface = this;
         marionette.enemyInterface = this;
-        thread = gameObject.GetComponentInChildren<GimmickThread>();    // 子オブジェクトのコライダーを使用する
+        thread = gameObject.transform.GetComponentInChildren<GimmickThread>();    // 子オブジェクトのコライダーを使用する
     }
 
     void Update()
