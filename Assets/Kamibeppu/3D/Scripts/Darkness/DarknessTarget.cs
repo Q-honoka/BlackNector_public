@@ -72,7 +72,7 @@ public class DarknessTarget : MonoBehaviour
         {
             if(!this.gameObject.CompareTag("Child"))
             {
-                Destroy(this.gameObject);
+                gameObject.SetActive(false);
             }
         }
     }

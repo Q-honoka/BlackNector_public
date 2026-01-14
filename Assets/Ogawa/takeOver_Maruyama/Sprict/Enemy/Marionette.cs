@@ -32,6 +32,9 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     //現在の状態
     [SerializeField] State state;
 
+    private ICharcters myCharacter;
+    private IEnemy myEnemy;
+
     // 落下するイベント
     private Subject<Unit> fallSubject = new Subject<Unit>();
     public IObservable<Unit> OnFallSubject
@@ -49,14 +52,14 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     void Start()
     {
         //
-        marionette.myData.charctersInterface = this;
-        marionette.enemyInterface = this;
+        myCharacter = this;
+        myEnemy = this;
         thread = gameObject.transform.GetComponentInChildren<GimmickThread>();    // 子オブジェクトのコライダーを使用する
     }
 
     void Update()
     {
-        marionette.myData.charctersInterface.State();
+        myCharacter.State();
     }
 
     /// <summary>
@@ -67,11 +70,11 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
         switch (state)
         {
             case State.IDLE:
-                marionette.myData.charctersInterface.Idle();
+                myCharacter.Idle();
                 break;
 
             case State.FOUND:
-                marionette.enemyInterface.FoundPlayer();
+                myEnemy.FoundPlayer();
                 break;
 
             case State.FALL:
@@ -96,8 +99,8 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     /// </summary>
     void ICharcters.Idle()
     {
-        if (foundArea.IsWithinChildInVisibility()) { marionette.myData.charctersInterface.SetMyState((int)State.FOUND); }
-        if (!thread.GetConnctMarionnet()) { marionette.myData.charctersInterface.SetMyState((int)State.FALL); }
+        if (foundArea.IsWithinChildInVisibility()) { myCharacter.SetMyState((int)State.FOUND); }
+        if (!thread.GetConnctMarionnet()) { myCharacter.SetMyState((int)State.FALL); }
     }
     /// <summary>
     /// 動き(動かないので無記入)
@@ -116,7 +119,12 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     /// <summary>
     /// Playerを見つけた
     /// </summary>
-    void IEnemy.FoundPlayer() { foundChild = true; }
+    void IEnemy.FoundPlayer() 
+    { 
+        foundChild = true;
+        GameObject child = GameObject.FindGameObjectWithTag("Child");
+        if (child != null) child.GetComponentInParent<ChildController>().SetIsFound();
+    }
     /// <summary>
     /// ネスターに捕まった
     /// </summary>
@@ -154,6 +162,6 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag != "Ground") { return; }
-        marionette.myData.charctersInterface.SetMyState((int)State.BROKEN);
+        myCharacter.SetMyState((int)State.BROKEN);
     }
 }

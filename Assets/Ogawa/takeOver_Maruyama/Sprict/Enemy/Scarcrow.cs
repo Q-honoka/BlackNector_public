@@ -19,15 +19,17 @@ public class Scarcrow : MonoBehaviour, IEnemy, ICharcters
     [SerializeField]
     EnemyVisibility foundArea;
     bool found = false;
+
+    private ICharcters myCharacter;
+    private IEnemy myEnemy;
     void Start()
     {
-        scacrow.myData.charctersInterface = this;
-        scacrow.enemyInterface = this;
+        myCharacter = this;
+        myEnemy = this;
         foundArea = this.transform.GetComponentInChildren<EnemyVisibility>();
-        Debug.Log($"{gameObject.name}‚ÌŽ‹ŠE: {foundArea.name}");
     }
 
-    void Update()  { scacrow.myData.charctersInterface.State(); }
+    void Update()  { myCharacter.State(); }
 
 
     void ICharcters.State()
@@ -35,11 +37,11 @@ public class Scarcrow : MonoBehaviour, IEnemy, ICharcters
         switch (state)
         {
             case State.IDLE:
-                scacrow.myData.charctersInterface.Idle();
+                myCharacter.Idle();
                 break;
 
             case State.FOUND:
-                scacrow.enemyInterface.FoundPlayer();
+                myEnemy.FoundPlayer();
                 break;
         }
 
@@ -47,7 +49,7 @@ public class Scarcrow : MonoBehaviour, IEnemy, ICharcters
 
     void ICharcters.Idle()
     {
-        if (foundArea.IsWithinChildInVisibility()) { scacrow.myData.charctersInterface.SetMyState((int)State.FOUND); }
+        if (foundArea.IsWithinChildInVisibility()) { myCharacter.SetMyState((int)State.FOUND); }
     }
 
     void ICharcters.Move() { }
@@ -55,7 +57,12 @@ public class Scarcrow : MonoBehaviour, IEnemy, ICharcters
     void ICharcters.End() { }
     void IEnemy.CatchByNector() { return; }
 
-    void IEnemy.FoundPlayer() { found = true; }
+    void IEnemy.FoundPlayer() 
+    { 
+        found = true; 
+        GameObject child = GameObject.FindGameObjectWithTag("Child");
+        if (child != null) child.GetComponentInParent<ChildController>().SetIsFound();
+    }
 
     bool IEnemy.GetFoundPlayer() { return found; }
 

@@ -191,6 +191,7 @@ public class EnemyVisibility : MonoBehaviour
     /// <returns></returns>
     public bool IsWithinChildInVisibility()
     {
+        Debug.Log($"K:{this.name}: êeÇ…ìnÇ∑{isWithinChild}");
         return isWithinChild;
     }
 }
