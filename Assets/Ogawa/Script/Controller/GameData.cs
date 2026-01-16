@@ -11,6 +11,7 @@ public enum SaveSpotKind
     Stage5_1,
     Stage6_1,
     Stage7_1,
+    Stage8_1,
     MAX
 }
 

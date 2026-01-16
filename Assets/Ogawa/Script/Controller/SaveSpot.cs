@@ -9,19 +9,14 @@ public class SaveSpot : MonoBehaviour
     {
         if (!other.gameObject.CompareTag("Child"))
         {
-            Debug.Log($"K:子ども以外が触れた。{other.gameObject.name}");
             return;
         }
-
-        Debug.Log($"K:インスタンスがあるか調べる");
 
         if (GameData.instance == null)
         {
-            Debug.Log($"K:GameDataのインスタンスがnull");
             return;
         }
 
-        Debug.Log($"K:セーブスポット{saveSpotKind}を子どもが通った");
         GameData.instance.SaveFromSaveSpot(saveSpotKind);
     }
 }
