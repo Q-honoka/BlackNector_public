@@ -8,6 +8,9 @@ public class GimmickBreaker : GimmickBase
     GimmickCollision collision;
     [SerializeField]
     GameObject[] lights;    // 消したいライトすべて
+    [SerializeField]
+    GameObject nestors;     // 追いかけるネスター
+    bool isChaseStart;      // 追いかけ開始
     bool myState = true;
     private Animator anim;
 
@@ -30,6 +33,13 @@ public class GimmickBreaker : GimmickBase
             isState = myState;
             collision.awakeGimmick = false;
         }
+
+        if (isChaseStart && GameData.instance.saveSpot == SaveSpotKind.Stage8_1)
+        {
+            nestors.SetActive(true);
+            nestors.GetComponent<Animator>().SetTrigger("Chase");
+            isChaseStart = false;
+        }
     }
 
     // ライトを消すコルーチン
@@ -38,6 +48,10 @@ public class GimmickBreaker : GimmickBase
         foreach (var light in lights)
         {
             yield return new WaitForSeconds(3.0f);
+            if (nestors.activeSelf == false)
+            {
+                isChaseStart = true;
+            }
             light.transform.GetComponentInChildren<Animator>().SetTrigger("Off");
         }
     }
@@ -75,7 +89,7 @@ public class GimmickBreaker : GimmickBase
     /// </summary>
     protected override void OnStateFalse()
     {
-        
+
     }
 
 }
