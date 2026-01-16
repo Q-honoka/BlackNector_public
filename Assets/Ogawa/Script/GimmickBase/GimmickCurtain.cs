@@ -3,10 +3,13 @@ using UnityEngine;
 public class GimmickCurtain : GimmickBase
 {
     private Light Light;
+    private Animator anim;
+
     private void Start()
     {
         Light = GetComponentInChildren<Light>();
         if (Light != null) { Light.enabled = false; }
+        anim = this.gameObject.transform.GetComponentInChildren<Animator>();
     }
 
     /// <summary>
@@ -14,8 +17,7 @@ public class GimmickCurtain : GimmickBase
     /// </summary>
     protected override void OnStateTrue()
     {
-        // 開くアニメーション
-
+        if (anim != null) anim.SetBool("IsOpen", true);
         // ライトをつける
         if (Light != null) { Light.enabled = true; }
     }
@@ -25,6 +27,8 @@ public class GimmickCurtain : GimmickBase
     /// </summary>
     protected override void OnStateFalse()
     {
-
+        if (anim != null) anim.SetBool("IsOpen", false);
+        // ライトを消す
+        if (Light != null) { Light.enabled = false; }
     }
 }

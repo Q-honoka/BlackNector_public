@@ -8,7 +8,7 @@ public class GimmickButton : GimmickBase
 
     private void Start()
     {
-        
+        isState = false;
     }
 
     private void Update()

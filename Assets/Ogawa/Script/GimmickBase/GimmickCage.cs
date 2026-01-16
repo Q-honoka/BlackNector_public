@@ -14,7 +14,7 @@ public class GimmickCage : GimmickBase
     /// </summary>
     protected override void OnStateTrue()
     {
-        animator.SetTrigger("OnTrigger");
+        animator.SetBool("IsOpen", true);
     }
 
     /// <summary>
@@ -22,6 +22,6 @@ public class GimmickCage : GimmickBase
     /// </summary>
     protected override void OnStateFalse()
     {
-
+        animator.SetBool("IsOpen", false);
     }
 }
