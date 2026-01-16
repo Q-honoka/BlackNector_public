@@ -812,7 +812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4869365982405007903, guid: b003c4fdd441a604888ed38a9d02ed14, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Child
       objectReference: {fileID: 0}
     - target: {fileID: 6223296176727084045, guid: b003c4fdd441a604888ed38a9d02ed14, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1978,6 +1978,10 @@ PrefabInstance:
       propertyPath: foundArea
       value: 
       objectReference: {fileID: 2073132670}
+    - target: {fileID: 5853342324586121034, guid: 711c6e6e5253bbb4380dc8df09a4698a, type: 3}
+      propertyPath: viewLength
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5853342324586121034, guid: 711c6e6e5253bbb4380dc8df09a4698a, type: 3}
       propertyPath: patrolPos.Array.size
       value: 2

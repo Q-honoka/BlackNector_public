@@ -91,8 +91,8 @@ public class DarknessSensor : MonoBehaviour
             if (isDarkness == true)
             {
                 entitiesInDarkness.Add(entity);
-                Debug.Log($"{entity.name}を暗闇リストに加えます");
-                Debug.Log($"暗闇にいるエンティティの数：{entitiesInDarkness.Count}");
+                //Debug.Log($"{entity.name}を暗闇リストに加えます");
+                //Debug.Log($"暗闇にいるエンティティの数：{entitiesInDarkness.Count}");
             }
         }
 
