@@ -33,7 +33,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsOpen
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6121654488980541225}
   m_Solo: 0
@@ -43,7 +46,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 1.0020204
   m_TransitionOffset: 0
   m_ExitTime: 8.1339624e-10
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -98,8 +101,8 @@ AnimatorController:
   m_Name: Cage
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: OnTrigger
-    m_Type: 9
+  - m_Name: IsOpen
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -153,7 +156,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: OnTrigger
+    m_ConditionEvent: IsOpen
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4333899438684525574}
