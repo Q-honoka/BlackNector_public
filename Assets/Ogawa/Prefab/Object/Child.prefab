@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 6440032996926063004}
   - component: {fileID: 4413778030728308796}
   - component: {fileID: 5249400361030298028}
+  - component: {fileID: 2595068213470501680}
   m_Layer: 0
   m_Name: syuzinkou
   m_TagString: Child
@@ -293,6 +294,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visible: 0
+--- !u!95 &2595068213470501680
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4869365982405007903}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 026f5f5b543692d4b848d0f450d5f0b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7816796539258653863
 GameObject:
   m_ObjectHideFlags: 0
