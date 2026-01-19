@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 4359965753582571581}
   - component: {fileID: 4725862349725561469}
   - component: {fileID: 6609486367189665260}
+  - component: {fileID: 1563636017136224860}
   m_Layer: 0
   m_Name: marionette
   m_TagString: Untagged
@@ -308,6 +309,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visible: 0
+--- !u!95 &1563636017136224860
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6226457746119043245}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b9ebef1ee05ad994b9569545c5344d7b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8229420207119653610
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3115336946487521879}
   - component: {fileID: 8834329250738154364}
   - component: {fileID: 2383674712265477858}
+  - component: {fileID: 4964519239850814457}
   m_Layer: 0
   m_Name: Scarecrow
   m_TagString: enemy
@@ -136,6 +137,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visible: 0
+--- !u!95 &4964519239850814457
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8394684719277781421}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 495b9c5d9e9a10e458dbc41f5ca8f9a3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &6290647669203705695
 PrefabInstance:
   m_ObjectHideFlags: 0
