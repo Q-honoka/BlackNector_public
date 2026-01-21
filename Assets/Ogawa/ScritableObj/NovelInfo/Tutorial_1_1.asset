@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f73c311afcbd5644587d6ae3ec0b608e, type: 3}
   m_Name: Tutorial_1_1
   m_EditorClassIdentifier: 
-  isLockedAutoPlay: 0
+  isLockedAutoPlay: 1
   novel:
   - charcter: 1
     text: "\u3069\u3046\u304B\u3057\u305F\uFF1F"
