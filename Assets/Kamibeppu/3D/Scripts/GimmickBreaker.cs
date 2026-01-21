@@ -34,6 +34,7 @@ public class GimmickBreaker : GimmickBase
             collision.awakeGimmick = false;
         }
 
+        // 最終ステージについたら
         if (isChaseStart && GameData.instance.saveSpot == SaveSpotKind.Stage8_1)
         {
             nestors.SetActive(true);
@@ -78,6 +79,7 @@ public class GimmickBreaker : GimmickBase
             foreach (var light in lights)
             {
                 light.transform.GetComponentInChildren<Animator>().SetTrigger("On");
+                nestors.SetActive(false);
             }
             pickedCount = 0;
             StartCoroutine(ToTitle());

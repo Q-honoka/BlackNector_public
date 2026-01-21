@@ -43,7 +43,7 @@ Material:
     - _Edge2: 0.8
     - _FIlterFactor: 0.304
     - _FogAmount: 0.42
-    - _FogFactor: 0.5
+    - _FogFactor: 0.3
     - _FogSpeedFactorX: 0.2
     - _FogSpeedFactorY: 0.1
     - _SceneFilterAmount: 1
