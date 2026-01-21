@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour, ICharcters
 
     const float KEY_INPUT_SPAN = 1f;      //次にキー操作を行う際のスパン
     const float MAX_SPEED_X = 2.5f;
-    const float MAX_SPEED_Y = MAX_SPEED_X / 2;
+    const float MAX_SPEED_Y = MAX_SPEED_X;
     const float GRAVITY_SPEED_Y = -5;
     const float SATY_GRAVITY = 1;
     const bool  SATY_GRAVITY_BOOL = true;
