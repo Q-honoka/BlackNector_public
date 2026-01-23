@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour, ICharcters
     [SerializeField] PlayersData player;                //playerの情報
     [SerializeField] Rigidbody rigid;                 //物理演算
     [SerializeField] CharctersState state;              //キャラクタの状態
+    [SerializeField] Animator anim;         // プレイヤーアニメーター
     private Command m_command;              // コマンドスクリプト
 
     public bool peckInput = false;          //つつくをしているかどうか

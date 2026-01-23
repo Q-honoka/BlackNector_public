@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class GimmickCage : GimmickBase
 {
-    private Animator animator;
+    private Rigidbody rigid;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody>();
     }
 
     /// <summary>
@@ -14,7 +14,7 @@ public class GimmickCage : GimmickBase
     /// </summary>
     protected override void OnStateTrue()
     {
-        animator.SetBool("IsOpen", true);
+        rigid.useGravity = true;
     }
 
     /// <summary>
@@ -22,6 +22,6 @@ public class GimmickCage : GimmickBase
     /// </summary>
     protected override void OnStateFalse()
     {
-        animator.SetBool("IsOpen", false);
+        
     }
 }
