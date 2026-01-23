@@ -1833,6 +1833,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1117086987643526473, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
   m_PrefabInstance: {fileID: 1153730133}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1799314466 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6977345273832758741, guid: aba7c0f8951627046b8f2a68db6d2216, type: 3}
+  m_PrefabInstance: {fileID: 1851394904}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1805250112 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1296058823458998886, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
@@ -1912,11 +1917,20 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7724296579101759008, guid: aba7c0f8951627046b8f2a68db6d2216, type: 3}
+      propertyPath: m_Intensity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7844050966128769649, guid: aba7c0f8951627046b8f2a68db6d2216, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8424576838679746130, guid: aba7c0f8951627046b8f2a68db6d2216, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1799314466}
+    m_RemovedComponents:
+    - {fileID: 3630257721437218796, guid: aba7c0f8951627046b8f2a68db6d2216, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3046,7 +3060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6487674519047576356, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6487674519047576356, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3054,7 +3068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6487674519047576356, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6487674519047576356, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
       propertyPath: m_LocalRotation.z
@@ -3062,7 +3076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6487674519047576356, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7189489171334163677, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
       propertyPath: m_CastShadows
@@ -3504,6 +3518,46 @@ PrefabInstance:
       propertyPath: saveSpotKind
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6350439040782356496, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
+      propertyPath: nestors
+      value: 
+      objectReference: {fileID: 2105859471}
+    - target: {fileID: 6350439040782356496, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
+      propertyPath: lights.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6350439040782356496, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
+      propertyPath: 'lights.Array.data[0]'
+      value: 
+      objectReference: {fileID: 794018027}
+    - target: {fileID: 6350439040782356496, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
+      propertyPath: 'lights.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1943449535}
+    - target: {fileID: 6350439040782356496, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
+      propertyPath: 'lights.Array.data[2]'
+      value: 
+      objectReference: {fileID: 754997582}
+    - target: {fileID: 6350439040782356496, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
+      propertyPath: 'lights.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1451728915}
+    - target: {fileID: 6350439040782356496, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
+      propertyPath: 'lights.Array.data[4]'
+      value: 
+      objectReference: {fileID: 802781932}
+    - target: {fileID: 6350439040782356496, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
+      propertyPath: 'lights.Array.data[5]'
+      value: 
+      objectReference: {fileID: 810274845}
+    - target: {fileID: 6350439040782356496, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
+      propertyPath: 'lights.Array.data[6]'
+      value: 
+      objectReference: {fileID: 32649729}
+    - target: {fileID: 6350439040782356496, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
+      propertyPath: 'lights.Array.data[7]'
+      value: 
+      objectReference: {fileID: 1022766541}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
