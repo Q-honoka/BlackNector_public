@@ -44,7 +44,7 @@ public class InputControl : MonoBehaviour
         else if (Input.GetKey(KeyCode.A)) { return (int)PlayerActions.MOVE_LEFT; }
         else if (Input.GetKey(KeyCode.S)) { return (int)PlayerActions.MOVE_DOWN; }
         else if (Input.GetKey(KeyCode.D)) { return (int)PlayerActions.MOVE_RIGHT; }
-        else if (Input.GetKey(KeyCode.Space)) { return (int)PlayerActions.ACTION_PECK; }
+        else if (Input.GetKey(KeyCode.E)) { return (int)PlayerActions.ACTION_PECK; }
         else if (Input.GetKey(KeyCode.C)) { return (int)PlayerActions.ACTION_CALL; }
         return (int)PlayerActions.NONE_PRESS_KEY;
     }

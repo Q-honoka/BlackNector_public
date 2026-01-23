@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour, ICharcters
     [SerializeField] Rigidbody rigid;                 //物理演算
     [SerializeField] CharctersState state;              //キャラクタの状態
     [SerializeField] Animator anim;         // プレイヤーアニメーター
+    [SerializeField] GameObject playerModel;// プレイヤーの見た目       
     private Command m_command;              // コマンドスクリプト
 
     public bool peckInput = false;          //つつくをしているかどうか
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour, ICharcters
     float staySpan = STAY_SPAN;
     float jumpLimit = 0;
     float stayPosY = 0;
+    float initRotY = 0;
     void Start()
     {
         player.myData.charctersInterface = this;
@@ -49,6 +51,7 @@ public class PlayerController : MonoBehaviour, ICharcters
         jumpLimit = transform.localScale.y;
 
         m_command = transform.GetComponent<Command>();
+        initRotY = playerModel.transform.rotation.eulerAngles.y;
     }
     void Update()
     {
@@ -138,6 +141,8 @@ public class PlayerController : MonoBehaviour, ICharcters
         if (!onGround) { beginGround = CheckBeingUnderGround(); }
         if ((!onGround && !jumpFlag) && rigid.useGravity != false) { rigid.useGravity = false; }
 
+        Vector3 prePos = this.gameObject.transform.position;
+
         switch (InputControl.Instance.CheckPlayerMoveKey())
         {
 
@@ -178,7 +183,7 @@ public class PlayerController : MonoBehaviour, ICharcters
             case (int)InputControl.PlayerActions.MOVE_LEFT:
                 {
                     if (rigid.linearVelocity.x <= -MAX_SPEED_X) { rigid.linearVelocity = new Vector3(-MAX_SPEED_X, 0, 0); }
-
+                    playerModel.transform.rotation = Quaternion.Euler(0, -125, 0);
                     rigid.AddForce(transform.right * -player.myData.speed);
                     break;
                 }
@@ -205,6 +210,7 @@ public class PlayerController : MonoBehaviour, ICharcters
             case (int)InputControl.PlayerActions.MOVE_RIGHT:
                 {
                     if (MAX_SPEED_X <= rigid.linearVelocity.x) { rigid.linearVelocity = new Vector3(MAX_SPEED_X, 0, 0); }
+                    playerModel.transform.rotation = Quaternion.Euler(0, 125, 0);
                     rigid.AddForce(transform.right * player.myData.speed);
                     break;
                 }
@@ -217,6 +223,7 @@ public class PlayerController : MonoBehaviour, ICharcters
                     if (0 < peckSpan) { peckInput = false; return; }
                     peckSpan = KEY_INPUT_SPAN;
                     peckInput = true;
+                    anim.SetTrigger("peck");
                     break;
                 }
 
@@ -250,7 +257,6 @@ public class PlayerController : MonoBehaviour, ICharcters
                     break;
                 }
         }
-
     }
     void ICharcters.End() { }
     /// <summary>
