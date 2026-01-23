@@ -167,7 +167,12 @@ public class EnemyVisibility : MonoBehaviour
     {
         Vector3 direction = (child.transform.position - this.transform.position).normalized;
         // è·äQï®Ç∆è’ìÀÇµÇΩÇÁ true Çï‘Ç∑
-        return Physics.Raycast(this.transform.position, direction, viewRadius, obstacleLayer);
+        bool hitObject = false;
+        hitObject = Physics.Raycast(this.transform.position, direction, viewRadius, obstacleLayer);
+        if(hitObject) return true;
+
+        hitObject = Physics.Raycast(this.transform.position, direction, viewRadius, LayerMask.GetMask("Cage"));
+        return hitObject;
     }
 
     // äpìxì‡Ç…Ç¢ÇÈÇ©í≤Ç◊ÇÈ

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3418362094675425548}
   - component: {fileID: 5181946791756574410}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collider left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4100569505776274983}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0317, y: -0.28, z: 0.0105}
+  m_LocalPosition: {x: 0.0317, y: -0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6337912073956710312}
   - component: {fileID: 5220423240537098751}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collider right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ Transform:
   m_GameObject: {fileID: 8148170343367443618}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -0.28, z: 0.0125}
+  m_LocalPosition: {x: -0.03, y: -0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
