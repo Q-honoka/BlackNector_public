@@ -102,7 +102,10 @@ public class ChildController : MonoBehaviour, ICharcters
 
         Debug.Log(rigid.linearVelocity);
         if (CharctersCommonDetas.MAX_SPEED <= rigid.linearVelocity.x) { rigid.linearVelocity = new Vector3(MAX_SPEED, 0, 0); }
-        rigid.AddForce(transform.right * child.myData.speed);
+
+        transform.Translate(transform.right * child.myData.speed * Time.deltaTime);
+        
+        //rigid.AddForce(transform.right * child.myData.speed);
     }
 
 
