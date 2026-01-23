@@ -22,7 +22,7 @@ public enum SCENE_ANIM
 
 public class SceneController : MonoBehaviour
 {
-    //private Retry retry;
+    private Retry retry;
     private GameData gameData;
 
     [SerializeField] private string[] scenes = new string[(int)SCENE.MAX];
@@ -47,6 +47,14 @@ public class SceneController : MonoBehaviour
 
     private void Start()
     {
+        if(Retry.instance != null)
+        {
+            retry = Retry.instance;
+        }
+        else
+        {
+            Debug.Log("Retryが存在しない");
+        }
 
         if (GameData.instance != null)
         {
@@ -65,14 +73,14 @@ public class SceneController : MonoBehaviour
             })
             .AddTo(this);
 
-        /*
+        
         retry.OnRetry
             .Subscribe(kind => {
                 OnRetry();
-            });*/
+            });
     }
 
-    /*
+    
     // リトライイベント受信
     public void OnRetry()
     {
@@ -80,8 +88,8 @@ public class SceneController : MonoBehaviour
         {
             return;
         }
-        SceneChange((int)gameData.saveSpot);
-    }*/
+        SceneReLoad(sceneChangeAnim).Forget();
+    }
 
     public void SceneChange(int scene)
     {

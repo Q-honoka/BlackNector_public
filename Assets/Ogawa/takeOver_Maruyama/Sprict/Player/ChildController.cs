@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor.SearchService;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 //using static UnityEngine.RuleTile.TilingRuleOutput;   // なんこれ
 
