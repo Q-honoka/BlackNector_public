@@ -91,7 +91,7 @@ public class ChildController : MonoBehaviour, ICharcters
 
     void ICharcters.Move()
     {
-        if(anim.GetBool("Walking") != true)
+        if(anim != null && anim.GetBool("Walking") != true)
         {
             anim.SetBool("Walking", true);
         }
@@ -183,7 +183,7 @@ public class ChildController : MonoBehaviour, ICharcters
     {
         if (state == CharctersState.MOVE)
         {
-            anim.SetBool("Walking", false);
+            if(anim != null) anim.SetBool("Walking", false);
             child.myData.charctersInterface.SetMyState((int)CharctersState.IDLE); 
             return; 
         }
@@ -214,7 +214,10 @@ public class ChildController : MonoBehaviour, ICharcters
     // 見つかったことを知らせる
     public void SetIsFound()
     {
-        anim.SetBool("IsCaught", true);
+        if(anim != null && anim.GetBool("IsCaught") != true)
+        {
+            anim.SetBool("IsCaught", true);
+        }
         isFound = true;
     }
 }

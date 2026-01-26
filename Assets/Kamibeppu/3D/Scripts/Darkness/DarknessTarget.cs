@@ -19,6 +19,7 @@ public class DarknessTarget : MonoBehaviour
     [SerializeField] private Image nestorPrefab;            // ネスターのPrefab
     [SerializeField] private float initializeRadius = 100f;   // ネスターと対象の距離（半径）
     [SerializeField] private int spawnedNestorCount = 10;  // ネスターの生成個数
+    [SerializeField] private Animator anim;
 
     private DarknessSensor darknessSensor;
     private DarknessEntityTracker tracker;
@@ -107,6 +108,12 @@ public class DarknessTarget : MonoBehaviour
             // ネスターを移動させる
             MoveNestors();
         }
+
+        // 見つかったアニメーションを再生
+        if(anim != null && anim.GetBool("IsCaught") != true)
+        {
+            anim.SetBool("IsCaught", true);
+        }
     }
 
     // ネスターの生成処理
@@ -188,6 +195,10 @@ public class DarknessTarget : MonoBehaviour
         }
         elapsedTime = 0f;
         radius = initializeRadius;
+        if(anim != null && anim.GetBool("IsCaught") != false)
+        {
+            anim.SetBool("IsCaught", false);
+        }
     }
 
     // 自身を消去したらセンサーのリストからも削除する

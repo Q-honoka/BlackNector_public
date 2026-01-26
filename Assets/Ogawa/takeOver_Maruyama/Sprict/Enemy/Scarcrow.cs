@@ -18,6 +18,9 @@ public class Scarcrow : MonoBehaviour, IEnemy, ICharcters
 
     [SerializeField]
     EnemyVisibility foundArea;
+    
+    [SerializeField]
+    Animator anim;
     bool found = false;
 
     private ICharcters myCharacter;
@@ -58,7 +61,8 @@ public class Scarcrow : MonoBehaviour, IEnemy, ICharcters
     void IEnemy.CatchByNector() { return; }
 
     void IEnemy.FoundPlayer() 
-    { 
+    {
+        if(anim != null) anim.SetTrigger("found");
         found = true; 
         GameObject child = GameObject.FindGameObjectWithTag("Child");
         if (child != null) child.GetComponentInParent<ChildController>().SetIsFound();
