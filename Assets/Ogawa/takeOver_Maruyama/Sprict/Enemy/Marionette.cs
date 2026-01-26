@@ -31,6 +31,8 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     [SerializeField] EnemyVisibility foundArea;
     //現在の状態
     [SerializeField] State state;
+    // アニメーター
+    [SerializeField] Animator anim;
 
     private ICharcters myCharacter;
     private IEnemy myEnemy;
@@ -120,7 +122,8 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     /// Playerを見つけた
     /// </summary>
     void IEnemy.FoundPlayer() 
-    { 
+    {
+        if (anim != null) anim.SetTrigger("found");
         foundChild = true;
         GameObject child = GameObject.FindGameObjectWithTag("Child");
         if (child != null) child.GetComponentInParent<ChildController>().SetIsFound();
@@ -140,6 +143,7 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     /// </summary>
     void Fall() 
     {
+        if (anim != null) anim.SetTrigger("StartFalling");
         rigid.isKinematic = false;
         rigid.constraints = RigidbodyConstraints.FreezePositionX;       // 真下に落ちるようにする
         rigid.useGravity = true;
@@ -154,7 +158,8 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
         transform.position = new Vector3(transform.position.x, transform.position.y, 1);
         transform.rotation = Quaternion.identity;
         foundArea.gameObject.SetActive(false);
-       
+        if (anim != null) anim.SetTrigger("EndFalling");
+
         gameObject.layer = 5;
     }
 
