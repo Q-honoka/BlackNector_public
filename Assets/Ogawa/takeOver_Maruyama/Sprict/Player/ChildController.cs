@@ -26,6 +26,7 @@ public class ChildController : MonoBehaviour, ICharcters
     [SerializeField] Rigidbody rigid;
     [SerializeField] CharctersState state;
     [SerializeField] LayerMask Obstacle;        // 障害物のレイヤー
+    [SerializeField] Animator anim;     // 子どものアニメーター
     [SerializeField] 
     EnemyData[] enemies;
      GameObject player;
@@ -90,7 +91,10 @@ public class ChildController : MonoBehaviour, ICharcters
 
     void ICharcters.Move()
     {
-
+        if(anim.GetBool("Walking") != true)
+        {
+            anim.SetBool("Walking", true);
+        }
         Collider col = GetComponent<Collider>();
         // Debug.Log(rigid.linearVelocityX);
         //インスタンスがからの場合return
@@ -177,8 +181,17 @@ public class ChildController : MonoBehaviour, ICharcters
 
     public void SetCanMove() 
     {
-        if (state == CharctersState.MOVE) { child.myData.charctersInterface.SetMyState((int)CharctersState.IDLE); return; }
-        else if (state == CharctersState.IDLE) { child.myData.charctersInterface.SetMyState((int)CharctersState.MOVE); return; }
+        if (state == CharctersState.MOVE)
+        {
+            anim.SetBool("Walking", false);
+            child.myData.charctersInterface.SetMyState((int)CharctersState.IDLE); 
+            return; 
+        }
+        else if (state == CharctersState.IDLE) 
+        {
+            child.myData.charctersInterface.SetMyState((int)CharctersState.MOVE); 
+            return; 
+        }
             
     }
 
@@ -201,6 +214,7 @@ public class ChildController : MonoBehaviour, ICharcters
     // 見つかったことを知らせる
     public void SetIsFound()
     {
+        anim.SetBool("IsCaught", true);
         isFound = true;
     }
 }
