@@ -29,6 +29,8 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     [SerializeField] LayerMask obstacleLayer;
     // 前判定に使う視野の長さ
     [SerializeField] float viewLength = 2f;
+    // アニメーター
+    [SerializeField] Animator anim;
 
     private bool foundChild = false;    // 子どもを見つけたかどうか
     private int patrolPosIndex = 0;     // 現在の巡回地点インデックス
@@ -89,6 +91,7 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     /// </summary>
     void ICharcters.Move()
     {
+        if (anim != null && anim.GetBool("Walking") != true) anim.SetBool("Walking", true);
         // 視界内に子どもがいたら FOUND 状態に遷移する
         if (foundArea.IsWithinChildInVisibility()) { myCharacter.SetMyState((int)State.FOUND); }
         // 前方に壁がある もしくは 巡回地点に到達したら Uターンする
@@ -117,7 +120,12 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     /// Playerを見つけた
     /// </summary>
     void IEnemy.FoundPlayer() 
-    { 
+    {
+        if (anim != null)
+        {
+            anim.SetBool("Walking", false);
+            anim.SetBool("found", true);
+        }
         foundChild = true;
         GameObject child = GameObject.FindGameObjectWithTag("Child");
         if (child != null) child.GetComponentInParent<ChildController>().SetIsFound();

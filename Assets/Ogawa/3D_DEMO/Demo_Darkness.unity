@@ -999,6 +999,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1655683216471870431}
     - target: {fileID: 2221540928747293975, guid: b003c4fdd441a604888ed38a9d02ed14, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1923184329}
+    - target: {fileID: 2221540928747293975, guid: b003c4fdd441a604888ed38a9d02ed14, type: 3}
       propertyPath: canvas
       value: 
       objectReference: {fileID: 9121798762320603615}
@@ -1221,6 +1225,18 @@ PrefabInstance:
     - target: {fileID: 5075300132425191636, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286606665669334433, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.46174863
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286606665669334433, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.8870109
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286606665669334433, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 6132943495769059368, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
       propertyPath: m_Enabled
