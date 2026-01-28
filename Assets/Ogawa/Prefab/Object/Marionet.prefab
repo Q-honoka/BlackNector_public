@@ -37,6 +37,7 @@ Transform:
   - {fileID: 2375241090715592981}
   - {fileID: 6717440513318450888}
   - {fileID: 9105373994203670286}
+  - {fileID: 919839989144597145}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7485837476059600699
@@ -57,7 +58,7 @@ MonoBehaviour:
   nestorPrefab: {fileID: 6556216763162163791, guid: f62867bbbe3ec5146ac727410858712f, type: 3}
   initializeRadius: 3
   spawnedNestorCount: 10
-  anim: {fileID: 7030682625109807733}
+  caughtDirector: {fileID: 0}
 --- !u!65 &4100863065861937623
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -97,6 +98,7 @@ MonoBehaviour:
   foundArea: {fileID: 3836331005150897831}
   state: 0
   anim: {fileID: 7030682625109807733}
+  FoundDirector: {fileID: 0}
 --- !u!54 &3896285273978520349
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -137,6 +139,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visible: 0
+--- !u!1 &4826752716580270370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 919839989144597145}
+  - component: {fileID: 9087746887297583686}
+  m_Layer: 0
+  m_Name: SpottedDirector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &919839989144597145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4826752716580270370}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.025, y: 0.025, z: 0.025}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4537963177039515598}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &9087746887297583686
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4826752716580270370}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: cc4fc3de8c9208e4287db397699da106, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 4842763928479896200, guid: cc4fc3de8c9208e4287db397699da106, type: 2}
+    value: {fileID: 7030682625109807733}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &8229420207119653610
 GameObject:
   m_ObjectHideFlags: 0

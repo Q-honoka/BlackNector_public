@@ -1,6 +1,7 @@
 using System;
 using UniRx;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class Marionette : MonoBehaviour, ICharcters, IEnemy
 {
@@ -33,6 +34,10 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     [SerializeField] State state;
     // アニメーター
     [SerializeField] Animator anim;
+    // 子どものアニメーター
+    [SerializeField] Animator childAnim;
+    // タイムライン
+    [SerializeField] PlayableDirector FoundDirector;
 
     private ICharcters myCharacter;
     private IEnemy myEnemy;
@@ -127,6 +132,16 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
         foundChild = true;
         GameObject child = GameObject.FindGameObjectWithTag("Child");
         if (child != null) child.GetComponentInParent<ChildController>().SetIsFound();
+
+        // タイムラインの再生
+        foreach(var output in FoundDirector.playableAsset.outputs)
+        {
+            if(output.streamName == "ChildTrack")
+            {
+                FoundDirector.SetGenericBinding(output.sourceObject, childAnim);
+            }
+        }
+        FoundDirector.Play();
     }
     /// <summary>
     /// ネスターに捕まった

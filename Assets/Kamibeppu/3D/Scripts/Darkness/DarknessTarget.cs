@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
 /*
@@ -19,7 +20,7 @@ public class DarknessTarget : MonoBehaviour
     [SerializeField] private Image nestorPrefab;            // ネスターのPrefab
     [SerializeField] private float initializeRadius = 100f;   // ネスターと対象の距離（半径）
     [SerializeField] private int spawnedNestorCount = 10;  // ネスターの生成個数
-    [SerializeField] private Animator anim;
+    [SerializeField] private PlayableDirector caughtDirector;
 
     private DarknessSensor darknessSensor;
     private DarknessEntityTracker tracker;
@@ -102,6 +103,11 @@ public class DarknessTarget : MonoBehaviour
         {
             // ネスターを生成
             SpawnNestors();
+            // 見つかったアニメーションを再生
+            if (caughtDirector != null)
+            {
+                caughtDirector.Play();
+            }
         }
         else
         {
@@ -109,11 +115,6 @@ public class DarknessTarget : MonoBehaviour
             MoveNestors();
         }
 
-        // 見つかったアニメーションを再生
-        if(anim != null && anim.GetBool("IsCaught") != true)
-        {
-            anim.SetBool("IsCaught", true);
-        }
     }
 
     // ネスターの生成処理
@@ -195,9 +196,13 @@ public class DarknessTarget : MonoBehaviour
         }
         elapsedTime = 0f;
         radius = initializeRadius;
-        if(anim != null && anim.GetBool("IsCaught") != false)
+
+        // タイムラインもリセットする
+        if (caughtDirector != null)
         {
-            anim.SetBool("IsCaught", false);
+            caughtDirector.Stop();
+            caughtDirector.time = 0;
+            caughtDirector.Evaluate();
         }
     }
 
