@@ -98,7 +98,9 @@ MonoBehaviour:
   foundArea: {fileID: 3836331005150897831}
   state: 0
   anim: {fileID: 7030682625109807733}
-  FoundDirector: {fileID: 0}
+  childAnim: {fileID: 0}
+  FoundDirector: {fileID: 9087746887297583686}
+  redFlashUI: {fileID: 0}
 --- !u!54 &3896285273978520349
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -149,6 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 919839989144597145}
   - component: {fileID: 9087746887297583686}
+  - component: {fileID: 4737479175917942652}
   m_Layer: 0
   m_Name: SpottedDirector
   m_TagString: Untagged
@@ -190,6 +193,36 @@ PlayableDirector:
     value: {fileID: 7030682625109807733}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &4737479175917942652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4826752716580270370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 9843aa853c1343543930e050b74d91d3, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5993668090502845699, guid: c55a70dd51dedce4084a7ecc026afe38, type: 3}
+          m_TargetAssemblyTypeName: Retry, Assembly-CSharp
+          m_MethodName: CallRetry
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8229420207119653610
 GameObject:
   m_ObjectHideFlags: 0

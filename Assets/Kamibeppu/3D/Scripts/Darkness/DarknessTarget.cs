@@ -20,7 +20,7 @@ public class DarknessTarget : MonoBehaviour
     [SerializeField] private Image nestorPrefab;            // ネスターのPrefab
     [SerializeField] private float initializeRadius = 100f;   // ネスターと対象の距離（半径）
     [SerializeField] private int spawnedNestorCount = 10;  // ネスターの生成個数
-    [SerializeField] private PlayableDirector caughtDirector;
+    [SerializeField] private PlayableDirector caughtDirector;   // Timelineを操作するコンポーネント
 
     private DarknessSensor darknessSensor;
     private DarknessEntityTracker tracker;

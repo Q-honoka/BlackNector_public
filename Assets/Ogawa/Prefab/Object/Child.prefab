@@ -79,7 +79,7 @@ MonoBehaviour:
   nestorPrefab: {fileID: 0}
   initializeRadius: 3
   spawnedNestorCount: 10
-  anim: {fileID: 0}
+  caughtDirector: {fileID: 0}
 --- !u!114 &7646114924289781281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,9 +357,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -2569866401294014468, guid: 55904167eec0d764381e3c2c07a5525e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4765502857965154514}
-    - targetCorrespondingSourceObject: {fileID: -2569866401294014468, guid: 55904167eec0d764381e3c2c07a5525e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8477564530406652753}
   m_SourcePrefab: {fileID: 100100000, guid: 55904167eec0d764381e3c2c07a5525e, type: 3}
 --- !u!4 &1700971951021899425 stripped
 Transform:
@@ -384,28 +381,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visible: 0
---- !u!95 &8477564530406652753
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5496548344312757942}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 026f5f5b543692d4b848d0f450d5f0b0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &5395370203911841465
 PrefabInstance:
   m_ObjectHideFlags: 0

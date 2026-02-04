@@ -116,10 +116,8 @@ public class ChildController : MonoBehaviour, ICharcters
 
     void ICharcters.End()
     {
-        //アニメーションなど
-        Retry.instance.CallRetry();
-
         //次のシーンへ移動
+        //Retry.instance.CallRetry();
         //SceneManager.LoadScene("GameOver");
     }
 

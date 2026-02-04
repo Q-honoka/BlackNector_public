@@ -20,7 +20,7 @@ public class GimmickBreaker : GimmickBase
     {
         isState = false;
         anim = GetComponent<Animator>();
-        StartCoroutine(LightOffAnimation());
+        //StartCoroutine(LightOffAnimation());
     }
 
     private void Update()

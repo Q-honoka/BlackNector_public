@@ -38,6 +38,8 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     [SerializeField] Animator childAnim;
     // タイムライン
     [SerializeField] PlayableDirector FoundDirector;
+    // 点滅UI
+    [SerializeField] GameObject redFlashUI;
 
     private ICharcters myCharacter;
     private IEnemy myEnemy;
@@ -62,6 +64,19 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
         myCharacter = this;
         myEnemy = this;
         thread = gameObject.transform.GetComponentInChildren<GimmickThread>();    // 子オブジェクトのコライダーを使用する
+
+        // Timelineにセットする
+        foreach (var output in FoundDirector.playableAsset.outputs)
+        {
+            if (output.streamName == "ChildTrack")
+            {
+                FoundDirector.SetGenericBinding(output.sourceObject, childAnim);
+            }
+            else if (output.streamName == "RedFlash")
+            {
+                FoundDirector.SetGenericBinding(output.sourceObject, redFlashUI.GetComponent<Animator>());
+            }
+        }
     }
 
     void Update()
@@ -134,13 +149,6 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
         if (child != null) child.GetComponentInParent<ChildController>().SetIsFound();
 
         // タイムラインの再生
-        foreach(var output in FoundDirector.playableAsset.outputs)
-        {
-            if(output.streamName == "ChildTrack")
-            {
-                FoundDirector.SetGenericBinding(output.sourceObject, childAnim);
-            }
-        }
         FoundDirector.Play();
     }
     /// <summary>

@@ -1,5 +1,89 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5607858091085820884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7831503224981019296}
+  - component: {fileID: 8304120461055656687}
+  - component: {fileID: 4890166867301748275}
+  m_Layer: 0
+  m_Name: SpottedDirector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7831503224981019296
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5607858091085820884}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9060676101501348261}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &8304120461055656687
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5607858091085820884}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 373a0549e01696b42bdbf1324bdf488d, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 4842763928479896200, guid: cc4fc3de8c9208e4287db397699da106, type: 2}
+    value: {fileID: 6565118448717309477}
+  - key: {fileID: 4842763928479896200, guid: 373a0549e01696b42bdbf1324bdf488d, type: 2}
+    value: {fileID: 6565118448717309477}
+  m_ExposedReferences:
+    m_References: []
+--- !u!114 &4890166867301748275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5607858091085820884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 9843aa853c1343543930e050b74d91d3, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5993668090502845699, guid: c55a70dd51dedce4084a7ecc026afe38, type: 3}
+          m_TargetAssemblyTypeName: Retry, Assembly-CSharp
+          m_MethodName: CallRetry
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8394684719277781421
 GameObject:
   m_ObjectHideFlags: 0
@@ -33,6 +117,7 @@ Transform:
   m_Children:
   - {fileID: 3733346698383165672}
   - {fileID: 1154160542000895156}
+  - {fileID: 7831503224981019296}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3115336946487521879
@@ -51,6 +136,9 @@ MonoBehaviour:
   scacrow: {fileID: 11400000, guid: 1c0b433f1303a4f4ba6a47bac4210f72, type: 2}
   foundArea: {fileID: 0}
   anim: {fileID: 6565118448717309477}
+  childAnim: {fileID: 0}
+  FoundDirector: {fileID: 8304120461055656687}
+  redFlashUI: {fileID: 0}
 --- !u!114 &8834329250738154364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +157,7 @@ MonoBehaviour:
   nestorPrefab: {fileID: 6556216763162163791, guid: f62867bbbe3ec5146ac727410858712f, type: 3}
   initializeRadius: 100
   spawnedNestorCount: 10
-  anim: {fileID: 6565118448717309477}
+  caughtDirector: {fileID: 8304120461055656687}
 --- !u!1001 &3766480949265362691
 PrefabInstance:
   m_ObjectHideFlags: 0
