@@ -20,7 +20,7 @@ public class DarknessTarget : MonoBehaviour
     [SerializeField] private Image nestorPrefab;            // ネスターのPrefab
     [SerializeField] private float initializeRadius = 100f;   // ネスターと対象の距離（半径）
     [SerializeField] private int spawnedNestorCount = 10;  // ネスターの生成個数
-    [SerializeField] private PlayableDirector caughtDirector;   // Timelineを操作するコンポーネント
+    [SerializeField] private GameOverManager gameOverManager;
 
     private DarknessSensor darknessSensor;
     private DarknessEntityTracker tracker;
@@ -51,7 +51,7 @@ public class DarknessTarget : MonoBehaviour
         // 半径の減少速度を求める [ (初期半径 - 半径の下限) / 消滅までの時間 ]
         decreaseRadius = (initializeRadius - 20f) / destroyTime;
 
-        if(cam == null) cam = Camera.main;
+        if (cam == null) cam = Camera.main;
         isEnd = false;
     }
 
@@ -72,7 +72,7 @@ public class DarknessTarget : MonoBehaviour
         // アニメーションが終わったときに自身が子どもでないなら消去する
         if (isEnd == true)
         {
-            if(!this.gameObject.CompareTag("Child"))
+            if (!this.gameObject.CompareTag("Child"))
             {
                 gameObject.SetActive(false);
             }
@@ -83,7 +83,7 @@ public class DarknessTarget : MonoBehaviour
     private void DarknessAction()
     {
         elapsedTime += Time.deltaTime;
-        
+
         // 経過時間が消滅までの時間を越していないならアニメーションを再生する
         if (elapsedTime <= destroyTime)
         {
@@ -91,7 +91,7 @@ public class DarknessTarget : MonoBehaviour
         }
         else
         {
-            if(nestorContainer != null) Destroy(nestorContainer);
+            if (nestorContainer != null) Destroy(nestorContainer);
             isEnd = true;
         }
     }
@@ -104,9 +104,10 @@ public class DarknessTarget : MonoBehaviour
             // ネスターを生成
             SpawnNestors();
             // 見つかったアニメーションを再生
-            if (caughtDirector != null)
+            if (this.gameObject.CompareTag("Child"))
             {
-                caughtDirector.Play();
+                Debug.Log("再生");
+                gameOverManager.PlayDarknessGameOver();
             }
         }
         else
@@ -121,7 +122,7 @@ public class DarknessTarget : MonoBehaviour
     private void SpawnNestors()
     {
         // ネスターUIを入れるコンテナオブジェクトを生成
-        if(nestorContainer != null) Destroy(nestorContainer);
+        if (nestorContainer != null) Destroy(nestorContainer);
 
         nestorContainer = new GameObject($"{this.gameObject.name}_nestors");
         nestorContainer.transform.SetParent(canvas, false);
@@ -152,9 +153,9 @@ public class DarknessTarget : MonoBehaviour
         radius -= decreaseRadius * Time.deltaTime;
         radius = Mathf.Max(radius, 1f);         // 半径が1を下回らないように制御
 
-        for (int i = 0; i < nestors.Count;i++)
+        for (int i = 0; i < nestors.Count; i++)
         {
-            if(nestors[i] == null) continue;
+            if (nestors[i] == null) continue;
 
             if (nestors[i].enabled == false) nestors[i].enabled = true;
             SetNestor(nestors[i], screenPos, angles[i], radius);
@@ -192,24 +193,22 @@ public class DarknessTarget : MonoBehaviour
         // それまで出現していたネスターを非表示にする
         foreach (var nestor in nestors)
         {
-            if(nestor != null) nestor.enabled = false;
+            if (nestor != null) nestor.enabled = false;
         }
+        nestors.Clear();
+        angles.Clear();
+
         elapsedTime = 0f;
         radius = initializeRadius;
 
-        // タイムラインもリセットする
-        if (caughtDirector != null)
-        {
-            caughtDirector.Stop();
-            caughtDirector.time = 0;
-            caughtDirector.Evaluate();
-        }
+        // タイムラインを止める
+        //GameObject.FindAnyObjectByType<GameOverManager>().StopDarknessGameOver();
     }
 
     // 自身を消去したらセンサーのリストからも削除する
     private void OnDestroy()
     {
-        if(nestorContainer != null) Destroy(nestorContainer);
+        if (nestorContainer != null) Destroy(nestorContainer);
         NotifyEntityStateChanged();
     }
 

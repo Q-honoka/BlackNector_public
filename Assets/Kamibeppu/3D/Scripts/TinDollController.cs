@@ -32,12 +32,6 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     [SerializeField] float viewLength = 2f;
     // アニメーター
     [SerializeField] Animator anim;
-    // 子どものアニメーター
-    [SerializeField] Animator childAnim;
-    // タイムライン
-    [SerializeField] PlayableDirector FoundDirector;
-    // 点滅UI
-    [SerializeField] GameObject redFlashUI;
 
     private bool foundChild = false;    // 子どもを見つけたかどうか
     private int patrolPosIndex = 0;     // 現在の巡回地点インデックス
@@ -50,19 +44,6 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     {
         myCharacter = this;
         myEnemy = this;
-
-        // Timelineにセットする
-        foreach (var output in FoundDirector.playableAsset.outputs)
-        {
-            if (output.streamName == "ChildTrack")
-            {
-                FoundDirector.SetGenericBinding(output.sourceObject, childAnim);
-            }
-            else if (output.streamName == "RedFlash")
-            {
-                FoundDirector.SetGenericBinding(output.sourceObject, redFlashUI.GetComponent<Animator>());
-            }
-        }
     }
 
     void Update()
@@ -150,7 +131,7 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
         if (child != null) child.GetComponentInParent<ChildController>().SetIsFound();
 
         // タイムラインの再生
-        FoundDirector.Play();
+        GameObject.FindAnyObjectByType<GameOverManager>().PlayEnemyGameOver(2, anim);
     }
     /// <summary>
     /// playerの捜索状態を共有

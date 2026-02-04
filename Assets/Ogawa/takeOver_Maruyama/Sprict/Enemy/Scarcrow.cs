@@ -24,13 +24,6 @@ public class Scarcrow : MonoBehaviour, IEnemy, ICharcters
     Animator anim;
     bool found = false;
 
-    // 子どものアニメーター
-    [SerializeField] Animator childAnim;
-    // タイムライン
-    [SerializeField] PlayableDirector FoundDirector;
-    // 点滅UI
-    [SerializeField] GameObject redFlashUI;
-
     private ICharcters myCharacter;
     private IEnemy myEnemy;
     void Start()
@@ -38,19 +31,6 @@ public class Scarcrow : MonoBehaviour, IEnemy, ICharcters
         myCharacter = this;
         myEnemy = this;
         foundArea = this.transform.GetComponentInChildren<EnemyVisibility>();
-
-        // Timelineにセットする
-        foreach (var output in FoundDirector.playableAsset.outputs)
-        {
-            if (output.streamName == "ChildTrack")
-            {
-                FoundDirector.SetGenericBinding(output.sourceObject, childAnim);
-            }
-            else if (output.streamName == "RedFlash")
-            {
-                FoundDirector.SetGenericBinding(output.sourceObject, redFlashUI.GetComponent<Animator>());
-            }
-        }
     }
 
     void Update()  { myCharacter.State(); }
@@ -89,7 +69,7 @@ public class Scarcrow : MonoBehaviour, IEnemy, ICharcters
         if (child != null) child.GetComponentInParent<ChildController>().SetIsFound();
 
         // タイムラインの再生
-        FoundDirector.Play();
+        GameObject.FindAnyObjectByType<GameOverManager>().PlayEnemyGameOver(0, anim);
     }
 
     bool IEnemy.GetFoundPlayer() { return found; }
