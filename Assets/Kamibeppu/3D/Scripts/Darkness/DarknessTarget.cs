@@ -106,7 +106,6 @@ public class DarknessTarget : MonoBehaviour
             // 見つかったアニメーションを再生
             if (this.gameObject.CompareTag("Child"))
             {
-                Debug.Log("再生");
                 gameOverManager.PlayDarknessGameOver();
             }
         }

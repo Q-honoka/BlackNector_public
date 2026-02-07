@@ -1195,6 +1195,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1709425795}
     - target: {fileID: 2221540928747293975, guid: b003c4fdd441a604888ed38a9d02ed14, type: 3}
+      propertyPath: gameOverManager
+      value: 
+      objectReference: {fileID: 1743538803}
+    - target: {fileID: 2221540928747293975, guid: b003c4fdd441a604888ed38a9d02ed14, type: 3}
       propertyPath: initializeRadius
       value: 100
       objectReference: {fileID: 0}
