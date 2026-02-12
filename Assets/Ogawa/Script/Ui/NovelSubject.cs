@@ -3,6 +3,7 @@ using UniRx;
 using System;
 using static UnityEngine.InputManagerEntry;
 using Cysharp.Threading.Tasks;
+using RaruLib;
 
 public enum NOVEL_KIND  // ノベルパートの種類
 {
@@ -97,7 +98,8 @@ public class NovelSubject : MonoBehaviour
     // ノベルが終了した
     public IObservable<Unit> OnFinishedNovel
     {
-        get { return novelFinishedSubject; }
+        get
+        {   return novelFinishedSubject;  }
     }
     /**************************/
     
@@ -128,12 +130,11 @@ public class NovelSubject : MonoBehaviour
     // ノベルを進める
     public void Next()
     {
-        if(currentAssetsID + 1 >= novelData[(int)playingNovel].novel.Length)
+        if (currentAssetsID + 1 >= novelData[(int)playingNovel].novel.Length)
         {
             Stop();
             return;
         }
-
         currentAssetsID++;
         novelAssetsSubject.OnNext(novelData[(int)playingNovel].novel[currentAssetsID]);
     }

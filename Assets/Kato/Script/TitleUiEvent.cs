@@ -2,7 +2,7 @@ using RaruLib;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UiEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class TitleUiEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private Sound _sound => Sound.instance;
 
@@ -25,5 +25,8 @@ public class UiEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
     {
         // ƒNƒŠƒbƒN‚³‚ê‚½
         _sound.Play("SE", "Cursor_click");
+        _sound.Stop("BGM","Title_BGM");
+        _sound.Play("SE", "Wind");
+        _sound.Play("BGM", "Game_BGM");
     }
 }
