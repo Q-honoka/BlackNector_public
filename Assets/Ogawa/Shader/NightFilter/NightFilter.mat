@@ -43,7 +43,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Brightness: 1
-    - _FilterAmount: -5
+    - _FilterAmount: -1.8
     - _QueueControl: 0
     - _QueueOffset: 0
     - _timeFactorX: 0.3
