@@ -9,6 +9,24 @@ public class GameOverManager : MonoBehaviour
     [Header("暗闇のタイムライン")]
     public PlayableDirector darknessTimeline;
 
+    [Header("終了で表示する一枚絵")]
+    public GameObject EndImage;
+
+    private bool isEnd = false;
+
+    private void Update()
+    {
+        if(isEnd)
+        {
+            if(Input.anyKeyDown)
+            {
+                isEnd = false;
+                EndImage.SetActive(false);
+                SceneController.instance.SceneChange(0);
+            }
+        }
+    }
+
     // 敵に見つかった演出
     public void PlayEnemyGameOver(int enemyType, Animator spottedEnemyAnimator)
     {
@@ -44,5 +62,13 @@ public class GameOverManager : MonoBehaviour
     public void RetrySignal()
     {
         Retry.instance.CallRetry();
+    }
+
+
+    // エンド画面の表示
+    public void ShowEnd()
+    {
+        EndImage.SetActive(true);
+        isEnd = true;
     }
 }
