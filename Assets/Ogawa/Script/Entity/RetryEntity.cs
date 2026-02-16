@@ -1,9 +1,11 @@
 using UnityEngine;
 using UniRx;
+using RaruLib;
 
 public class RetryEntity : MonoBehaviour
 {
     protected Retry retry;
+    private Sound _sound => Sound.instance;
 
     [SerializeField] protected Vector3[] retrySpot = new Vector3[(int)SaveSpotKind.MAX];
 
@@ -34,7 +36,8 @@ public class RetryEntity : MonoBehaviour
         {
             Debug.Log("プレイヤー位置リセット失敗。ゲームデータがない", gameObject);
         }
-
+        _sound.Stop("SE","WhiteNoise");
+        _sound.Stop("SE", "Warning");
         transform.position = retrySpot[(int)GameData.instance.saveSpot];
     }
 }

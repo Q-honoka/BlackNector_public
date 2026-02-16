@@ -1,3 +1,4 @@
+using RaruLib;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -26,6 +27,7 @@ public class Scarcrow : MonoBehaviour, IEnemy, ICharcters
 
     private ICharcters myCharacter;
     private IEnemy myEnemy;
+    private Sound _sound => Sound.instance;
     void Start()
     {
         myCharacter = this;
@@ -63,8 +65,13 @@ public class Scarcrow : MonoBehaviour, IEnemy, ICharcters
 
     void IEnemy.FoundPlayer() 
     {
-        if(anim != null) anim.SetTrigger("found");
-        found = true; 
+        if (anim != null) anim.SetTrigger("found");
+        if (!found)
+        {
+            _sound.Play("SE", "Marionette_caveat");
+            _sound.Play("SE","Warning");
+        }
+            found = true; 
         GameObject child = GameObject.FindGameObjectWithTag("Child");
         if (child != null) child.GetComponentInParent<ChildController>().SetIsFound();
 

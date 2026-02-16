@@ -1,3 +1,4 @@
+using RaruLib;
 using System;
 using UniRx;
 using UnityEngine;
@@ -34,7 +35,7 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     [SerializeField] State state;
     // アニメーター
     [SerializeField] Animator anim;
-
+    private Sound _sound => Sound.instance;
     private ICharcters myCharacter;
     private IEnemy myEnemy;
 
@@ -77,6 +78,7 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
                 break;
 
             case State.FOUND:
+                _sound.Play("SE","Marionette_caveat");
                 myEnemy.FoundPlayer();
                 break;
 
@@ -147,6 +149,7 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     /// </summary>
     void Fall() 
     {
+        _sound.Play("SE", "Marionette_fall");
         if (anim != null) anim.SetTrigger("StartFalling");
         rigid.isKinematic = false;
         rigid.constraints = RigidbodyConstraints.FreezePositionX;       // 真下に落ちるようにする

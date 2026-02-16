@@ -1,4 +1,5 @@
-﻿using UnityEditor.SearchService;
+﻿using RaruLib;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 //using static UnityEngine.RuleTile.TilingRuleOutput;   // なんこれ
@@ -33,6 +34,7 @@ public class ChildController : MonoBehaviour, ICharcters
 
     float childToWallDistance;
     bool isFound = false;       // 敵に見つかったフラグ
+    private Sound _sound => Sound.instance;
     void Start()
     {
         child.myData.charctersInterface = this;
@@ -144,7 +146,7 @@ public class ChildController : MonoBehaviour, ICharcters
 
 
         //障害物に当たったかを確認
-        if (!isHit/* || hit.collider.gameObject.layer != 3*/) { Debug.Log("当たらなかった"); return false; }
+        if (!isHit/* || hit.collider.gameObject.layer != 3*/) { /*Debug.Log("当たらなかった");*/ return false; }
 
         Debug.Log("当たった");
 
@@ -216,6 +218,7 @@ public class ChildController : MonoBehaviour, ICharcters
         {
             anim.SetBool("IsCaught", true);
         }
+        if (!isFound) _sound.Play("SE","WhiteNoise");
         isFound = true;
     }
 }

@@ -1,3 +1,4 @@
+using RaruLib;
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -43,6 +44,8 @@ public class PlayerController : MonoBehaviour, ICharcters
     float jumpLimit = 0;
     float stayPosY = 0;
     float initRotY = 0;
+    private Sound _sound => Sound.instance;
+
     void Start()
     {
         player.myData.charctersInterface = this;
@@ -220,6 +223,7 @@ public class PlayerController : MonoBehaviour, ICharcters
             //‚Â‚Â‚­
             case (int)InputControl.PlayerActions.ACTION_PECK:
                 {
+                    _sound.Play("SE", "Peck");
                     if (0 < peckSpan) { peckInput = false; return; }
                     peckSpan = KEY_INPUT_SPAN;
                     peckInput = true;
