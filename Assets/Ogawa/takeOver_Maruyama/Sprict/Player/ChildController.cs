@@ -34,9 +34,12 @@ public class ChildController : MonoBehaviour, ICharcters
 
     float childToWallDistance;
     bool isFound = false;       // 敵に見つかったフラグ
+    // 歩く音のSE管理用フラグ
+    bool isWalk = false;    // ステートがIDLEとWALKで移行したか？
     private Sound _sound => Sound.instance;
     void Start()
     {
+        isWalk = false;
         child.myData.charctersInterface = this;
         transform.position = child.myData.pos;
         player = GameObject.FindWithTag("Player");
@@ -87,6 +90,12 @@ public class ChildController : MonoBehaviour, ICharcters
     void ICharcters.Idle()
     {
         if (0 < rigid.linearVelocity.x) { rigid.linearVelocity -= new Vector3(Time.deltaTime, 0, 0); }
+        // SEの切り替え処理。MoveからIdleへ移行
+        if (isWalk)
+        {
+            _sound.Stop("SE", "Walk_child");
+            isWalk = false;
+        }
     }
 
 
@@ -96,6 +105,11 @@ public class ChildController : MonoBehaviour, ICharcters
         if(anim != null && anim.GetBool("Walking") != true)
         {
             anim.SetBool("Walking", true);
+        }
+        if (!isWalk)
+        {
+            _sound.Play("SE", "Walk_child");
+            isWalk = true;
         }
         Collider col = GetComponent<Collider>();
         // Debug.Log(rigid.linearVelocityX);
@@ -115,20 +129,12 @@ public class ChildController : MonoBehaviour, ICharcters
     }
 
 
-
     void ICharcters.End()
     {
         //次のシーンへ移動
         //Retry.instance.CallRetry();
         //SceneManager.LoadScene("GameOver");
     }
-
-
-
-
-
-
-
 
     bool CheckFront()
     {
@@ -218,7 +224,7 @@ public class ChildController : MonoBehaviour, ICharcters
         {
             anim.SetBool("IsCaught", true);
         }
-        if (!isFound) _sound.Play("SE","WhiteNoise");
+        if (!isFound) _sound.Play("SE","Whitenoise");
         isFound = true;
     }
 }

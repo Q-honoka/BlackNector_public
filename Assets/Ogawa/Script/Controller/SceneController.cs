@@ -5,6 +5,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine.UI;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 using DG.Tweening;
+using RaruLib;
 
 public enum SCENE
 {
@@ -31,7 +32,7 @@ public class SceneController : MonoBehaviour
     [SerializeField] private float animationDuration;
 
     public static SceneController instance;
-
+    private Sound _sound => Sound.instance;
     private void Awake()
     {
         if (instance == null)
@@ -93,6 +94,7 @@ public class SceneController : MonoBehaviour
 
     public void SceneChange(int scene)
     {
+
         SceneManager.LoadScene(scenes[scene]);
     }
 
@@ -155,7 +157,6 @@ public class SceneController : MonoBehaviour
         await PanelAnimationStart(anim);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
         await PanelAnimationEnd(anim);
     }
 

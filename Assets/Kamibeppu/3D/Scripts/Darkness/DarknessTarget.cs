@@ -1,3 +1,4 @@
+using RaruLib;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -32,6 +33,7 @@ public class DarknessTarget : MonoBehaviour
     private float decreaseRadius;           // 減らす半径
     private GameObject nestorContainer;     // ネスターUIを管理する親オブジェクト
     private bool isEnd;           // アニメーションが終わったかどうか
+    private Sound _sound => Sound.instance;
 
     // アニメーションが終わったかどうかを返す
     public bool GetIsEnd()
@@ -75,6 +77,12 @@ public class DarknessTarget : MonoBehaviour
             if (!this.gameObject.CompareTag("Child"))
             {
                 gameObject.SetActive(false);
+                if (isInsideCamera)
+                {
+                    _sound.Play("SE", "Boone");
+                    _sound.Stop("SE","Enemy_Badfeeling");
+                    _sound.Stop("SE","Walk_marionette");
+                }
             }
         }
     }
@@ -107,6 +115,13 @@ public class DarknessTarget : MonoBehaviour
             if (this.gameObject.CompareTag("Child"))
             {
                 gameOverManager.PlayDarknessGameOver();
+            }else
+            {
+                bool isInsideCamera = this.gameObject.transform.GetComponentInChildren<CameraVisible>().visible;
+                if (isInsideCamera && !_sound.IsPlaying("SE", "Enemy_Badfeeling")) 
+                {
+                    _sound.Play("SE","Enemy_Badfeeling");
+                }
             }
         }
         else
@@ -142,6 +157,7 @@ public class DarknessTarget : MonoBehaviour
             nestors.Add(spawned);
             angles.Add(radAngle);
         }
+
     }
 
     // ネスターの移動処理
@@ -167,6 +183,11 @@ public class DarknessTarget : MonoBehaviour
             {
                 nestor.enabled = true;
             }
+        }
+        bool isInsideCamera = this.gameObject.transform.GetComponentInChildren<CameraVisible>().visible;
+        if (isInsideCamera && !_sound.IsPlaying("SE", "Enemy_Badfeeling"))
+        {
+            _sound.Play("SE","Enemy_Badfeeling");
         }
     }
 

@@ -36,8 +36,14 @@ public class RetryEntity : MonoBehaviour
         {
             Debug.Log("プレイヤー位置リセット失敗。ゲームデータがない", gameObject);
         }
-        _sound.Stop("SE","WhiteNoise");
+        _sound.Stop("SE","Whitenoise");
         _sound.Stop("SE", "Warning");
+        _sound.Stop("SE","Walk_child");
+        _sound.Stop("SE", "Badfeeling");
+        _sound.Stop("SE", "Rumble");
+        _sound.Stop("SE","Enemy_Badfeeling");
+        _sound.Stop("SE", "Walk_marionette");
+
         transform.position = retrySpot[(int)GameData.instance.saveSpot];
     }
 }

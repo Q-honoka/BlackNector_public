@@ -1,3 +1,4 @@
+using RaruLib;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -39,7 +40,7 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
 
     private ICharcters myCharacter;
     private IEnemy myEnemy;
-
+    private Sound _sound => Sound.instance;
     private void Start()
     {
         myCharacter = this;
@@ -86,12 +87,25 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     /// <summary>
     /// 停止状態
     /// </summary>
-    void ICharcters.Idle() { }
+    void ICharcters.Idle() {
+        bool isInsideCamera = this.gameObject.transform.GetComponentInChildren<CameraVisible>().visible;
+        if (_sound.IsPlaying("SE", "Walk_marionette")&& isInsideCamera)
+        {
+            _sound.Stop("SE","Walk_marionette");
+        }
+    }
     /// <summary>
     /// 巡回中
     /// </summary>
     void ICharcters.Move()
     {
+        bool isInsideCamera = this.gameObject.transform.GetComponentInChildren<CameraVisible>().visible;
+        Debug.Log(isInsideCamera);
+        if ((!_sound.IsPlaying("SE", "Walk_marionette")) && (isInsideCamera))
+        {
+            _sound.Play("SE","Walk_marionette");
+            Debug.Log("Walk_marionetteが再生されました");
+        }
         if (anim != null && anim.GetBool("Walking") != true) anim.SetBool("Walking", true);
         // 視界内に子どもがいたら FOUND 状態に遷移する
         if (foundArea.IsWithinChildInVisibility()) { myCharacter.SetMyState((int)State.FOUND); }

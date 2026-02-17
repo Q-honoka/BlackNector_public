@@ -70,6 +70,7 @@ public class Scarcrow : MonoBehaviour, IEnemy, ICharcters
         {
             _sound.Play("SE", "Marionette_caveat");
             _sound.Play("SE","Warning");
+            _sound.Play("SE", "Whitenoise");
         }
             found = true; 
         GameObject child = GameObject.FindGameObjectWithTag("Child");

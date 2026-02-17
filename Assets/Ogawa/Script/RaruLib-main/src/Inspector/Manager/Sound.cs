@@ -143,5 +143,19 @@ namespace RaruLib
 
             groupDict[groupName].soundDict[soundName].Stop();
         }
+
+        /***************************************************************
+        * Ä¶ó‘Ôæ“¾
+        ***************************************************************/
+        public bool IsPlaying(string groupName, string soundName)
+        {
+            if (!groupDict.ContainsKey(groupName))
+            { Debug.Log($"{groupName}‚Í‘¶İ‚µ‚È‚¢ƒJƒeƒSƒŠ‚Å‚·"); return false; }
+
+            if (!groupDict[groupName].soundDict.ContainsKey(soundName))
+            { Debug.Log($"{soundName}‚Í‘¶İ‚µ‚È‚¢‰¹Œ¹–¼‚Å‚·"); return false; }
+
+            return groupDict[groupName].soundDict[soundName].isPlaying;
+        }
     }
 }

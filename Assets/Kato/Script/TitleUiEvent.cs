@@ -26,7 +26,7 @@ public class TitleUiEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         // ƒNƒŠƒbƒN‚³‚ê‚½
         _sound.Play("SE", "Cursor_click");
         _sound.Stop("BGM","Title_BGM");
-        _sound.Play("SE", "Wind");
+        _sound.Play("BGM", "Wind");
         _sound.Play("BGM", "Game_BGM");
     }
 }

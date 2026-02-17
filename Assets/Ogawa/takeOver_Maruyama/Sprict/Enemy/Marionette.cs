@@ -78,7 +78,6 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
                 break;
 
             case State.FOUND:
-                _sound.Play("SE","Marionette_caveat");
                 myEnemy.FoundPlayer();
                 break;
 
@@ -127,6 +126,12 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     void IEnemy.FoundPlayer() 
     {
         if (anim != null) anim.SetTrigger("found");
+        if (!foundChild)
+        {
+            _sound.Play("SE", "Marionette_caveat");
+            _sound.Play("SE", "Warning");
+            _sound.Play("SE", "Whitenoise");
+        }
         foundChild = true;
         GameObject child = GameObject.FindGameObjectWithTag("Child");
         if (child != null) child.GetComponentInParent<ChildController>().SetIsFound();
