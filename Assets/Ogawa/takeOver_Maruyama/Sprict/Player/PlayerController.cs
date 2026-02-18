@@ -223,11 +223,12 @@ public class PlayerController : MonoBehaviour, ICharcters
             //‚Â‚Â‚­
             case (int)InputControl.PlayerActions.ACTION_PECK:
                 {
-                    _sound.Play("SE", "Peck");
                     if (0 < peckSpan) { peckInput = false; return; }
+
                     peckSpan = KEY_INPUT_SPAN;
                     peckInput = true;
                     anim.SetTrigger("peck");
+                    _sound.Play("SE", "Peck");
                     break;
                 }
 

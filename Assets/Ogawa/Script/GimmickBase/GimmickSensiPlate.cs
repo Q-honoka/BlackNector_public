@@ -1,9 +1,11 @@
+using RaruLib;
 using UnityEngine;
 
 public class GimmickSensiPlate : GimmickBase
 {
     private Animator anim;
     private Collider target;    // 感圧板を踏んでいるコライダー
+    private Sound _sound => Sound.instance;
 
     private void Start()
     {
@@ -15,6 +17,16 @@ public class GimmickSensiPlate : GimmickBase
     /// </summary>
     protected override void OnStateTrue()
     {
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
+        bool isInside =
+            viewPos.z > 0 &&
+            viewPos.x > 0 && viewPos.x < 1 &&
+            viewPos.y > 0 && viewPos.y < 1;
+        if (isInside)
+        {
+            _sound.Play("SE", "Plate");
+        }
+
         anim.SetBool("IsPushed", true);
 
         // true にしたときに起動したいギミックの State を true にする
@@ -36,6 +48,15 @@ public class GimmickSensiPlate : GimmickBase
     /// </summary>
     protected override void OnStateFalse()
     {
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
+        bool isInside =
+            viewPos.z > 0 &&
+            viewPos.x > 0 && viewPos.x < 1 &&
+            viewPos.y > 0 && viewPos.y < 1;
+        if (isInside)
+        {
+            _sound.Play("SE", "Plate");
+        }
         anim.SetBool("IsPushed", false);
 
         // false にしたときに停止したいギミックの State を false にする

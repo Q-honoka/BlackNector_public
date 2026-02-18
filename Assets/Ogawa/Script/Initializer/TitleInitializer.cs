@@ -20,7 +20,6 @@ public class TitleInitializer : MonoBehaviour
             Sound.instance.Stop("SE", "Warning");
             Sound.instance.Stop("SE", "Marionette_caveat");
             Sound.instance.Stop("SE", "Rumble");
-            Sound.instance.Stop("SE", "Walk_marionette");
             Sound.instance.Stop("SE", "Enemy_Badfeeling");
         }
     }

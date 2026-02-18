@@ -1,16 +1,13 @@
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
-public class GimmickElectric : GimmickBase
+public class GimmickElectric_stage6 : GimmickBase
 {
     private GameObject Light;    // ライトオブジェクト
-    [SerializeField] bool isOn;
     private void Start()
     {
         Light = this.GetComponentInChildren<Light>().gameObject;
         if (Light == null) { Debug.LogWarning($"{this.name}: ライトオブジェクトがない"); }
-
-        Light.SetActive(isOn);
+        Light.SetActive( true );
     }
 
     /// <summary>
@@ -18,8 +15,7 @@ public class GimmickElectric : GimmickBase
     /// </summary>
     protected override void OnStateTrue()
     {
-        isOn = !isOn;
-        Light.SetActive(isOn);
+        Light.SetActive(false);
     }
 
     /// <summary>
@@ -27,7 +23,6 @@ public class GimmickElectric : GimmickBase
     /// </summary>
     protected override void OnStateFalse()
     {
-        isOn = !isOn;
-        Light.SetActive(isOn);
+        Light.SetActive(true);
     }
 }

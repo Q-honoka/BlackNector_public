@@ -34,7 +34,7 @@ public class DarknessTarget : MonoBehaviour
     private GameObject nestorContainer;     // ネスターUIを管理する親オブジェクト
     private bool isEnd;           // アニメーションが終わったかどうか
     private Sound _sound => Sound.instance;
-
+    bool isInsideCamera;
     // アニメーションが終わったかどうかを返す
     public bool GetIsEnd()
     {
@@ -55,13 +55,16 @@ public class DarknessTarget : MonoBehaviour
 
         if (cam == null) cam = Camera.main;
         isEnd = false;
+        isInsideCamera = false;
     }
 
     private void Update()
     {
         // カメラの範囲内 かつ 暗闇にいる場合はアニメーションをする
         bool isInDark = darknessSensor.GetSelfIsDarkness(this);
-        bool isInsideCamera = this.gameObject.transform.GetComponentInChildren<CameraVisible>().visible;
+        isInsideCamera = this.gameObject.transform.GetComponentInChildren<CameraVisible>().visible;
+
+
         if (isInsideCamera == true && isInDark == true)
         {
             DarknessAction();
@@ -77,11 +80,17 @@ public class DarknessTarget : MonoBehaviour
             if (!this.gameObject.CompareTag("Child"))
             {
                 gameObject.SetActive(false);
-                if (isInsideCamera)
+                // なんかisInsideCameraのフラグが機能してない？ので応急処置としてフラグを追加しました。
+                Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
+                bool isInside =
+                    viewPos.z > 0 &&
+                    viewPos.x > 0 && viewPos.x < 1 &&
+                    viewPos.y > 0 && viewPos.y < 1;
+
+                if (isInside)
                 {
                     _sound.Play("SE", "Boone");
                     _sound.Stop("SE","Enemy_Badfeeling");
-                    _sound.Stop("SE","Walk_marionette");
                 }
             }
         }
@@ -117,8 +126,12 @@ public class DarknessTarget : MonoBehaviour
                 gameOverManager.PlayDarknessGameOver();
             }else
             {
-                bool isInsideCamera = this.gameObject.transform.GetComponentInChildren<CameraVisible>().visible;
-                if (isInsideCamera && !_sound.IsPlaying("SE", "Enemy_Badfeeling")) 
+                Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
+                bool isInside =
+                    viewPos.z > 0 &&
+                    viewPos.x > 0 && viewPos.x < 1 &&
+                    viewPos.y > 0 && viewPos.y < 1;
+                if (isInside)
                 {
                     _sound.Play("SE","Enemy_Badfeeling");
                 }
@@ -183,11 +196,7 @@ public class DarknessTarget : MonoBehaviour
             {
                 nestor.enabled = true;
             }
-        }
-        bool isInsideCamera = this.gameObject.transform.GetComponentInChildren<CameraVisible>().visible;
-        if (isInsideCamera && !_sound.IsPlaying("SE", "Enemy_Badfeeling"))
-        {
-            _sound.Play("SE","Enemy_Badfeeling");
+            
         }
     }
 

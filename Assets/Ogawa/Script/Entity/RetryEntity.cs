@@ -41,8 +41,6 @@ public class RetryEntity : MonoBehaviour
         _sound.Stop("SE","Walk_child");
         _sound.Stop("SE", "Badfeeling");
         _sound.Stop("SE", "Rumble");
-        _sound.Stop("SE","Enemy_Badfeeling");
-        _sound.Stop("SE", "Walk_marionette");
 
         transform.position = retrySpot[(int)GameData.instance.saveSpot];
     }
