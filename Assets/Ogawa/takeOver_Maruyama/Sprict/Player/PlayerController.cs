@@ -1,7 +1,9 @@
+using Cysharp.Threading.Tasks;
 using RaruLib;
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UniRx;
 
 [RequireComponent(typeof(Command))]
 public class PlayerController : MonoBehaviour, ICharcters
@@ -44,6 +46,7 @@ public class PlayerController : MonoBehaviour, ICharcters
     float jumpLimit = 0;
     float stayPosY = 0;
     float initRotY = 0;
+    bool isStart = false;
     private Sound _sound => Sound.instance;
 
     void Start()
@@ -55,9 +58,17 @@ public class PlayerController : MonoBehaviour, ICharcters
 
         m_command = transform.GetComponent<Command>();
         initRotY = playerModel.transform.rotation.eulerAngles.y;
+
+        NovelSubject.instance.OnFinishedNovel
+            .Subscribe(kind => 
+            {
+                isStart = true;
+            })
+            .AddTo(this);
     }
     void Update()
     {
+        if (!isStart) return;
         //playerˆ—ŠJn
         player.myData.charctersInterface.State();
     }
