@@ -231,7 +231,10 @@ public class DarknessTarget : MonoBehaviour
         radius = initializeRadius;
 
         // タイムラインを止める
-        //GameObject.FindAnyObjectByType<GameOverManager>().StopDarknessGameOver();
+        if (gameOverManager != null)
+        {
+            gameOverManager.StopDarknessGameOver();
+        }
     }
 
     // 自身を消去したらセンサーのリストからも削除する
