@@ -1,3 +1,4 @@
+using RaruLib;
 using System;
 using UniRx;
 using UnityEngine;
@@ -34,7 +35,7 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     [SerializeField] State state;
     // アニメーター
     [SerializeField] Animator anim;
-
+    private Sound _sound => Sound.instance;
     private ICharcters myCharacter;
     private IEnemy myEnemy;
 
@@ -125,6 +126,12 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     void IEnemy.FoundPlayer() 
     {
         if (anim != null) anim.SetTrigger("found");
+        if (!foundChild)
+        {
+            _sound.Play("SE", "Marionette_caveat");
+            _sound.Play("SE", "Warning");
+            _sound.Play("SE", "Whitenoise");
+        }
         foundChild = true;
         GameObject child = GameObject.FindGameObjectWithTag("Child");
         if (child != null) child.GetComponentInParent<ChildController>().SetIsFound();
@@ -147,6 +154,7 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
     /// </summary>
     void Fall() 
     {
+        _sound.Play("SE", "Marionette_fall");
         if (anim != null) anim.SetTrigger("StartFalling");
         rigid.isKinematic = false;
         rigid.constraints = RigidbodyConstraints.FreezePositionX;       // 真下に落ちるようにする

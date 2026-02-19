@@ -1,3 +1,4 @@
+using RaruLib;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -10,6 +11,7 @@ public class GimmickBreaker : GimmickBase
     [SerializeField]
     PlayableDirector endFinalDirector;
     private Animator anim;
+    private Sound _sound => Sound.instance;
 
     int pickedCount = 0;
 
@@ -43,7 +45,11 @@ public class GimmickBreaker : GimmickBase
         // 3‰ñ‚Â‚Â‚¢‚½‚çƒ‰ƒCƒg‚ð‚Â‚¯‚é
         if (pickedCount == 3)
         {
+            _sound.Play("SE", "Breaker_finish");
             endFinalDirector.Play();
+        }else
+        {
+            _sound.Play("SE","Breaker_middle");
         }
     }
 

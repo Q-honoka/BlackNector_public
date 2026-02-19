@@ -1994,7 +1994,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7535122262080681435}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Command, Assembly-CSharp
         m_MethodName: LogOutForGame
         m_Mode: 1
@@ -3867,8 +3867,8 @@ GameObject:
   - component: {fileID: 8001587954744478945}
   - component: {fileID: 8585095797773317265}
   - component: {fileID: 4752012581672053541}
-  - component: {fileID: 5057105977544197509}
   - component: {fileID: 759754330387728452}
+  - component: {fileID: 8585095797773317266}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -3891,18 +3891,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 740896520549695086}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5057105977544197509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4987851961308092579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38d738f61b242ce42821577d23fdb353, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!33 &5063425283035560777
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5372,18 +5360,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!114 &7535122262080681435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8759149368118535217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54fa117c400be1c489656a9f116f4d00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &7538138139842310390
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6060,6 +6036,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8585095797773317266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4987851961308092579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7f1028da173b54e9c4ec723aba607d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8606026555620397675
 Transform:
   m_ObjectHideFlags: 0
@@ -6174,7 +6162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 812248821468962764}
-  - component: {fileID: 7535122262080681435}
+  - component: {fileID: 8759149368118535218}
   m_Layer: 0
   m_Name: TitleController
   m_TagString: Untagged
@@ -6182,6 +6170,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8759149368118535218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8759149368118535217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b0912b7bd5d4714da3d7ee8ce7d44c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8776367834370040057
 MonoBehaviour:
   m_ObjectHideFlags: 0

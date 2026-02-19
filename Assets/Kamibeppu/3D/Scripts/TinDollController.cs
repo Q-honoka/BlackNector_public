@@ -1,3 +1,4 @@
+using RaruLib;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -39,7 +40,7 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
 
     private ICharcters myCharacter;
     private IEnemy myEnemy;
-
+    private Sound _sound => Sound.instance;
     private void Start()
     {
         myCharacter = this;
@@ -86,13 +87,23 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     /// <summary>
     /// 停止状態
     /// </summary>
-    void ICharcters.Idle() { }
+    void ICharcters.Idle() {  }
     /// <summary>
     /// 巡回中
     /// </summary>
     void ICharcters.Move()
     {
-        if (anim != null && anim.GetBool("Walking") != true) anim.SetBool("Walking", true);
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
+        bool isInside =
+            viewPos.z > 0 &&
+            viewPos.x > 0 && viewPos.x < 1 &&
+            viewPos.y > 0 && viewPos.y < 1;
+        // もし、カメラ外なら、動かない。
+        if (!isInside)
+        {
+            state = State.IDLE;
+        }
+            if (anim != null && anim.GetBool("Walking") != true) anim.SetBool("Walking", true);
         // 視界内に子どもがいたら FOUND 状態に遷移する
         if (foundArea.IsWithinChildInVisibility()) { myCharacter.SetMyState((int)State.FOUND); }
         // 前方に壁がある もしくは 巡回地点に到達したら Uターンする
@@ -125,6 +136,12 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
         if (anim != null)
         {
             anim.SetBool("Walking", false);
+        }
+        if (!foundChild)
+        {
+            _sound.Play("SE", "Marionette_caveat");
+            _sound.Play("SE", "Warning");
+            _sound.Play("SE", "Whitenoise");
         }
         foundChild = true;
         GameObject child = GameObject.FindGameObjectWithTag("Child");

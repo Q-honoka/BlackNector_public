@@ -6,6 +6,7 @@ using static UnityEngine.InputManagerEntry;
 using System;
 using System.Threading;
 using System.Globalization;
+using RaruLib;
 
 public enum ViewType
 {
@@ -38,10 +39,9 @@ public class NovelTextView : MonoBehaviour
     [Header("フェードイン")]
     [SerializeField, Tooltip("秒間不透明度増加率(1で不透明度100%)")] float addAlpha_Fadein_Sec = 0.05f;   // n秒で不透明度100になるかにすればよかった
     [Header("フェードイン＆タイピング")]
-    [SerializeField, Header("文字の表示間隔")] float charInterval = 0.05f;
+    [SerializeField, Header("文字の表示間隔")] float charInterval = 0.1f;
     [SerializeField, Range(0, 1024), Tooltip("秒間不透明度増加率(255で不透明度100%)")] byte addAlpha_FadeinType_Sec = 10; // n秒で不透明度100になるかにすればよかった
-
-
+    private Sound _sound => Sound.instance;
     private void Start()
     {
         if(NovelSubject.instance != null)
@@ -86,8 +86,10 @@ public class NovelTextView : MonoBehaviour
         {
             case ViewType.Typing:
                 TypingText(asset).Forget();
+
                 break;
             case ViewType.Fadein:
+
                 FadeinText(asset).Forget();
                 break;
             case ViewType.FadeinTyping:
@@ -107,13 +109,14 @@ public class NovelTextView : MonoBehaviour
 
     // タイピング
     private async UniTaskVoid TypingText(NovelAsset asset)
-    {
+    {          
         int textSize = asset.text.Length;
         float typeStart = Time.time;
         string text = initText;
 
         for (int t = 0; t < textSize; t++)
         {
+  
             bool isClick = Input.GetMouseButtonDown(click);             //スキップクリックしたか
             bool isFinishedCT = Time.time - typeStart >= skipCoolTime;  // スキップできるまでのクールタイムが経過したか
             bool isLockedAutoPlay = novelSubject.IsLockedAutoPlay;  // ロックするか
@@ -128,6 +131,7 @@ public class NovelTextView : MonoBehaviour
             ugui.text = text;
             await UniTask.WaitForSeconds(typeSpeed, cancellationToken: token);
         }
+
     }
 
     // フェードイン
@@ -144,11 +148,13 @@ public class NovelTextView : MonoBehaviour
         }
 
         ugui.color = new Color(ugui.color.r, ugui.color.g, ugui.color.b, 1);    // 透明度調整
+        
     }
 
     // タイピング＆フェードイン
     private async UniTaskVoid FadeinTypingText(NovelAsset asset)
     {
+
         float uguiAlpha = ugui.color.a;
         ugui.color = new Color(ugui.color.r, ugui.color.g, ugui.color.b, 0);
         ugui.text = asset.text;
@@ -168,6 +174,7 @@ public class NovelTextView : MonoBehaviour
         // テキストのメッシュアルファを一文字ずつフェードインする
         for (int i = 0; i < textCount; i++)
         {
+            _sound.Play("SE", "Message");
             ChangeCharacterAlphaFadein(textInfo, i).Forget();
             await UniTask.WaitForSeconds(charInterval, cancellationToken: token);
         }

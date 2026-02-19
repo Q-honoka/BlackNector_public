@@ -126,6 +126,7 @@ namespace RaruLib
             if (!groupDict[groupName].soundDict.ContainsKey(soundName))
             { Debug.Log($"{soundName}ÇÕë∂ç›ÇµÇ»Ç¢âπåπñºÇ≈Ç∑"); return; }
             groupDict[groupName].soundDict[soundName].Play();
+            
         }
 
         /***************************************************************
@@ -141,6 +142,20 @@ namespace RaruLib
             { Debug.Log($"{soundName}ÇÕë∂ç›ÇµÇ»Ç¢âπåπñºÇ≈Ç∑"); return; }
 
             groupDict[groupName].soundDict[soundName].Stop();
+        }
+
+        /***************************************************************
+        * çƒê∂èÛë‘éÊìæ
+        ***************************************************************/
+        public bool IsPlaying(string groupName, string soundName)
+        {
+            if (!groupDict.ContainsKey(groupName))
+            { Debug.Log($"{groupName}ÇÕë∂ç›ÇµÇ»Ç¢ÉJÉeÉSÉäÇ≈Ç∑"); return false; }
+
+            if (!groupDict[groupName].soundDict.ContainsKey(soundName))
+            { Debug.Log($"{soundName}ÇÕë∂ç›ÇµÇ»Ç¢âπåπñºÇ≈Ç∑"); return false; }
+
+            return groupDict[groupName].soundDict[soundName].isPlaying;
         }
     }
 }

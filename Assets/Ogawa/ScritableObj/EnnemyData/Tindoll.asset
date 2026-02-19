@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myData:
     pos: {x: 0, y: 0, z: 0}
-    speed: 1
+    speed: 1.8
     obje: {fileID: 0}
   ViewDistance: 30
   collision: 0

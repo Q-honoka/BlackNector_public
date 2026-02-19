@@ -13,7 +13,7 @@ public class UiEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        _sound.Play("SE", "SE1");
+        _sound.Play("SE", "Cursor_touch");
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -24,5 +24,6 @@ public class UiEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
     public void OnPointerClick(PointerEventData eventData)
     {
         // ƒNƒŠƒbƒN‚³‚ê‚½
+        _sound.Play("SE", "Cursor_click");
     }
 }

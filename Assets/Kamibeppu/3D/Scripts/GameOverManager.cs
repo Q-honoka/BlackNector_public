@@ -1,3 +1,4 @@
+using RaruLib;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -13,7 +14,7 @@ public class GameOverManager : MonoBehaviour
     public GameObject EndImage;
 
     private bool isEnd = false;
-
+    private Sound _sound => Sound.instance;
     private void Update()
     {
         if(isEnd)
@@ -56,6 +57,7 @@ public class GameOverManager : MonoBehaviour
         darknessTimeline.Stop();
         darknessTimeline.time = 0;
         darknessTimeline.Evaluate();
+        _sound.Stop("SE", "Badfeeling");
     }
 
     // リトライ
@@ -63,7 +65,30 @@ public class GameOverManager : MonoBehaviour
     {
         Retry.instance.CallRetry();
     }
+     
+    // SEPlay Nestor_hand01
+    public void Nestorbig_SE()
+    {
+        _sound.Play("SE", "Nestor_hand01");
+    }
 
+    // SEPlay Badfeeling
+    public void Nestor_Badfeeling_SE()
+    {
+        _sound.Play("SE", "Badfeeling");
+    }
+
+    // SEPlay Rumble
+    public void Rumble_SE()
+    {
+        _sound.Play("SE", "Rumble");
+    }
+
+    // SEPlay Boone
+    public void Boone_SE()
+    {
+        _sound.Play("SE", "Boone");
+    }
 
     // エンド画面の表示
     public void ShowEnd()

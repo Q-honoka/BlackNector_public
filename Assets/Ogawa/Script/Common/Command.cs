@@ -7,10 +7,10 @@ public class Command : MonoBehaviour
 {
     protected void Start()
     {
-        if(Sound.instance!=null)
+        /*if(Sound.instance!=null)
         {
             Sound.instance.Play("BGM", "BGM1");
-        }
+        }*/
     }
     public virtual void LogOutForGame()
     {

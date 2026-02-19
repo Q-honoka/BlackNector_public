@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3895944850943110433}
   - component: {fileID: 4153228813783781577}
   - component: {fileID: 5420086275987173219}
+  - component: {fileID: 2499228536468224015}
   m_Layer: 5
   m_Name: QuitBtn
   m_TagString: Untagged
@@ -144,6 +145,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54fa117c400be1c489656a9f116f4d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2499228536468224015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941081679958314039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d738f61b242ce42821577d23fdb353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1592165914675351488
@@ -462,6 +475,7 @@ GameObject:
   - component: {fileID: 119361528170165607}
   - component: {fileID: 801969363676725035}
   - component: {fileID: 7146861548696503481}
+  - component: {fileID: 6197822985487567216}
   m_Layer: 5
   m_Name: BackBtn
   m_TagString: Untagged
@@ -593,6 +607,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54fa117c400be1c489656a9f116f4d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6197822985487567216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2509303432498756682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d738f61b242ce42821577d23fdb353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2715480141423089170
@@ -1594,6 +1620,7 @@ GameObject:
   - component: {fileID: 2504101420350300393}
   - component: {fileID: 9042340149867360807}
   - component: {fileID: 1958837342926609163}
+  - component: {fileID: 4441354557411718587}
   m_Layer: 5
   m_Name: RetryBtn
   m_TagString: Untagged
@@ -1725,6 +1752,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54fa117c400be1c489656a9f116f4d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4441354557411718587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9072434335662446896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d738f61b242ce42821577d23fdb353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9079344768101268538
