@@ -21,6 +21,7 @@ public class EnemyVisibility : MonoBehaviour
     [SerializeField] private float viewRadius = 5f;     // 視界の距離
     [SerializeField] private float viewAngle = 90f;     // 視界の角度(左右の合計)
     [SerializeField, Range(4, 128)] private int segmentCount = 48; // 分割数
+    [SerializeField] private LayerMask excludeMask;     // 当たり判定を行わないレイヤー
 
     private GameObject child = null;    // 子どもの情報
     private bool isWithinChild = false; // 視界内に子どもがいるか
@@ -79,7 +80,7 @@ public class EnemyVisibility : MonoBehaviour
             Vector3 targetPoint;
             
             // 障害物にぶつかったらぶつかった場所を保存
-            if (Physics.Raycast(origin, dir, out hit, viewRadius))
+            if (Physics.Raycast(origin, dir, out hit, viewRadius, excludeMask,QueryTriggerInteraction.Ignore))
             {
                 targetPoint = hit.point;
             }
