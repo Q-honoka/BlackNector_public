@@ -80,7 +80,7 @@ public class EnemyVisibility : MonoBehaviour
             Vector3 targetPoint;
             
             // áŠQ•¨‚É‚Ô‚Â‚©‚Á‚½‚ç‚Ô‚Â‚©‚Á‚½êŠ‚ğ•Û‘¶
-            if (Physics.Raycast(origin, dir, out hit, viewRadius, excludeMask,QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(origin, dir, out hit, viewRadius, excludeMask, QueryTriggerInteraction.Ignore))
             {
                 targetPoint = hit.point;
             }

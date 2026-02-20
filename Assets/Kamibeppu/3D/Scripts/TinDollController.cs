@@ -45,6 +45,7 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     {
         myCharacter = this;
         myEnemy = this;
+        this.GetComponent<Rigidbody>().maxDepenetrationVelocity = 2.0f;
     }
 
     void Update()
