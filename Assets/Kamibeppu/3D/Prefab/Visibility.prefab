@@ -127,3 +127,6 @@ MonoBehaviour:
   viewRadius: 5
   viewAngle: 45
   segmentCount: 45
+  excludeMask:
+    serializedVersion: 2
+    m_Bits: 32
