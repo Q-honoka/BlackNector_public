@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour, ICharcters
     float jumpLimit = 0;
     float stayPosY = 0;
     float initRotY = 0;
-    bool isStart = false;
+    bool isStart = true;
     private Sound _sound => Sound.instance;
 
     void Start()
@@ -58,6 +58,14 @@ public class PlayerController : MonoBehaviour, ICharcters
 
         m_command = transform.GetComponent<Command>();
         initRotY = playerModel.transform.rotation.eulerAngles.y;
+
+        NovelSubject.instance.OnPlayNovel
+            .Subscribe(kind =>
+            {
+                if (kind == NOVEL_KIND.Tutorial_1_1)
+                    isStart = false;
+            })
+            .AddTo(this);
 
         NovelSubject.instance.OnFinishedNovel
             .Subscribe(kind => 
