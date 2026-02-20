@@ -145,6 +145,8 @@ public class PlayerController : MonoBehaviour, ICharcters
         //重力を止まっている間のみ適応
         rigid.useGravity = false;
 
+        return;
+
         //現在の位置が静止した場所よりも低い位置にあるなら
         if (transform.position.y < stayPosY)
         {
@@ -193,6 +195,11 @@ public class PlayerController : MonoBehaviour, ICharcters
                         {
                             rigid.linearVelocity = new Vector3(rigid.linearVelocity.x, MAX_SPEED_Y, rigid.linearVelocity.z);
                         }
+
+                        // 上に移動（transform）
+                        transform.Translate(transform.up * player.myData.speed * Time.deltaTime);
+                        break;
+
                         rigid.AddForce(transform.up * player.myData.speed);
 
                     }
@@ -206,6 +213,11 @@ public class PlayerController : MonoBehaviour, ICharcters
                 {
                     if (rigid.linearVelocity.x <= -MAX_SPEED_X) { rigid.linearVelocity = new Vector3(-MAX_SPEED_X, 0, 0); }
                     playerModel.transform.rotation = Quaternion.Euler(0, -125, 0);
+
+                    // 左に移動（transform）
+                    transform.Translate(-transform.right * player.myData.speed * Time.deltaTime);
+                    break;
+
                     rigid.AddForce(transform.right * -player.myData.speed);
                     break;
                 }
@@ -217,6 +229,10 @@ public class PlayerController : MonoBehaviour, ICharcters
                 {
                     //速度を制御
                     if (rigid.linearVelocity.y <= -MAX_SPEED_Y) { rigid.linearVelocity = new Vector3(0, -MAX_SPEED_Y, 0); }
+
+                    // 下に移動（transform）
+                    transform.Translate(-transform.up * player.myData.speed * Time.deltaTime);
+                    break;
 
                     //下方向に移動
                     rigid.AddForce(transform.up * -player.myData.speed);
@@ -233,6 +249,11 @@ public class PlayerController : MonoBehaviour, ICharcters
                 {
                     if (MAX_SPEED_X <= rigid.linearVelocity.x) { rigid.linearVelocity = new Vector3(MAX_SPEED_X, 0, 0); }
                     playerModel.transform.rotation = Quaternion.Euler(0, 125, 0);
+
+                    // 右に移動（transform）
+                    transform.Translate(transform.right * player.myData.speed * Time.deltaTime);
+                    break;
+
                     rigid.AddForce(transform.right * player.myData.speed);
                     break;
                 }
