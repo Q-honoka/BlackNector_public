@@ -2949,6 +2949,10 @@ PrefabInstance:
       propertyPath: 'stateTrueObj.Array.data[0]'
       value: 
       objectReference: {fileID: 2137740995}
+    - target: {fileID: 6000017043947092155, guid: eb0aa5229104a074d927b59a9e69db31, type: 3}
+      propertyPath: 'stateFalseObj.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2137740995}
     - target: {fileID: 7962479949715932179, guid: eb0aa5229104a074d927b59a9e69db31, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0
@@ -6745,6 +6749,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cage_Re
       objectReference: {fileID: 0}
+    - target: {fileID: 9001638003251531769, guid: 1d85818e837e5464580d49ac7acb8d61, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001638003251531769, guid: 1d85818e837e5464580d49ac7acb8d61, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7924,6 +7936,14 @@ PrefabInstance:
       propertyPath: 'lights.Array.data[7]'
       value: 
       objectReference: {fileID: 1022766541}
+    - target: {fileID: 7497240409719451253, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.011
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497240409719451253, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.009
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
