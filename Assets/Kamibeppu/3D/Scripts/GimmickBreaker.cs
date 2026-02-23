@@ -46,8 +46,16 @@ public class GimmickBreaker : GimmickBase
         if (pickedCount == 3)
         {
             _sound.Play("SE", "Breaker_finish");
-            endFinalDirector.Play();
-        }else
+            if (endFinalDirector != null)
+            {
+                endFinalDirector.Play();
+            }
+            else
+            {
+                Debug.LogWarning("GimmickBreaker の endFinalDirector がアサインされていません！");
+            }
+        }
+        else
         {
             _sound.Play("SE","Breaker_middle");
         }

@@ -9,11 +9,13 @@ public class TitleInitializer : MonoBehaviour
     {
         if (Sound.instance != null)
         {
+            GameData.instance._saveSpot = SaveSpotKind.Stage1_1;
+            TitleUiEvent.IsFirstLaunch = true;
             Sound.instance.ChangeVolume("BGM",0.01f);
             Sound.instance.ChangeVolume("SE", 0.02f);
             Sound.instance.Play("BGM", "Title_BGM");
-            Sound.instance.Stop("BGM","Game_BGM");
-            Sound.instance.Stop("BGM","Wind");
+            Sound.instance.Stop("BGM", "Game_BGM");
+            Sound.instance.Stop("BGM", "Wind");
             Sound.instance.Stop("SE", "Badfeeling");
             Sound.instance.Stop("SE", "Walk_child");
             Sound.instance.Stop("SE", "Whitenoise");

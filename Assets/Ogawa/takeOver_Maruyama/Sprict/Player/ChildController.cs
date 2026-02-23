@@ -1,5 +1,4 @@
 ﻿using RaruLib;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 //using static UnityEngine.RuleTile.TilingRuleOutput;   // なんこれ
@@ -41,7 +40,11 @@ public class ChildController : MonoBehaviour, ICharcters
     {
         isWalk = false;
         child.myData.charctersInterface = this;
-        transform.position = child.myData.pos;
+
+        if (Retry.instance.IsRetryRequested)
+        {
+            transform.position = child.myData.pos;
+        }
         player = GameObject.FindWithTag("Player");
     }
 

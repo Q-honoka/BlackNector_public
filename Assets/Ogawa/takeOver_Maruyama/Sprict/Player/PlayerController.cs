@@ -53,7 +53,10 @@ public class PlayerController : MonoBehaviour, ICharcters
     {
         player.myData.charctersInterface = this;
         child = GameObject.FindAnyObjectByType<ChildController>();
-        transform.position = player.myData.pos;
+        if (Retry.instance.IsRetryRequested)
+        {
+            transform.position = player.myData.pos;
+        }
         jumpLimit = transform.localScale.y;
 
         m_command = transform.GetComponent<Command>();
@@ -68,7 +71,7 @@ public class PlayerController : MonoBehaviour, ICharcters
             .AddTo(this);
 
         NovelSubject.instance.OnFinishedNovel
-            .Subscribe(kind => 
+            .Subscribe(kind =>
             {
                 isStart = true;
             })

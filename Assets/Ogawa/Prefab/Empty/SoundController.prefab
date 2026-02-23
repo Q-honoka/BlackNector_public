@@ -172,11 +172,11 @@ MonoBehaviour:
     volume: 0.6
     soundDatas:
     - soundName: Title_BGM
-      audioSource: {fileID: 0}
+      audioSource: {fileID: 6631565244583602984}
     - soundName: Game_BGM
-      audioSource: {fileID: 0}
+      audioSource: {fileID: 3614022306957836967}
     - soundName: Wind
-      audioSource: {fileID: 0}
+      audioSource: {fileID: 5584824059916457936}
   - groupName: SE
     volume: 0.5
     soundDatas:
