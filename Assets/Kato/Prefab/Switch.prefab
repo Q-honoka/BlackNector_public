@@ -146,8 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e56bf32a395112443a5b33212148ba5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateTrueObj: {fileID: 0}
-  stateFalseObj: {fileID: 0}
+  stateTrueObj:
+  - {fileID: 0}
+  stateFalseObj:
+  - {fileID: 0}
   collision: {fileID: 5851380561952711275}
 --- !u!4 &6622451673481287091 stripped
 Transform:

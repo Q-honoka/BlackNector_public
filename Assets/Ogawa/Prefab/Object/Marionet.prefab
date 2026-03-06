@@ -58,7 +58,7 @@ MonoBehaviour:
   nestorPrefab: {fileID: 6556216763162163791, guid: f62867bbbe3ec5146ac727410858712f, type: 3}
   initializeRadius: 3
   spawnedNestorCount: 10
-  caughtDirector: {fileID: 0}
+  gameOverManager: {fileID: 0}
 --- !u!65 &4100863065861937623
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -98,9 +98,6 @@ MonoBehaviour:
   foundArea: {fileID: 3836331005150897831}
   state: 0
   anim: {fileID: 7030682625109807733}
-  childAnim: {fileID: 0}
-  FoundDirector: {fileID: 9087746887297583686}
-  redFlashUI: {fileID: 0}
 --- !u!54 &3896285273978520349
 Rigidbody:
   m_ObjectHideFlags: 0
