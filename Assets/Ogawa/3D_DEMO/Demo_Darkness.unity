@@ -1223,7 +1223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 625739920807904536, guid: 854b4ca884baac64a861711c44a74732, type: 3}
       propertyPath: m_SpotAngle
-      value: 120.133224
+      value: 88
       objectReference: {fileID: 0}
     - target: {fileID: 625739920807904536, guid: 854b4ca884baac64a861711c44a74732, type: 3}
       propertyPath: m_InnerSpotAngle
@@ -3250,6 +3250,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1022962797}
     - target: {fileID: 1265237993208169097, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
+      propertyPath: viewLength
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265237993208169097, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
       propertyPath: 'patrolPos.Array.data[0]'
       value: 
       objectReference: {fileID: 2053342305}
@@ -3437,6 +3441,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scarecrow 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4612374932390406916, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4782923035577017614, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.19
@@ -3494,8 +3502,20 @@ PrefabInstance:
       value: 18.42
       objectReference: {fileID: 0}
     - target: {fileID: 5132191340121009962, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
+      propertyPath: m_Range
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5132191340121009962, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
       propertyPath: m_InnerSpotAngle
       value: 107.46081
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166321727505208519, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
+      propertyPath: m_Constraints
+      value: 92
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166321727505208519, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5255556509793346335, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3535,7 +3555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6417490062252400919, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.38
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6524661464710732314, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
       propertyPath: m_Name
@@ -7989,6 +8009,10 @@ PrefabInstance:
     - target: {fileID: 1165380855441133094, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
       propertyPath: saveSpotKind
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5419831173768338013, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
+      propertyPath: isOn
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6350439040782356496, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
       propertyPath: nestors
