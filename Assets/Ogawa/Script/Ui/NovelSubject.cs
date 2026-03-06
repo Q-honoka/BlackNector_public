@@ -1,7 +1,6 @@
 using UnityEngine;
 using UniRx;
 using System;
-using static UnityEngine.InputManagerEntry;
 using Cysharp.Threading.Tasks;
 using RaruLib;
 

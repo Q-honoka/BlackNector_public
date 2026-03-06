@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 
 public class TitleUiEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
+    public static bool IsFirstLaunch = true;
     private Sound _sound => Sound.instance;
 
     private void Start()
@@ -25,8 +26,9 @@ public class TitleUiEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         // ƒNƒŠƒbƒN‚³‚ê‚½
         _sound.Play("SE", "Cursor_click");
-        _sound.Stop("BGM","Title_BGM");
+        _sound.Stop("BGM", "Title_BGM");
         _sound.Play("BGM", "Wind");
         _sound.Play("BGM", "Game_BGM");
     }
+
 }

@@ -45,7 +45,7 @@ public class GameData : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
-    private SaveSpotKind _saveSpot = SaveSpotKind.Stage1_1;
+    public SaveSpotKind _saveSpot = SaveSpotKind.Stage1_1;
     public  SaveSpotKind saveSpot => _saveSpot;
 
     // 最終セーブ地点更新

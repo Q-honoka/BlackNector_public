@@ -14,12 +14,14 @@ public class CommandTrigger : Command
         {
             return;
         }
+        if (!TitleUiEvent.IsFirstLaunch) return;
         if(isOnce && _OnOnced)
         {
             return;
         }
         m_event?.Invoke();
         _OnOnced = true;
+        TitleUiEvent.IsFirstLaunch = false;
     }
     public override void LogOutForGame()
         { base.LogOutForGame(); }

@@ -1,46 +1,50 @@
-using Cysharp.Threading.Tasks;
 using System;
 using UniRx;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Retry : MonoBehaviour
 {
     public static Retry instance;
 
-    private void Awake()
+    /// <summary>
+    /// 今回のシーン読み込みが「リトライによるものか」
+    /// </summary>
+    public bool IsRetryRequested { get; private set; }
+
+    private Subject<Unit> retrySubject = new Subject<Unit>();
+
+    /// <summary>
+    /// リトライイベント
+    /// </summary>
+    public IObservable<Unit> OnRetry => retrySubject;
+
+    void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(gameObject); 
         }
         else
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 
-    private Subject<Unit> retrySubject = new Subject<Unit>();
-
-    // リトライイベント
-    public IObservable<Unit> OnRetry
-    {
-        get
-        {
-            return retrySubject;
-        }
-    }
-
-    // リトライを呼ぶ
+    /// <summary>
+    /// リトライを呼ぶ
+    /// </summary>
     public void CallRetry()
     {
-        if(SceneController.instance == null)
+        if (SceneController.instance == null)
         {
-            Debug.Log("リトライ失敗。シーン遷移用スクリプトがない",gameObject);
+            Debug.Log("リトライ失敗。シーン遷移用スクリプトがない", gameObject);
             return;
         }
 
-        SceneController.instance.SceneReLoad();
+        IsRetryRequested = false;            
         retrySubject.OnNext(Unit.Default);
+        SceneController.instance.SceneReLoad();
     }
 }

@@ -2,7 +2,6 @@ using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UniRx;
-using static UnityEngine.InputManagerEntry;
 using System;
 using System.Threading;
 using System.Globalization;

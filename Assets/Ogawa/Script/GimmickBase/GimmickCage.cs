@@ -16,7 +16,8 @@ public class GimmickCage : GimmickBase
     protected override void OnStateTrue()
     {
         _sound.Play("SE","Open_cage");
-        rigid.useGravity = true;
+        //rigid.useGravity = true;
+        rigid.isKinematic = false;
     }
 
     /// <summary>

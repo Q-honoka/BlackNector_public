@@ -739,6 +739,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plate
       objectReference: {fileID: 0}
+    - target: {fileID: 4227210793211474999, guid: e51225a0238427c4fb99b2d698a859eb, type: 3}
+      propertyPath: stateTrueObj.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227210793211474999, guid: e51225a0238427c4fb99b2d698a859eb, type: 3}
+      propertyPath: stateFalseObj.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227210793211474999, guid: e51225a0238427c4fb99b2d698a859eb, type: 3}
+      propertyPath: 'stateTrueObj.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6935139365116920223}
+    - target: {fileID: 4227210793211474999, guid: e51225a0238427c4fb99b2d698a859eb, type: 3}
+      propertyPath: 'stateFalseObj.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6935139365116920223}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -901,6 +917,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 970fd268f242c134aa1617d450606dd5, type: 3}
+--- !u!1 &6935139365116920223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1988569665911698728, guid: 970fd268f242c134aa1617d450606dd5, type: 3}
+  m_PrefabInstance: {fileID: 8909880456054830263}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7743165703585209125 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1212314098435944338, guid: 970fd268f242c134aa1617d450606dd5, type: 3}
