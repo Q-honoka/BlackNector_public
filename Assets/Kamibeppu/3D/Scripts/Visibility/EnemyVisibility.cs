@@ -21,7 +21,7 @@ public class EnemyVisibility : MonoBehaviour
     [SerializeField] private float viewRadius = 5f;     // ‹ŠE‚Ì‹——£
     [SerializeField] private float viewAngle = 90f;     // ‹ŠE‚ÌŠp“x(¶‰E‚Ì‡Œv)
     [SerializeField, Range(4, 128)] private int segmentCount = 48; // •ªŠ„”
-    [SerializeField] private LayerMask excludeMask;     // “–‚½‚è”»’è‚ğs‚í‚È‚¢ƒŒƒCƒ„[
+    [SerializeField] private LayerMask ObstacleLayer;   // áŠQ•¨ƒŒƒCƒ„[
 
     private GameObject child = null;    // q‚Ç‚à‚Ìî•ñ
     private bool isWithinChild = false; // ‹ŠE“à‚Éq‚Ç‚à‚ª‚¢‚é‚©
@@ -78,11 +78,21 @@ public class EnemyVisibility : MonoBehaviour
             Vector3 dir = rotation * localDir;
             RaycastHit hit;
             Vector3 targetPoint;
-            
+
             // áŠQ•¨‚É‚Ô‚Â‚©‚Á‚½‚ç‚Ô‚Â‚©‚Á‚½êŠ‚ğ•Û‘¶
-            if (Physics.Raycast(origin, dir, out hit, viewRadius, excludeMask, QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(origin, dir, out hit, viewRadius))
             {
-                targetPoint = hit.point;
+                // ŸB‚à‚µ‚­‚ÍáŠQ•¨‚ª‚ ‚Á‚½‚çŸB‚ÌêŠ‚ğ•Û‘¶
+                int cageLayer = LayerMask.NameToLayer("Cage");
+                int obstacleLayer = LayerMask.NameToLayer("Obstacle");
+                if (hit.collider.gameObject.layer == cageLayer || hit.collider.gameObject.layer == obstacleLayer)
+                {
+                    targetPoint = hit.point;
+                }
+                else
+                {
+                    targetPoint = origin + dir * viewRadius;
+                }
             }
             // ‚Ô‚Â‚©‚ç‚È‚¯‚ê‚ÎÅ‘å‹——£‚ğ•Û‘¶
             else
@@ -169,7 +179,7 @@ public class EnemyVisibility : MonoBehaviour
         // áŠQ•¨‚ÆÕ“Ë‚µ‚½‚ç true ‚ğ•Ô‚·
         bool hitObject = false;
         hitObject = Physics.Raycast(this.transform.position, direction, viewRadius, obstacleLayer);
-        if(hitObject) return true;
+        if (hitObject) return true;
 
         hitObject = Physics.Raycast(this.transform.position, direction, viewRadius, LayerMask.GetMask("Cage"));
         return hitObject;
