@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GimmickThread : GimmickBase
 {
-
+    [SerializeField] GameObject actionParticle;     // エフェクトオブジェクト
     bool connectMarionntte = true;
     GimmickCollision collision;
 
@@ -41,6 +41,10 @@ public class GimmickThread : GimmickBase
     protected override void OnStateFalse()
     {
         connectMarionntte = false;
+        if(actionParticle != null)
+        {
+            actionParticle.SetActive(false);
+        }
     }
 
     public bool GetConnctMarionnet() { return connectMarionntte; }
