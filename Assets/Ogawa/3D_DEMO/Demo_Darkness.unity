@@ -983,13 +983,13 @@ PlayableDirector:
   - key: {fileID: 0}
     value: {fileID: 1050457899}
   - key: {fileID: 6129868523022787416, guid: 157a99f055c0a9e43aa9ff83a2d1ce1e, type: 2}
-    value: {fileID: 1923184329}
+    value: {fileID: 0}
   - key: {fileID: -6004683601209054590, guid: d60cda13069f0c142a288af030087fbd, type: 2}
     value: {fileID: 1022962797}
   - key: {fileID: -6524573498630250685, guid: d60cda13069f0c142a288af030087fbd, type: 2}
     value: {fileID: 1022962800}
   - key: {fileID: -2362800814714805877, guid: d60cda13069f0c142a288af030087fbd, type: 2}
-    value: {fileID: 1923184329}
+    value: {fileID: 0}
   - key: {fileID: 0}
     value: {fileID: 0}
   - key: {fileID: -2433000851084284728, guid: d60cda13069f0c142a288af030087fbd, type: 2}
@@ -1761,7 +1761,7 @@ PrefabInstance:
     - target: {fileID: 3639289042756370151, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
       propertyPath: childAnim
       value: 
-      objectReference: {fileID: 1923184329}
+      objectReference: {fileID: 0}
     - target: {fileID: 3639289042756370151, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
       propertyPath: foundArea
       value: 
@@ -1793,7 +1793,7 @@ PrefabInstance:
     - target: {fileID: 4811885108061715690, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
       propertyPath: childAnim
       value: 
-      objectReference: {fileID: 1923184329}
+      objectReference: {fileID: 0}
     - target: {fileID: 4811885108061715690, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
       propertyPath: foundArea
       value: 
@@ -2571,7 +2571,7 @@ PrefabInstance:
     - target: {fileID: 1287640520070025229, guid: eb0aa5229104a074d927b59a9e69db31, type: 3}
       propertyPath: childAnim
       value: 
-      objectReference: {fileID: 1923184329}
+      objectReference: {fileID: 0}
     - target: {fileID: 1287640520070025229, guid: eb0aa5229104a074d927b59a9e69db31, type: 3}
       propertyPath: foundArea
       value: 
@@ -2583,7 +2583,7 @@ PrefabInstance:
     - target: {fileID: 2128349310214612799, guid: eb0aa5229104a074d927b59a9e69db31, type: 3}
       propertyPath: childAnim
       value: 
-      objectReference: {fileID: 1923184329}
+      objectReference: {fileID: 0}
     - target: {fileID: 2128349310214612799, guid: eb0aa5229104a074d927b59a9e69db31, type: 3}
       propertyPath: redFlashUI
       value: 
@@ -2606,7 +2606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3089784546549954286, guid: eb0aa5229104a074d927b59a9e69db31, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.71
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 3097025747067624336, guid: eb0aa5229104a074d927b59a9e69db31, type: 3}
       propertyPath: m_Range
@@ -2651,6 +2651,10 @@ PrefabInstance:
     - target: {fileID: 4137094535718344180, guid: eb0aa5229104a074d927b59a9e69db31, type: 3}
       propertyPath: m_SpotAngle
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454141481347496260, guid: eb0aa5229104a074d927b59a9e69db31, type: 3}
+      propertyPath: isOn
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4471623945265981603, guid: eb0aa5229104a074d927b59a9e69db31, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2852,13 +2856,13 @@ PlayableDirector:
   - key: {fileID: 0}
     value: {fileID: 1050457899}
   - key: {fileID: 6129868523022787416, guid: 157a99f055c0a9e43aa9ff83a2d1ce1e, type: 2}
-    value: {fileID: 1923184329}
+    value: {fileID: 0}
   - key: {fileID: -6004683601209054590, guid: d60cda13069f0c142a288af030087fbd, type: 2}
     value: {fileID: 1022962797}
   - key: {fileID: -6524573498630250685, guid: d60cda13069f0c142a288af030087fbd, type: 2}
     value: {fileID: 1022962800}
   - key: {fileID: -2362800814714805877, guid: d60cda13069f0c142a288af030087fbd, type: 2}
-    value: {fileID: 1923184329}
+    value: {fileID: 0}
   - key: {fileID: 0}
     value: {fileID: 0}
   - key: {fileID: -2433000851084284728, guid: d60cda13069f0c142a288af030087fbd, type: 2}
@@ -2936,7 +2940,7 @@ PrefabInstance:
     - target: {fileID: 1265237993208169097, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
       propertyPath: childAnim
       value: 
-      objectReference: {fileID: 1923184329}
+      objectReference: {fileID: 0}
     - target: {fileID: 1265237993208169097, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
       propertyPath: foundArea
       value: 
@@ -2990,12 +2994,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1727768801076535243, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
+      propertyPath: isOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727768801076535243, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
       propertyPath: stateTrueObj.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1727768801076535243, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
       propertyPath: stateFalseObj.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858187264731240491, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
+      propertyPath: isOn
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1858187264731240491, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
       propertyPath: stateTrueObj.Array.size
@@ -3060,11 +3072,15 @@ PrefabInstance:
     - target: {fileID: 3464381734961968402, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
       propertyPath: childAnim
       value: 
-      objectReference: {fileID: 1923184329}
+      objectReference: {fileID: 0}
     - target: {fileID: 3464381734961968402, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
       propertyPath: redFlashUI
       value: 
       objectReference: {fileID: 1022962797}
+    - target: {fileID: 3704197178277250108, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
+      propertyPath: isOn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3704197178277250108, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
       propertyPath: stateTrueObj.Array.size
       value: 0
@@ -3336,7 +3352,7 @@ PrefabInstance:
     - target: {fileID: 7075156811951818740, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
       propertyPath: childAnim
       value: 
-      objectReference: {fileID: 1923184329}
+      objectReference: {fileID: 0}
     - target: {fileID: 7075156811951818740, guid: 30de75d4fae04a04d8a9a3d049ecc019, type: 3}
       propertyPath: foundArea
       value: 
@@ -4304,13 +4320,13 @@ PlayableDirector:
   - key: {fileID: 0}
     value: {fileID: 1050457899}
   - key: {fileID: 6129868523022787416, guid: 157a99f055c0a9e43aa9ff83a2d1ce1e, type: 2}
-    value: {fileID: 1923184329}
+    value: {fileID: 0}
   - key: {fileID: -6004683601209054590, guid: d60cda13069f0c142a288af030087fbd, type: 2}
     value: {fileID: 1022962797}
   - key: {fileID: -6524573498630250685, guid: d60cda13069f0c142a288af030087fbd, type: 2}
     value: {fileID: 1022962800}
   - key: {fileID: -2362800814714805877, guid: d60cda13069f0c142a288af030087fbd, type: 2}
-    value: {fileID: 1923184329}
+    value: {fileID: 0}
   - key: {fileID: -2433000851084284728, guid: d60cda13069f0c142a288af030087fbd, type: 2}
     value: {fileID: 0}
   - key: {fileID: -2846616310523209169, guid: d60cda13069f0c142a288af030087fbd, type: 2}
@@ -4922,7 +4938,7 @@ PrefabInstance:
     - target: {fileID: 2019012737734370027, guid: 3638c9f4ab5e626449b017817d16dfbd, type: 3}
       propertyPath: childAnim
       value: 
-      objectReference: {fileID: 1923184329}
+      objectReference: {fileID: 0}
     - target: {fileID: 2019012737734370027, guid: 3638c9f4ab5e626449b017817d16dfbd, type: 3}
       propertyPath: foundArea
       value: 
@@ -4942,7 +4958,7 @@ PrefabInstance:
     - target: {fileID: 2067727391582657977, guid: 3638c9f4ab5e626449b017817d16dfbd, type: 3}
       propertyPath: childAnim
       value: 
-      objectReference: {fileID: 1923184329}
+      objectReference: {fileID: 0}
     - target: {fileID: 2067727391582657977, guid: 3638c9f4ab5e626449b017817d16dfbd, type: 3}
       propertyPath: foundArea
       value: 
@@ -5079,13 +5095,25 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 5233079474210052121, guid: 3638c9f4ab5e626449b017817d16dfbd, type: 3}
+      propertyPath: isOn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5343846266470163220, guid: 3638c9f4ab5e626449b017817d16dfbd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.6
       objectReference: {fileID: 0}
+    - target: {fileID: 5348455695772660901, guid: 3638c9f4ab5e626449b017817d16dfbd, type: 3}
+      propertyPath: m_Constraints
+      value: 92
+      objectReference: {fileID: 0}
     - target: {fileID: 5351261015816677716, guid: 3638c9f4ab5e626449b017817d16dfbd, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5372647459207367671, guid: 3638c9f4ab5e626449b017817d16dfbd, type: 3}
+      propertyPath: m_Constraints
+      value: 92
       objectReference: {fileID: 0}
     - target: {fileID: 5416594672470632080, guid: 3638c9f4ab5e626449b017817d16dfbd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5632,11 +5660,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 854b4ca884baac64a861711c44a74732, type: 3}
---- !u!95 &1923184329 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1755296389991832769, guid: b003c4fdd441a604888ed38a9d02ed14, type: 3}
-  m_PrefabInstance: {fileID: 695394964}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1943449535 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2334371190953321484, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
@@ -5914,6 +5937,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Visibility 8
       objectReference: {fileID: 0}
+    - target: {fileID: 615631603585765826, guid: 711c6e6e5253bbb4380dc8df09a4698a, type: 3}
+      propertyPath: isOn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1203089300742666707, guid: 711c6e6e5253bbb4380dc8df09a4698a, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -6058,6 +6085,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 9121798762320603615}
+    - target: {fileID: 5329689498259236019, guid: 711c6e6e5253bbb4380dc8df09a4698a, type: 3}
+      propertyPath: isOn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5609515291329418045, guid: 711c6e6e5253bbb4380dc8df09a4698a, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.05
@@ -6089,7 +6120,7 @@ PrefabInstance:
     - target: {fileID: 5853342324586121034, guid: 711c6e6e5253bbb4380dc8df09a4698a, type: 3}
       propertyPath: childAnim
       value: 
-      objectReference: {fileID: 1923184329}
+      objectReference: {fileID: 0}
     - target: {fileID: 5853342324586121034, guid: 711c6e6e5253bbb4380dc8df09a4698a, type: 3}
       propertyPath: foundArea
       value: 
@@ -6129,7 +6160,7 @@ PrefabInstance:
     - target: {fileID: 6706759996319680791, guid: 711c6e6e5253bbb4380dc8df09a4698a, type: 3}
       propertyPath: childAnim
       value: 
-      objectReference: {fileID: 1923184329}
+      objectReference: {fileID: 0}
     - target: {fileID: 6706759996319680791, guid: 711c6e6e5253bbb4380dc8df09a4698a, type: 3}
       propertyPath: redFlashUI
       value: 
@@ -7095,7 +7126,7 @@ PrefabInstance:
     - target: {fileID: 2289686708318244570, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
       propertyPath: childAnim
       value: 
-      objectReference: {fileID: 1923184329}
+      objectReference: {fileID: 0}
     - target: {fileID: 2289686708318244570, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
       propertyPath: foundArea
       value: 
@@ -7139,7 +7170,7 @@ PrefabInstance:
     - target: {fileID: 2954883219894843400, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
       propertyPath: childAnim
       value: 
-      objectReference: {fileID: 1923184329}
+      objectReference: {fileID: 0}
     - target: {fileID: 2954883219894843400, guid: 41b186444d8faf94fa3dead5d6cabfed, type: 3}
       propertyPath: redFlashUI
       value: 
@@ -7915,6 +7946,7 @@ PrefabInstance:
     - {fileID: 5215962153023288899, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
     - {fileID: 3721535077201627929, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
     - {fileID: 1641824491805448202, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
+    - {fileID: 4436560624179734098, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 932012624298347271, guid: 6fa07b332a30ccd48b4a83f6069cf0a0, type: 3}
       insertIndex: 3
