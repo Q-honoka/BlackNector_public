@@ -223,10 +223,6 @@ public class ChildController : MonoBehaviour, ICharcters
     // 見つかったことを知らせる
     public void SetIsFound()
     {
-        if(anim != null && anim.GetBool("IsCaught") != true)
-        {
-            anim.SetBool("IsCaught", true);
-        }
         if (!isFound) _sound.Play("SE","Whitenoise");
         isFound = true;
     }
