@@ -80,7 +80,7 @@ public class EnemyVisibility : MonoBehaviour
             Vector3 targetPoint;
 
             // áŠQ•¨‚É‚Ô‚Â‚©‚Á‚½‚ç‚Ô‚Â‚©‚Á‚½êŠ‚ğ•Û‘¶
-            if (Physics.Raycast(origin, dir, out hit, viewRadius))
+            if (Physics.Raycast(origin, dir, out hit, viewRadius, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
             {
                 // ŸB‚à‚µ‚­‚ÍáŠQ•¨‚ª‚ ‚Á‚½‚çŸB‚ÌêŠ‚ğ•Û‘¶
                 int cageLayer = LayerMask.NameToLayer("Cage");
