@@ -1,0 +1,72 @@
+using RaruLib;
+using UnityEngine;
+using UnityEngine.Playables;
+
+public class GimmickBreaker : GimmickBase
+{
+    [SerializeField]
+    GimmickCollision collision;
+    [SerializeField]
+    bool myState = true;
+    [SerializeField]
+    PlayableDirector endFinalDirector;
+    private Animator anim;
+    private Sound _sound => Sound.instance;
+
+    int pickedCount = 0;
+
+    private void Start()
+    {
+        isState = false;
+        anim = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        if (collision == null) { return; }
+
+        if (collision.awakeGimmick)
+        {
+            myState ^= true;
+            isState = myState;
+            collision.awakeGimmick = false;
+        }
+    }
+
+    /// <summary>
+    /// ステートがTrueに変化したとき
+    /// </summary>
+    protected override void OnStateTrue()
+    {
+        pickedCount++;
+        anim.SetTrigger("Picked");
+        anim.SetInteger("PickedCount", pickedCount);
+
+        // 3回つついたらライトをつける
+        if (pickedCount == 3)
+        {
+            _sound.Play("SE", "Breaker_finish");
+            if (endFinalDirector != null)
+            {
+                endFinalDirector.Play();
+            }
+            else
+            {
+                Debug.LogWarning("GimmickBreaker の endFinalDirector がアサインされていません！");
+            }
+        }
+        else
+        {
+            _sound.Play("SE","Breaker_middle");
+        }
+    }
+
+    /// <summary>
+    /// ステートがFalseに変化したとき
+    /// </summary>
+    protected override void OnStateFalse()
+    {
+
+    }
+
+}
