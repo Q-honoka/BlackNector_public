@@ -62,18 +62,23 @@ public class ActiveLightTracker : MonoBehaviour
         return activeLights.AsReadOnly();
     }
 
-    // アクティブなライトをリストに追加する関数
+    /// <summary>
+    /// アクティブなライトをリストに追加する関数
+    /// </summary>
+    /// <param name="light3D">リストに登録するライト</param>
     private void AddActiveLight(Light light3D)
     {
         // リストにそのライトがない かつ ライトオブジェクトが有効の場合は追加する
         if (!activeLights.Contains(light3D) && light3D.gameObject.activeSelf)
         {
-            //Debug.Log($"{light3D.name}追加");
             activeLights.Add(light3D);
         }
     }
 
-    // 非アクティブなライトをリストから削除する関数
+    /// <summary>
+    /// 非アクティブなライトをリストから削除する関数
+    /// </summary>
+    /// <param name="light3D">リストから削除するライト</param>
     private void RemoveActiveLight(Light light3D)
     {
         // リストにそのライトがある かつ ライトオブジェクトが無効の場合は削除する

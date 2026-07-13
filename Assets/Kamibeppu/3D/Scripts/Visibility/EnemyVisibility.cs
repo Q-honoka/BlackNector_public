@@ -48,7 +48,9 @@ public class EnemyVisibility : MonoBehaviour
 
     }
 
-    // 視界の描画
+    /// <summary>
+    /// 視界の描画
+    /// </summary>
     private void RenderVisibility()
     {
         // メッシュがない場合は処理しない
@@ -121,7 +123,10 @@ public class EnemyVisibility : MonoBehaviour
         mesh.RecalculateBounds();
     }
 
-    // 何かが視界に入ったとき
+    /// <summary>
+    /// 範囲内に子どもがいるかを返す
+    /// </summary>
+    /// <param name="other">コライダー</param>
     private void OnTriggerStay(Collider other)
     {
         // 子どもだった場合は詳細な視界判定に入る
@@ -133,7 +138,10 @@ public class EnemyVisibility : MonoBehaviour
         }
     }
 
-    // 何かが視界から出たとき
+    /// <summary>
+    /// 範囲外に出たコライダーが子どもかどうかを返す
+    /// </summary>
+    /// <param name="other">コライダー</param>
     private void OnTriggerExit(Collider other)
     {
         // 子どもだった場合かつフラグがtrueのときは false にする
@@ -145,7 +153,10 @@ public class EnemyVisibility : MonoBehaviour
         }
     }
 
-    // 視界内にいるか調べる
+    /// <summary>
+    /// 視界内にいるか調べる
+    /// </summary>
+    /// <returns>範囲内にいたらtrueを返す</returns>
     private bool IsWithinVisibility()
     {
         // 子どもが未取得なら処理しない
@@ -163,7 +174,10 @@ public class EnemyVisibility : MonoBehaviour
         return true;
     }
 
-    // 半径内にいるか調べる
+    /// <summary>
+    /// 半径内にいるかどうかを返す
+    /// </summary>
+    /// <returns>範囲内にいたらtrueを返す</returns>
     private bool IsWithinRange()
     {
         float distance = Vector3.Distance(child.transform.position, this.transform.position);
@@ -172,7 +186,10 @@ public class EnemyVisibility : MonoBehaviour
         return distance <= viewRadius;
     }
 
-    // 障害物があるか調べる
+    /// <summary>
+    /// 障害物があるかどうかを返す
+    /// </summary>
+    /// <returns>範囲内にいたらtrueを返す</returns>
     private bool IsBlocked()
     {
         Vector3 direction = (child.transform.position - this.transform.position).normalized;
@@ -185,7 +202,10 @@ public class EnemyVisibility : MonoBehaviour
         return hitObject;
     }
 
-    // 角度内にいるか調べる
+    /// <summary>
+    /// 角度内にいるかどうかを返す
+    /// </summary>
+    /// <returns>範囲内にいたらtrueを返す</returns>
     private bool IsWithinAngle()
     {
         Vector2 toChild = new Vector2(
@@ -201,9 +221,9 @@ public class EnemyVisibility : MonoBehaviour
     }
 
     /// <summary>
-    /// 視界内に子どもがいるかを返す関数
+    /// 視界内に子どもがいるかどうかを返す
     /// </summary>
-    /// <returns></returns>
+    /// <returns>範囲内にいたらtrueを返す</returns>
     public bool IsWithinChildInVisibility()
     {
         return isWithinChild;

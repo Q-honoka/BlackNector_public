@@ -1,7 +1,6 @@
 using RaruLib;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Playables;
 using UnityEngine.UI;
 
 /*
@@ -35,7 +34,11 @@ public class DarknessTarget : MonoBehaviour
     private bool isEnd;           // アニメーションが終わったかどうか
     private Sound _sound => Sound.instance;
     bool isInsideCamera;
-    // アニメーションが終わったかどうかを返す
+    
+    /// <summary>
+    /// アニメーションが終わったかどうかを返す
+    /// </summary>
+    /// <returns>終わったらtrueを返す</returns>
     public bool GetIsEnd()
     {
         return isEnd;
@@ -96,7 +99,9 @@ public class DarknessTarget : MonoBehaviour
         }
     }
 
-    // 暗闇に入ったときの演出
+    /// <summary>
+    /// 暗闇に入ったときの演出
+    /// </summary>
     private void DarknessAction()
     {
         elapsedTime += Time.deltaTime;
@@ -113,7 +118,9 @@ public class DarknessTarget : MonoBehaviour
         }
     }
 
-    // ネスターに襲われるアニメーション
+    /// <summary>
+    /// ネスターに襲われるアニメーション
+    /// </summary>
     private void DarknessAnimation()
     {
         if (nestors.Count == 0)
@@ -145,7 +152,9 @@ public class DarknessTarget : MonoBehaviour
 
     }
 
-    // ネスターの生成処理
+    /// <summary>
+    /// ネスターの生成処理
+    /// </summary>
     private void SpawnNestors()
     {
         // ネスターUIを入れるコンテナオブジェクトを生成
@@ -165,7 +174,7 @@ public class DarknessTarget : MonoBehaviour
 
             // ネスター生成
             Image spawned = Instantiate(nestorPrefab, nestorContainer.transform);
-            SetNestor(spawned, screenPos, radAngle, radius);
+            SetNestor(spawned, screenPos, radAngle);
 
             nestors.Add(spawned);
             angles.Add(radAngle);
@@ -173,7 +182,9 @@ public class DarknessTarget : MonoBehaviour
 
     }
 
-    // ネスターの移動処理
+    /// <summary>
+    /// ネスターの移動処理
+    /// </summary>
     private void MoveNestors()
     {
         Vector3 screenPos = cam.WorldToScreenPoint(this.transform.position);
@@ -186,7 +197,7 @@ public class DarknessTarget : MonoBehaviour
             if (nestors[i] == null) continue;
 
             if (nestors[i].enabled == false) nestors[i].enabled = true;
-            SetNestor(nestors[i], screenPos, angles[i], radius);
+            SetNestor(nestors[i], screenPos, angles[i]);
         }
 
         // ネスターが表示されていなければ表示する
@@ -200,8 +211,13 @@ public class DarknessTarget : MonoBehaviour
         }
     }
 
-    // ネスターの位置と回転設定
-    private void SetNestor(Image nestor, Vector3 center, float rad, float radDirection)
+    /// <summary>
+    /// ネスターの位置と回転設定
+    /// </summary>
+    /// <param name="nestor">ネスターの画像</param>
+    /// <param name="center">生成する中心座標</param>
+    /// <param name="rad">角度</param>
+    private void SetNestor(Image nestor, Vector3 center, float rad)
     {
         // 三角関数を使って円形に配置
         float x = center.x + Mathf.Cos(rad) * radius;
@@ -216,7 +232,9 @@ public class DarknessTarget : MonoBehaviour
         nestor.transform.rotation = Quaternion.Euler(0, 0, angleToTarget);
     }
 
-    // アニメーションのリセット
+    /// <summary>
+    /// アニメーションのリセット
+    /// </summary>
     private void ResetDarknessAnimation()
     {
         // それまで出現していたネスターを非表示にする
@@ -237,14 +255,18 @@ public class DarknessTarget : MonoBehaviour
         }
     }
 
-    // 自身を消去したらセンサーのリストからも削除する
+    /// <summary>
+    /// 自身を消去したらセンサーのリストからも削除する
+    /// </summary>
     private void OnDestroy()
     {
         if (nestorContainer != null) Destroy(nestorContainer);
         NotifyEntityStateChanged();
     }
 
-    // エンティティの状態が変化したことを通知する
+    /// <summary>
+    /// エンティティの状態が変化したことを通知する
+    /// </summary>
     private void NotifyEntityStateChanged()
     {
         if (tracker != null)
@@ -253,13 +275,17 @@ public class DarknessTarget : MonoBehaviour
         }
     }
 
-    // エンティティが無効になったときにトラッカーに通知
+    /// <summary>
+    /// エンティティが無効になったときにトラッカーに通知
+    /// </summary>
     private void OnDisable()
     {
         NotifyEntityStateChanged();
     }
 
-    // エンティティが有効になったときにトラッカーに通知
+    /// <summary>
+    /// エンティティが有効になったときにトラッカーに通知
+    /// </summary>
     private void OnEnable()
     {
         NotifyEntityStateChanged();

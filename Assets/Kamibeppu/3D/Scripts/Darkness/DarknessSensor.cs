@@ -70,7 +70,9 @@ public class DarknessSensor : MonoBehaviour
         return false;
     }
 
-    // 暗闇にいるエンティティを調べる
+    /// <summary>
+    /// 暗闇にいるエンティティを調べる
+    /// </summary>
     private void CheckDarknessEntities()
     {
         entitiesInDarkness.Clear();
@@ -91,14 +93,17 @@ public class DarknessSensor : MonoBehaviour
             if (isDarkness == true)
             {
                 entitiesInDarkness.Add(entity);
-                //Debug.Log($"{entity.name}を暗闇リストに加えます");
-                //Debug.Log($"暗闇にいるエンティティの数：{entitiesInDarkness.Count}");
             }
         }
 
     }
 
-    // エンティティがスポットライトの照射範囲内にいるか調べる
+    /// <summary>
+    /// エンティティがスポットライトの照射範囲内にいるか調べる
+    /// </summary>
+    /// <param name="entity">調べる対象のエンティティ</param>
+    /// <param name="light">調べる対象のライト</param>
+    /// <returns></returns>
     private bool IsWithinSpotLightArea(DarknessTarget entity, Light light)
     {
         // 半径で簡易チェック

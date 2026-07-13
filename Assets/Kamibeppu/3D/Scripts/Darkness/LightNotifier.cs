@@ -37,7 +37,9 @@ public class LightNotifier : MonoBehaviour
         }
     }
 
-    // ライトの状態が変化したことを通知する
+    /// <summary>
+    /// ライトの状態が変化したことを通知する
+    /// </summary>
     private void NotifyLightStateChanged()
     {
         if (tracker != null)
@@ -46,13 +48,17 @@ public class LightNotifier : MonoBehaviour
         }
     }
 
-    // ライトオブジェクトが無効になったときにトラッカーに通知
+    /// <summary>
+    /// ライトオブジェクトが無効になったときにトラッカーに通知
+    /// </summary>
     private void OnDisable()
     {
         NotifyLightStateChanged();
     }
 
-    // ライトオブジェクトが有効になったときにトラッカーに通知
+    /// <summary>
+    /// ライトオブジェクトが有効になったときにトラッカーに通知
+    /// </summary>
     private void OnEnable()
     {
         NotifyLightStateChanged();

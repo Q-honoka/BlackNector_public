@@ -72,7 +72,10 @@ public class DarknessEntityTracker : MonoBehaviour
         return darknessEntities.AsReadOnly();
     }
 
-    // アクティブなエンティティをリストに追加する関数
+    /// <summary>
+    /// アクティブなエンティティをリストに追加する関数
+    /// </summary>
+    /// <param name="entity">リストに登録するエンティティ</param>
     private void AddActiveEntity(DarknessTarget entity)
     {
         // リストにそのエンティティがない かつ エンティティが有効の場合は追加する
@@ -82,7 +85,10 @@ public class DarknessEntityTracker : MonoBehaviour
         }
     }
 
-    // 非アクティブなエンティティをリストから削除する関数
+    /// <summary>
+    /// 非アクティブなエンティティをリストから削除する関数
+    /// </summary>
+    /// <param name="entity">リストから削除するエンティティ</param>
     private void RemoveActiveEntity(DarknessTarget entity)
     {
         // リストにそのエンティティがある かつ エンティティが無効の場合は削除する

@@ -11,13 +11,17 @@ public class CameraVisible : MonoBehaviour
 {
     public bool visible;
 
-    // カメラから外れた瞬間にフラグを false にする
+    /// <summary>
+    /// カメラから外れた瞬間にフラグを false にする
+    /// </summary>
     private void OnBecameInvisible()
     {
         visible = false;
     }
 
-    // カメラ内に入った瞬間にフラグを true にする
+    /// <summary>
+    /// カメラ内に入った瞬間にフラグを true にする
+    /// </summary>
     private void OnBecameVisible()
     {
         visible = true;

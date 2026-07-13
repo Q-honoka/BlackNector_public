@@ -28,7 +28,11 @@ public class GameOverManager : MonoBehaviour
         }
     }
 
-    // 敵に見つかった演出
+    /// <summary>
+    /// 敵に見つかった演出
+    /// </summary>
+    /// <param name="enemyType">敵の種類</param>
+    /// <param name="spottedEnemyAnimator">再生するアニメーション</param>
     public void PlayEnemyGameOver(int enemyType, Animator spottedEnemyAnimator)
     {
         var director = enemyTimelines[enemyType];
@@ -44,13 +48,17 @@ public class GameOverManager : MonoBehaviour
         director.Play();
     }
 
-    // 暗闇に入った演出
+    /// <summary>
+    /// 暗闇に入った演出
+    /// </summary>
     public void PlayDarknessGameOver()
     {
         darknessTimeline.Play();
     }
 
-    // タイムラインを止める
+    /// <summary>
+    /// タイムラインを止める
+    /// </summary>
     public void StopDarknessGameOver()
     {
         StopAllCoroutines();
@@ -60,7 +68,9 @@ public class GameOverManager : MonoBehaviour
         _sound.Stop("SE", "Badfeeling");
     }
 
-    // リトライ
+    /// <summary>
+    /// リトライ
+    /// </summary>
     public void RetrySignal()
     {
         Retry.instance.CallRetry();
@@ -90,7 +100,9 @@ public class GameOverManager : MonoBehaviour
         _sound.Play("SE", "Boone");
     }
 
-    // エンド画面の表示
+    /// <summary>
+    /// エンド画面の表示
+    /// </summary>
     public void ShowEnd()
     {
         EndImage.SetActive(true);
