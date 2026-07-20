@@ -11,8 +11,6 @@ using UnityEngine;
  * IsWithinChildInVisibility()
  * を呼ぶと子どもがいるなら true
  * いないなら false を返します。
- * 
- * 視界の描画に MeshRenderer と MeshFilter が必要です。
  */
 
 public class EnemyVisibility : MonoBehaviour
@@ -21,106 +19,28 @@ public class EnemyVisibility : MonoBehaviour
     [SerializeField] private float viewRadius = 5f;     // 視界の距離
     [SerializeField] private float viewAngle = 90f;     // 視界の角度(左右の合計)
     [SerializeField, Range(4, 128)] private int segmentCount = 48; // 分割数
-    [SerializeField] private LayerMask ObstacleLayer;   // 障害物レイヤー
 
     private GameObject child = null;    // 子どもの情報
     private bool isWithinChild = false; // 視界内に子どもがいるか
-    private Mesh mesh = null;       // 扇形にするメッシュ
-    private MeshFilter filter;      // メッシュを適用するMeshFilter
+    private RenderFanShape renderFan = null;    // 扇形を描画するクラスインスタンス
 
     private void Start()
     {
-        filter = this.GetComponent<MeshFilter>();
-        if (mesh == null) mesh = new Mesh();
-        if (filter != null) filter.mesh = mesh;
+        renderFan = GetComponentInChildren<RenderFanShape>();
+        if(renderFan != null)
+        {
+            renderFan.SetRenderInfo(viewRadius, viewAngle, segmentCount, obstacleLayer, true);
+        }
     }
 
     private void Update()
     {
-        // 視界の描画
-        RenderVisibility();
-
         // 子どもを保持しているときは、より詳細に調べる
         if (child != null)
         {
             isWithinChild = IsWithinVisibility();
         }
 
-    }
-
-    /// <summary>
-    /// 視界の描画
-    /// </summary>
-    private void RenderVisibility()
-    {
-        // メッシュがない場合は処理しない
-        if (mesh == null) return;
-        mesh.Clear();
-
-        float half = viewAngle * 0.5f;
-        float start = -half;
-        float step = viewAngle / segmentCount;
-
-        Vector3[] vertices = new Vector3[2 + segmentCount];     // 頂点数(中心+扇の端+分割数)
-
-        // 中心点を設定
-        vertices[0] = Vector3.zero;
-
-        // 各頂点の設定
-        for (int i = 0; i <= segmentCount; i++)
-        {
-            float angle = (start + step * i) * Mathf.Deg2Rad;   // ラジアン
-            float x = Mathf.Cos(angle);
-            float y = Mathf.Sin(angle);
-
-            Vector3 origin = this.transform.position;
-            Quaternion rotation = this.transform.rotation;
-
-            Vector3 localDir = new Vector3(x, y, 0f);
-            Vector3 dir = rotation * localDir;
-            RaycastHit hit;
-            Vector3 targetPoint;
-
-            // 障害物にぶつかったらぶつかった場所を保存
-            if (Physics.Raycast(origin, dir, out hit, viewRadius, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
-            {
-                // 檻もしくは障害物があったら檻の場所を保存
-                int cageLayer = LayerMask.NameToLayer("Cage");
-                int obstacleLayer = LayerMask.NameToLayer("Obstacle");
-                if (hit.collider.gameObject.layer == cageLayer || hit.collider.gameObject.layer == obstacleLayer)
-                {
-                    targetPoint = hit.point;
-                }
-                else
-                {
-                    targetPoint = origin + dir * viewRadius;
-                }
-            }
-            // ぶつからなければ最大距離を保存
-            else
-            {
-                targetPoint = origin + dir * viewRadius;
-            }
-
-            Vector3 localVer = this.transform.InverseTransformPoint(targetPoint);
-            vertices[i + 1] = localVer;     // 頂点をセット
-        }
-
-        // 三角形の設定
-        int[] triangles = new int[segmentCount * 3];
-        for (int i = 0; i < segmentCount; i++)
-        {
-            triangles[i * 3] = 0;           // 中心
-            triangles[i * 3 + 1] = i + 1;
-            triangles[i * 3 + 2] = i + 2;
-        }
-
-        // 頂点と三角形の情報をメッシュに格納する
-        mesh.vertices = vertices;
-        mesh.triangles = triangles;
-
-        mesh.RecalculateNormals();
-        mesh.RecalculateBounds();
     }
 
     /// <summary>
