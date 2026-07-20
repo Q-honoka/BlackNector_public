@@ -17,12 +17,18 @@ using UnityEngine;
 [DefaultExecutionOrder(-10)]
 public class LightNotifier : MonoBehaviour
 {
+    [SerializeField]
+    private LayerMask ObstacleLayer;    // 障害物レイヤー
+
     private Light light3D;
     private static ActiveLightTracker tracker;  // ライトのトラッカースクリプト
+    private RenderFanShape renderFan;   // メッシュ描画クラスのインスタンス
+    private int segmentCount = 32;      // 扇形の滑らかさ
 
     private void Start()
     {
         light3D = GetComponent<Light>();
+        renderFan = GetComponentInChildren<RenderFanShape>();
 
         // トラッカーを取得
         if (tracker == null)
@@ -34,6 +40,11 @@ public class LightNotifier : MonoBehaviour
         if (tracker != null)
         {
             tracker?.UpdateActiveLights(light3D);
+        }
+
+        if(renderFan != null)
+        {
+            renderFan.SetRenderInfo(light3D.range, light3D.spotAngle, segmentCount, ObstacleLayer, true);
         }
     }
 
@@ -54,6 +65,7 @@ public class LightNotifier : MonoBehaviour
     private void OnDisable()
     {
         NotifyLightStateChanged();
+        if(renderFan != null) renderFan.enabled = false;
     }
 
     /// <summary>
@@ -62,5 +74,6 @@ public class LightNotifier : MonoBehaviour
     private void OnEnable()
     {
         NotifyLightStateChanged();
+        if(renderFan != null) renderFan.enabled = true;
     }
 }

@@ -1859,6 +1859,18 @@ PrefabInstance:
       propertyPath: 'stateFalseObj.Array.data[0]'
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4321039037120956381, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321039037120956381, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321039037120956381, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 4811885108061715690, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
       propertyPath: childAnim
       value: 
@@ -1996,6 +2008,7 @@ PrefabInstance:
     - {fileID: 7875972622991694517, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
     - {fileID: 1001020231856139998, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
     - {fileID: 6014131464585044226, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+    - {fileID: 6994477429859187809, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
@@ -3988,6 +4001,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08229c483d771004b9bf7f2463bbaf53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &1541361618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6990,6 +7006,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08229c483d771004b9bf7f2463bbaf53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &480749393785026874
 PrefabInstance:
   m_ObjectHideFlags: 0
