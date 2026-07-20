@@ -1,8 +1,6 @@
 using Cysharp.Threading.Tasks;
 using RaruLib;
-using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UniRx;
 
 [RequireComponent(typeof(Command))]
@@ -351,9 +349,4 @@ public class PlayerController : MonoBehaviour, ICharcters
     }
 
     public Vector3 GetPlayerPosition() { return transform.position; }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        //onGround = true;
-    }
 }

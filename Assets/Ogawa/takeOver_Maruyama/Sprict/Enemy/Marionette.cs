@@ -82,7 +82,6 @@ public class Marionette : MonoBehaviour, ICharcters, IEnemy
                 break;
 
             case State.FALL:
-                Debug.Log(state);
                 Fall();
                 break;
 

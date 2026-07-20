@@ -5,12 +5,8 @@ public class GimmickButton : GimmickBase
 {
     [SerializeField]
     GimmickCollision collision;
-    bool myState = true;
+    bool myState = false;
     private Sound _sound => Sound.instance;
-    private void Start()
-    {
-        isState = false;
-    }
 
     private void Update()
     {

@@ -23,11 +23,6 @@ public class GimmickCollision : MonoBehaviour
     {
         if (collision.gameObject.tag != "Player") { return; }
         player = collision.gameObject;
-        if(transform.CompareTag("enemy"))
-        {
-            Debug.Log("player‚Æ‚Á‚½");
-        }
-
     }
 
     private void OnTriggerExit(Collider collision)
