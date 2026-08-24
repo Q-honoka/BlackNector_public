@@ -60,7 +60,7 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     {
         if (patrolPos[0] == null) return;
 
-        switch(state)
+        switch (state)
         {
             case State.IDLE:
                 myCharacter.Idle();
@@ -87,7 +87,11 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     /// <summary>
     /// 停止状態
     /// </summary>
-    void ICharcters.Idle() {  }
+    void ICharcters.Idle()
+    {
+        // 歩行アニメーションから静止アニメーションに切り替える
+        if (anim != null && anim.GetBool("Walking") == true) anim.SetBool("Walking", false);
+    }
     /// <summary>
     /// 巡回中
     /// </summary>
@@ -103,11 +107,13 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
         {
             state = State.IDLE;
         }
-            if (anim != null && anim.GetBool("Walking") != true) anim.SetBool("Walking", true);
+        if (anim != null && anim.GetBool("Walking") != true) anim.SetBool("Walking", true);
         // 視界内に子どもがいたら FOUND 状態に遷移する
         if (foundArea.IsWithinChildInVisibility()) { myCharacter.SetMyState((int)State.FOUND); }
         // 前方に壁がある もしくは 巡回地点に到達したら Uターンする
-        if(CheckWallForward() || CheckPatrolPos()) { Turn(); }
+        if (CheckWallForward() || CheckPatrolPos()) { Turn(); }
+        // 檻に閉じ込められている場合は、静止する
+        if (CheckInCage()) { myCharacter.SetMyState((int)State.IDLE); }
         // 前方に移動
         transform.Translate(transform.right * tinDoll.myData.speed * Time.deltaTime, Space.World);
     }
@@ -131,7 +137,7 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     /// <summary>
     /// Playerを見つけた
     /// </summary>
-    void IEnemy.FoundPlayer() 
+    void IEnemy.FoundPlayer()
     {
         if (anim != null)
         {
@@ -181,13 +187,40 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
         Vector3 origin = this.gameObject.transform.position;
         Vector3 direction = this.gameObject.transform.right;
         RaycastHit hit;
-        
+
         // 当たったオブジェクトが障害物なら true を返す
-        if(Physics.Raycast(origin, direction, out hit, viewLength, obstacleLayer) == true)
+        if (Physics.Raycast(origin, direction, out hit, viewLength, obstacleLayer) == true)
         {
-            if(hit.collider != null) { return true; }
+            if (hit.collider != null) { return true; }
         }
 
+        return false;
+    }
+
+    /// <summary>
+    /// 檻に閉じ込められているか調べる
+    /// </summary>
+    /// <returns></returns>
+    bool CheckInCage()
+    {
+        RaycastHit hit;
+        bool checkFront = false;    // 前方に檻があるか
+        int cageMask = 1 << LayerMask.NameToLayer("Cage");  // 檻のレイヤー
+        float checkDistance = viewLength * 4;   // rayを飛ばす
+                                                // 距離
+        // 前方を確認して檻があれば、後方に檻があるか確認する
+        if (Physics.Raycast(transform.position, transform.right, out hit, checkDistance, cageMask))
+        {
+            checkFront = true;
+        }
+        // 前方に檻がなければ、閉じ込められていないためfalseを返す
+        if (checkFront == false) return false;
+
+        // 後方も檻がある場合は、trueを返す
+        if (Physics.Raycast(transform.position, -transform.right, out hit, checkDistance, cageMask))
+        {
+            return true;
+        }
         return false;
     }
 
@@ -198,7 +231,7 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     {
         // ターゲット地点を移動
         patrolPosIndex = (patrolPosIndex + 1) % patrolPos.Length;
-        
+
         // 角度を反転させる(後々コルーチン使ってなめらかにしたい)
         Vector3 currentAngle = this.gameObject.transform.rotation.eulerAngles;
         currentAngle.y = (currentAngle.y + 180f) % 360f;
