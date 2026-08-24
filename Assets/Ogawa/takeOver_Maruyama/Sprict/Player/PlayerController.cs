@@ -26,7 +26,8 @@ public class PlayerController : MonoBehaviour, ICharcters
     [SerializeField] Rigidbody rigid;                 //物理演算
     [SerializeField] CharctersState state;              //キャラクタの状態
     [SerializeField] Animator anim;         // プレイヤーアニメーター
-    [SerializeField] GameObject playerModel;// プレイヤーの見た目       
+    [SerializeField] GameObject playerModel;// プレイヤーの見た目
+    [SerializeField] ParticleSystem callEffect;     // 子どもを呼ぶときのエフェクト
     private Command m_command;              // コマンドスクリプト
 
     public bool peckInput = false;          //つつくをしているかどうか
@@ -291,6 +292,9 @@ public class PlayerController : MonoBehaviour, ICharcters
                     {
                         m_command.CallNovelMessagePlay(NOVEL_KIND.Event_1_2);
                     }
+
+                    // エフェクトを出す
+                    if(callEffect != null) callEffect.Play();
                     break;
                 }
 

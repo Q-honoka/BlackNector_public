@@ -4746,6 +4746,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 127131151927088511, guid: aba7c0f8951627046b8f2a68db6d2216, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 196061940422505428, guid: aba7c0f8951627046b8f2a68db6d2216, type: 3}
       propertyPath: retrySpot.Array.size
       value: 8
@@ -4914,6 +4918,10 @@ PrefabInstance:
       propertyPath: playerModel
       value: 
       objectReference: {fileID: 2141693872}
+    - target: {fileID: 9165579717142217273, guid: aba7c0f8951627046b8f2a68db6d2216, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3630257721437218796, guid: aba7c0f8951627046b8f2a68db6d2216, type: 3}
     m_RemovedGameObjects: []
