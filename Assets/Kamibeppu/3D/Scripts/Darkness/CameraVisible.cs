@@ -1,29 +1,42 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 /*
- * ˆÃˆÅ”»’è‚ğ‚µ‚½‚¢ƒGƒ“ƒeƒBƒeƒB‚ÌRenderer‚ª‚Â‚¢‚Ä‚¢‚éƒIƒuƒWƒFƒNƒg‚É
- * •K‚¸‚±‚ÌƒXƒNƒŠƒvƒg‚ğƒAƒ^ƒbƒ`‚µ‚Ä‚­‚¾‚³‚¢B
+ * æš—é—‡åˆ¤å®šã‚’ã—ãŸã„ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ã®RendererãŒã¤ã„ã¦ã„ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«
+ * å¿…ãšã“ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’ã‚¢ã‚¿ãƒƒãƒã—ã¦ãã ã•ã„ã€‚
  * 
- * ƒIƒuƒWƒFƒNƒg‚ªƒJƒƒ‰‚É‰f‚Á‚Ä‚¢‚é‚©‚Ç‚¤‚©‚ğ•Û‚µ‚Ü‚·B
+ * ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒã‚«ãƒ¡ãƒ©ã«æ˜ ã£ã¦ã„ã‚‹ã‹ã©ã†ã‹ã‚’ä¿æŒã—ã¾ã™ã€‚
  */
 
 public class CameraVisible : MonoBehaviour
 {
-    public bool visible;
+    private SkinnedMeshRenderer targetRenderer;     // å¯¾è±¡ã®ãƒ¬ãƒ³ãƒ€ãƒ¼
+    private Camera targetCamera;      // å¯¾è±¡ã®ã‚«ãƒ¡ãƒ©
 
-    /// <summary>
-    /// ƒJƒƒ‰‚©‚çŠO‚ê‚½uŠÔ‚Éƒtƒ‰ƒO‚ğ false ‚É‚·‚é
-    /// </summary>
-    private void OnBecameInvisible()
+    private void Awake()
     {
-        visible = false;
+        targetRenderer = GetComponent<SkinnedMeshRenderer>();
+        targetCamera = Camera.main;
     }
 
     /// <summary>
-    /// ƒJƒƒ‰“à‚É“ü‚Á‚½uŠÔ‚Éƒtƒ‰ƒO‚ğ true ‚É‚·‚é
+    /// ã‚«ãƒ¡ãƒ©ã«æ˜ ã£ã¦ã„ã‚‹ã‹ã©ã†ã‹ã‚’è¿”ã™
     /// </summary>
-    private void OnBecameVisible()
+    public bool Visible
     {
-        visible = true;
+        get
+        {
+            if (targetRenderer == null) return false;
+            if (targetCamera == null) targetCamera = Camera.main;
+            if (targetCamera == null) return false;
+
+            // ãƒ“ãƒ¥ãƒ¼ãƒãƒ¼ãƒˆåº§æ¨™ã«å¤‰æ›ã™ã‚‹
+            Vector3 viewportPos = targetCamera.WorldToViewportPoint(targetRenderer.bounds.center);
+
+            // X ã¨ Y ãŒ 0.0 ã€œ 1.0 ã®ç¯„å›²å†…ã«ã‚ã‚‹ã‹åˆ¤å®š
+            bool inX = viewportPos.x >= 0.0f && viewportPos.x <= 1.0f;
+            bool inY = viewportPos.y >= 0.0f && viewportPos.y <= 1.0f;
+
+            return inX && inY;
+        }
     }
 }

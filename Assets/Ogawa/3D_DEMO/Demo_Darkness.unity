@@ -1903,6 +1903,10 @@ PrefabInstance:
       propertyPath: redFlashUI
       value: 
       objectReference: {fileID: 1022962797}
+    - target: {fileID: 4961922913730152551, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5018341034422707977, guid: 7c41c9737caa0dd47a2b6a5fdea2a29c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

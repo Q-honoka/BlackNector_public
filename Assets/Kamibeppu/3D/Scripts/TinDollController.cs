@@ -33,7 +33,7 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     // アニメーター
     [SerializeField] Animator anim;
 
-    private const float CheckInCageLengthMulti = 4.0f;   // 檻の中にいるか調べるのにかける数
+    private const float CheckInCageLengthMulti = 2.0f;   // 檻の中にいるか調べるのにかける数
     private CameraVisible cameraVisible;    // カメラ内に映っているか調べるクラス
     private bool foundChild = false;    // 子どもを見つけたかどうか
     private int patrolPosIndex = 0;     // 現在の巡回地点インデックス
@@ -101,7 +101,7 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     void ICharcters.Move()
     {
         // もし、カメラ外なら、動かない。
-        if (!cameraVisible)
+        if (!cameraVisible.Visible)
         {
             state = State.IDLE;
         }

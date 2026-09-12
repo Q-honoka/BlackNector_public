@@ -69,7 +69,7 @@ public class DarknessTarget : MonoBehaviour
     {
         // カメラの範囲内 かつ 暗闇にいる場合はアニメーションをする
         bool isInDark = darknessSensor.GetSelfIsDarkness(this);
-        isInsideCamera = cameraVisible.visible;
+        isInsideCamera = cameraVisible.Visible;
 
 
         if (isInsideCamera == true && isInDark == true)
