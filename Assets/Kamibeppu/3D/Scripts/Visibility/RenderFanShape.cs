@@ -10,6 +10,8 @@ public class RenderFanShape : MonoBehaviour
     [SerializeField]
     private bool RenderUpdate = false;      // 毎フレーム描画しなおすか
 
+    private const int triangleVertexCount = 3;      // 三角形の頂点数
+
     private Mesh mesh;          // 扇形を生成するメッシュ
     private MeshFilter filter;  // メッシュを適用するフィルター
 
@@ -111,12 +113,12 @@ public class RenderFanShape : MonoBehaviour
         }
 
         // 三角形の設定
-        int[] triangles = new int[segmentCount * 3];
+        int[] triangles = new int[segmentCount * triangleVertexCount];
         for (int i = 0; i < segmentCount; i++)
         {
-            triangles[i * 3] = 0;           // 中心
-            triangles[i * 3 + 1] = i + 1;
-            triangles[i * 3 + 2] = i + 2;
+            triangles[i * triangleVertexCount] = 0;           // 中心
+            triangles[i * triangleVertexCount + 1] = i + 1;
+            triangles[i * triangleVertexCount + 2] = i + 2;
         }
 
         // 頂点と三角形の情報をメッシュに格納する

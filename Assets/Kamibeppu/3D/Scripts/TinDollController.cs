@@ -33,6 +33,8 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     // アニメーター
     [SerializeField] Animator anim;
 
+    private const float CheckInCageLengthMulti = 4.0f;   // 檻の中にいるか調べるのにかける数
+    private CameraVisible cameraVisible;    // カメラ内に映っているか調べるクラス
     private bool foundChild = false;    // 子どもを見つけたかどうか
     private int patrolPosIndex = 0;     // 現在の巡回地点インデックス
     private float threshold = 0.1f;     // 巡回地点に到達と判定するしきい値
@@ -42,6 +44,7 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     private Sound _sound => Sound.instance;
     private void Start()
     {
+        cameraVisible = GetComponentInChildren<CameraVisible>();
         myCharacter = this;
         myEnemy = this;
         this.GetComponent<Rigidbody>().maxDepenetrationVelocity = 2.0f;
@@ -97,13 +100,8 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
     /// </summary>
     void ICharcters.Move()
     {
-        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
-        bool isInside =
-            viewPos.z > 0 &&
-            viewPos.x > 0 && viewPos.x < 1 &&
-            viewPos.y > 0 && viewPos.y < 1;
         // もし、カメラ外なら、動かない。
-        if (!isInside)
+        if (!cameraVisible)
         {
             state = State.IDLE;
         }
@@ -206,7 +204,7 @@ public class TinDollController : MonoBehaviour, ICharcters, IEnemy
         RaycastHit hit;
         bool checkFront = false;    // 前方に檻があるか
         int cageMask = 1 << LayerMask.NameToLayer("Cage");  // 檻のレイヤー
-        float checkDistance = viewLength * 4;   // rayを飛ばす
+        float checkDistance = viewLength * CheckInCageLengthMulti;   // rayを飛ばす
                                                 // 距離
         // 前方を確認して檻があれば、後方に檻があるか確認する
         if (Physics.Raycast(transform.position, transform.right, out hit, checkDistance, cageMask))

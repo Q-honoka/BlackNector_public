@@ -22,8 +22,10 @@ public class DarknessTarget : MonoBehaviour
     [SerializeField] private int spawnedNestorCount = 10;  // ネスターの生成個数
     [SerializeField] private GameOverManager gameOverManager;
 
-    private DarknessSensor darknessSensor;
-    private DarknessEntityTracker tracker;
+    private const float LowRadiusLimmit = 20f;
+    private CameraVisible cameraVisible;                // カメラ内に映っているか調べるクラス
+    private DarknessSensor darknessSensor;              // 暗闇判定スクリプト
+    private DarknessEntityTracker tracker;              // 暗闇判定を行うエンティティのトラッカー
     private List<Image> nestors = new List<Image>();  // 生成されたネスターのリスト
     private List<float> angles = new List<float>();             // 各ネスターの生成角度
     private float angleStep;                // 生成する角度の間隔
@@ -46,6 +48,8 @@ public class DarknessTarget : MonoBehaviour
 
     private void Start()
     {
+        cameraVisible = GetComponentInChildren<CameraVisible>();
+
         // センサーのインスタンス取得
         darknessSensor = DarknessSensor.Instance;
         tracker = DarknessEntityTracker.Instance;
@@ -54,7 +58,7 @@ public class DarknessTarget : MonoBehaviour
         radius = initializeRadius;
 
         // 半径の減少速度を求める [ (初期半径 - 半径の下限) / 消滅までの時間 ]
-        decreaseRadius = (initializeRadius - 20f) / destroyTime;
+        decreaseRadius = (initializeRadius - LowRadiusLimmit) / destroyTime;
 
         if (cam == null) cam = Camera.main;
         isEnd = false;
@@ -65,7 +69,7 @@ public class DarknessTarget : MonoBehaviour
     {
         // カメラの範囲内 かつ 暗闇にいる場合はアニメーションをする
         bool isInDark = darknessSensor.GetSelfIsDarkness(this);
-        isInsideCamera = this.gameObject.transform.GetComponentInChildren<CameraVisible>().visible;
+        isInsideCamera = cameraVisible.visible;
 
 
         if (isInsideCamera == true && isInDark == true)
@@ -83,14 +87,8 @@ public class DarknessTarget : MonoBehaviour
             if (!this.gameObject.CompareTag("Child"))
             {
                 gameObject.SetActive(false);
-                // なんかisInsideCameraのフラグが機能してない？ので応急処置としてフラグを追加しました。
-                Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
-                bool isInside =
-                    viewPos.z > 0 &&
-                    viewPos.x > 0 && viewPos.x < 1 &&
-                    viewPos.y > 0 && viewPos.y < 1;
 
-                if (isInside)
+                if (isInsideCamera)
                 {
                     _sound.Play("SE", "Boone");
                     _sound.Stop("SE","Enemy_Badfeeling");
@@ -133,12 +131,7 @@ public class DarknessTarget : MonoBehaviour
                 gameOverManager.PlayDarknessGameOver();
             }else
             {
-                Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
-                bool isInside =
-                    viewPos.z > 0 &&
-                    viewPos.x > 0 && viewPos.x < 1 &&
-                    viewPos.y > 0 && viewPos.y < 1;
-                if (isInside)
+                if (isInsideCamera)
                 {
                     _sound.Play("SE","Enemy_Badfeeling");
                 }
@@ -192,6 +185,7 @@ public class DarknessTarget : MonoBehaviour
         radius -= decreaseRadius * Time.deltaTime;
         radius = Mathf.Max(radius, 1f);         // 半径が1を下回らないように制御
 
+        // ネスターを円形に配置する
         for (int i = 0; i < nestors.Count; i++)
         {
             if (nestors[i] == null) continue;

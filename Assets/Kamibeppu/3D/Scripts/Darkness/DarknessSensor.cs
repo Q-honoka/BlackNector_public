@@ -21,7 +21,7 @@ public class DarknessSensor : MonoBehaviour
 
     [SerializeField] LayerMask ObstacleLayer;
     [SerializeField]
-    private float checkInterval = 1f;
+    private float checkInterval = 1f;       // 暗闇をチェックする間隔
 
     // エンティティトラッカーのシングルトン
     private DarknessEntityTracker entityTracker;

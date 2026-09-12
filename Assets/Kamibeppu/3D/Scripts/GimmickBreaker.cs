@@ -10,6 +10,8 @@ public class GimmickBreaker : GimmickBase
     bool myState = true;
     [SerializeField]
     PlayableDirector endFinalDirector;
+
+    private const int ActivePickCount = 3;  // 起動させるのに必要な回数
     private Animator anim;
     private Sound _sound => Sound.instance;
 
@@ -42,17 +44,13 @@ public class GimmickBreaker : GimmickBase
         anim.SetTrigger("Picked");
         anim.SetInteger("PickedCount", pickedCount);
 
-        // 3回つついたらライトをつける
-        if (pickedCount == 3)
+        // 指定回数つついたらライトをつける
+        if (pickedCount == ActivePickCount)
         {
             _sound.Play("SE", "Breaker_finish");
             if (endFinalDirector != null)
             {
                 endFinalDirector.Play();
-            }
-            else
-            {
-                Debug.LogWarning("GimmickBreaker の endFinalDirector がアサインされていません！");
             }
         }
         else
